@@ -335,7 +335,7 @@ For a Young diagram $\iota$, write
 $$\br_1(\iota) \geq \br_2(\iota) \geq \br_3(\iota) \geq \cdots$$
 for its row lengths, and similarly, write
 $$\bc_1(\iota) \geq \bc_2(\iota) \geq \bc_3(\iota) \geq \cdots$$
-for its column lengths. Denote by $|\iota|:= \sum_{i=1}^{\infty}\br_i(\iota)$ the total size of $\iota$ and by $\mathrm{YD}_{n}$ the set of all Young diagrams with total size $n$. We identify set of Young diagrams of total size $n$ with set of partition of $n$ via sending each Young diagram to the partition given by row lengths. By abuse of notation, we also use Young diagrams to represent partitions.
+for its column lengths. Let $|\iota|:= \sum_{i=1}^{\infty}\br_i(\iota)$ denote the total size of $\iota$, and let $\mathrm{YD}_{n}$ denote the set of all Young diagrams with total size $n$. We identify this set with the set of partitions of $n$ by associating each Young diagram with the partition given by row lengths. By abuse of notation, we also use Young diagrams to represent partitions.
 
 For any Young diagram $\iota$, we introduce the set $\mathrm{Box}(\iota)$ of boxes of $\iota$ as follows:
 \begin{equation}
@@ -413,7 +413,7 @@ We also have a notion of assigned Young diagrams:
 In the statement of the following theorems, we will use the canonical identification $^{a}\fh^* = \BC^n, \ \BC^n \times \BC^n$ defined in section \ref{3.1}, and identify nilpotent orbits in Lie algebras of type $A$ with partitions or Young diagrams in the usual way. For a partition $\iota$ denote by $\CO_\iota$ the corresponding nilpotent orbit, and for a nilpotent orbit $\CO$, denote by $\iota(\CO)$ the corresponding partition. We also define the "row by row" union of Young diagrams $\mathop{\sqcup}\limits^r$, e.g. $[5,3,1^2] \mathop{\sqcup}\limits^r [4,3^3] = [9,6,4^2]$
 
 \begin{thm}\label{R}
-   Let $G = \GL_n(\BR)$ and $\CO \in \bar{\Nil}(\fg^*)$.
+   Let $G = \GL_n(\BR)$, and $\CO \in \bar{\Nil}(\fg^*)$.
    \begin{enumerate}
         \item If $\nu \in {^{a}\fh^*} = \BC^n$ is integral, it means that we can permute its entries such that 
         \[
@@ -441,7 +441,7 @@ In the statement of the following theorems, we will use the canonical identifica
 
 
 \begin{thm}\label{H}
-    Let $G= \GL_{\frac{n}{2}}(\BH)$ and $\CO \in \bar{\Nil}(\fg^*)$.
+    Let $G= \GL_{\frac{n}{2}}(\BH)$, and $\CO \in \bar{\Nil}(\fg^*)$.
     \begin{enumerate}
         \item If $\nu \in {^a\fh^*} = \BC^n$ is integral, it means that we can permute its entries such that 
         \[
@@ -469,7 +469,7 @@ In the statement of the following theorems, we will use the canonical identifica
 \end{thm}
 
 \begin{thm}\label{C}
-    Let $G = \GL_{n}(\BC)$ and $\CO = \CO_{\iota} \times \CO_{\iota'} \in \bar{\Nil}(\fg^*)$.
+    Let $G = \GL_{n}(\BC)$, and $\CO = \CO_{\iota} \times \CO_{\iota'} \in \bar{\Nil}(\fg^*)$.
     \begin{enumerate}
         \item If $\nu \in {^a\fh^*} = \BC^n \times \BC^n$ is integral, it means that we can permute its entries via Weyl group $\mathrm{S}_n \times \mathrm{S}_n$ such that
         \[
@@ -512,7 +512,7 @@ In the statement of the following theorems, we will use the canonical identifica
 \end{thm}
 
 \begin{thm}\label{U}
-    Let $G = \U(p,q)$ with $p + q = n$ and $\CO \in \bar{\Nil}(\fg^*)$.
+    Let $G = \U(p,q)$ with $p + q = n$, and $\CO \in \bar{\Nil}(\fg^*)$.
     \begin{enumerate}
         \item If $\nu \in {^a\fh^*} = \BC^n$ and we can permute its entries such that 
         \[ 
@@ -554,6 +554,30 @@ In the statement of the following theorems, we will use the canonical identifica
             & \cdot \sharp(\Irr_{\blam'}(\U(\frac{e'}{2},\frac{e'}{2});\CO(\iota')))\cdot \prod_{i=1}^{r} \sharp(\Irr_{(\blam_i,\blam_i')}(\GL_{e_i}(\BC);\CO(\iota_i)\times \CO(\iota_i'))),
         \end{align*}
         where $p' = p - (\frac{e'}{2} + e_1 + \cdots + e_r) $, $q' = q - (\frac{e'}{2} + e_1 + \cdots + e_r)$.
+    \end{enumerate}
+\end{thm}
+
+Recall that a partial order is defined on the set of nilpotent orbits defined by $\CO \leq \CO'$ if $\bar{\CO} \subseteq \bar{\CO'}$. It can also be described in terms of corresponding partitions as follows: $[d_1, d_2, \cdots , d_k] \leq [d_1', d_2', \cdots , d_{k'}']$ if the following condition
+\[
+    \sum_{1 \leq j \leq k} d_{j} \leq \sum_{1 \leq j \leq k} d_{j}' \ \textrm{for $1 \leq k \leq \mathrm{max}\{k,k'\}$},
+\]
+is satisfied. Here, zeros are added to the shorter partition if necessary.
+This partial order naturally induces a corresponding partial order on the set of associated varieties of irreducible representations. We now describe the minimal associated variety that can arise for irreducible representations with a given infinitesimal character.
+
+\begin{thm}\label{minimal}
+    Let $G = \GL_n(\BR)$, and $\nu \in {^{a}\fh}^* = \BC^n$.
+    \begin{enumerate}
+        \item If 
+        \[
+        \nu = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \BC^n,
+        \]
+        where $[d_1, d_2, \cdots , d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \setminus \{0\}$ for $i \neq j$. Then, the unique minimal associated variety of irreducible Casselman-Wallach representation with infinitesimal character $\nu$ is $\bar{\CO}$, where $\iota(\CO) = [d_1, d_2, \cdots , d_k]$.
+        \item If
+                \[
+                \nu = (\blam_1, \cdots, \blam_r) \in \BC^n,
+                \]
+                where each $\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i}$ is integral.\\
+                Here, $[d_{i,1}, \cdots d_{i,k_i} ]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \setminus \{0\}$ holds for different $p, q$. Moreover, we have $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i, j$. Then, the unique minimal associated variety of irreducible Casselman-Wallach representation with infinitesimal character $\nu$ is $\bar{\CO} = \bar{\CO(\iota_1 \mathop{\sqcup}\limits^r \iota_2 \cdots \mathop{\sqcup}\limits^r  \iota_r)} $, where $\iota_i = [d_{i,1}, \cdots d_{i,k_i}]$.
     \end{enumerate}
 \end{thm}
 
@@ -1023,7 +1047,18 @@ Then the quadratic character $\sgn_{\mathrm{im}}$ of $W_{H_r}$ is
 \end{itemize}
 
 
-Let $\CP_r$ denote the set of parameters in $\CP_{\Lambda}(G)$ which are represented by triples of the form $(H,\zeta,\Gamma) \in \mathscr{P}_{\Lambda}(G)$, where $H$ conjugate to $H_r$. Under the cross action the $W$-orbits of $\CP_r$ is parameterized by non-negative integers in $\{0,1,\cdots,n-2r\}$. Each $i \in \{0,1,\cdots,n-2r\}$ corresponds to a $W$-orbit of $\CP_r$ represented by $\gamma_{r,i} = G \cdot \upgamma_{r,i} = G \cdot (H_r,\xi,\Gamma^i) \in \CP_{\Lambda}(G)$, where $\Gamma_{\nu}^i|_{\{\pm1\}^{n-2r}} = \underbrace{1 \otimes \cdots \otimes 1}_{i} \otimes \underbrace{\sgn \otimes \cdots \otimes \sgn }_{n-2r-i}$. ($\{\pm1\}^{n-2r} \subseteq (\BR^\times)^{n-2r}$ is the component subgroup.)
+Let $\CP_r$ denote the set of parameters in $\CP_{\Lambda}(G)$ which are represented by triples of the form $(H,\zeta,\Gamma) \in \mathscr{P}_{\Lambda}(G)$, where $H$ conjugate to $H_r$.
+
+\begin{lem}\label{gp char}
+    For any Cartan subgroup $H$ and $\zeta \in W({^{a}\fh}^*,\fh^*)$, $\zeta(\nu) + \delta(\zeta) \in {^{a}\fh^*}$ is always the differential of a continuous character on $H$. 
+\end{lem}
+
+\begin{proof}
+    Without lose of generality, assume $H = H_r$ for some $r$, and $\zeta = \xi$. Then, $\delta(\xi) = -\frac{1}{2} \cdot (1,-1,1,-1,\cdots,1,-1,0,\cdots,0)$, where the first $2r$ entries are nonzero. $\xi(\nu) = (\nu_1,\cdots,\nu_n)$, with $\nu_i \in \BZ$. The difference between $2i$-th entry and $(2i-1)$-th entry of $\zeta(\nu) + \delta(\zeta)$ is always an integer for $1 \leq i \leq r$, and hence $\zeta(\nu) + \delta(\zeta)$ comes from the differential of a group character.
+
+\end{proof}
+
+Thus, under the cross action, the $W$-orbits of $\CP_r$ is parameterized by non-negative integers in $\{0,1,\cdots,n-2r\}$. Each $i \in \{0,1,\cdots,n-2r\}$ corresponds to a $W$-orbit of $\CP_r$ represented by $\gamma_{r,i} = G \cdot \upgamma_{r,i} = G \cdot (H_r,\xi,\Gamma^i) \in \CP_{\Lambda}(G)$, where $\Gamma_{\nu}^i|_{\{\pm1\}^{n-2r}} = \underbrace{1 \otimes \cdots \otimes 1}_{i} \otimes \underbrace{\sgn \otimes \cdots \otimes \sgn }_{n-2r-i}$. ($\{\pm1\}^{n-2r} \subseteq (\BR^\times)^{n-2r}$ is the component subgroup.)
 
 We can identify $W$ with $W_{\fh_r}$ through the isomorphism $\xi$, then the centralizer $W_{{\gamma_{r,i}}}$ of ${\gamma_{r,i}} \in \CP_{\Lambda}(G)$ in $W$ is identified with the subgroup $\xi \circ W_{{\gamma_{r,i}}}\circ \xi = (\mathrm{S}_{r} \ltimes (W(A_1))^r) \times (\mathrm{S}_{i} \times \mathrm{S}_{n-2r-i}) \subseteq (\mathrm{S}_{r} \ltimes (W(A_1))^r) \times \mathrm{S}_{n-2r} = W_{H_r} \subseteq W_{\fh}$.
 
@@ -1109,13 +1144,14 @@ For a fixed nilpotent orbit $\CO = \CO_{\iota} \in \bar{\Nil}(\fg^*)$,
 \end{align*}
 here, the third equality is the consequence of Proposition \ref{2.9}.
 
-Combining the above three identities, we get the second part of Theorem \ref{R}.
+Combining the above three identities, we obtain the second part of Theorem \ref{R}.
 
-\subsubsection{Minimal nilpotent orbits for a fixed infinitesimal character}
+\subsubsection{Proof of theorem \ref{minimal}}
 
-\begin{prop}
-    
-\end{prop}
+
+We will prove the first assertion, as the second follows directly. It is easy to check that for any Young diagram, there is always a painting of type $A^{\BR}$ on it. Thus, the orbit closure $\bar{\CO}$  arises for an irreducible Casselman-Wallach representation of infinitesimal character $\nu$ if and only if $\CO$ has an assignment of type $[d_1, d_2, \cdots , d_k]$. We proceed by induction. For $n = 1,2$, the assertion is obvious. Assume the assertion holds for any positive integer $k < n$. Suppose $[d_1', d_2', \cdots , d_{k'}']$ is a minimal partition satisfies the assumption that it has an assignment of type $[d_1, d_2, \cdots , d_k]$, remove the boxes assigned with $k$ in the Young diagram to obtain another Young diagram $[d_1'', d_2'', \cdots , d_{k''}'']$, by induction hypothesis, we have $[d_1'', d_2'', \cdots , d_{k''}''] \geq [d_1, d_2, \cdots , d_{k-1}]$. It follows immediately that $[d_1', d_2', \cdots , d_{k'}'] \geq [d_1, d_2, \cdots , d_k]$, after we add $d_k$ boxes to both sides. Since $[d_1, d_2, \cdots , d_k]$ also satisfies the assumption, we must have $[d_1', d_2', \cdots , d_{k'}'] = [d_1, d_2, \cdots , d_k]$. The assertion follows.
+
+
 
 
 
@@ -1157,6 +1193,8 @@ The quadratic character $\sgn_{\mathrm{im}}$ of $W_{H}$ is
     \item trivial character on $\mathrm{S}_{\frac{n}{2}}$.
 \end{itemize}
 
+Using a similar calculation as in \ref{gp char}, we observe that for any Cartan subgroup $H'$ and any $\zeta \in W({^{a}\fh^*,\fh'^*})$, $\zeta(\nu) + \delta(\zeta)$ is always the differential of a continuous group character.
+
 Since the abstract Weyl group $W$ acts transitively on the set $W({^{a}\fh}^*,\fh^*)$, and $\Gamma$ in a character $\upgamma' = (H,\xi',\Gamma)$ is uniquely determined by $H$ and $\xi'$, the cross action of $W$ on $\CP_{\Lambda}(G)$ is transitive.  Choose a representative element $\upgamma = (H,\xi,\Gamma)$, where $\Gamma$ is the unique map determined by $H$ and $\xi$.
 
 We can identify $W$ with $W_{\fh}$ through the isomorphism $\xi$, then the centralizer $W_{{\gamma}}$ of $\gamma = G \cdot \upgamma$ in $W$ can be identified with $W_{H} \subseteq W_{\fh}$.
@@ -1185,7 +1223,7 @@ Now, we assume that all the $e_i$'s are even, there is a decomposition of abstra
 
 The same as in section \ref{3.2}, we can define $\CP_{\Lambda_i}(\G(V_i))$ for each $i = 1,2,\cdots,r$, and we can also define the following map
 \defmap{\varphi}{\CP_{\Lambda_1}(\G(V_i))\times \cdots \times \CP_{\Lambda_r}(\G(V_r))}{\CP_{\Lambda}(G)}{((H_1,\xi_1,\Gamma_1), \cdots,(H_r,\xi_r,\Gamma_r))}{(H,\xi,\Gamma)}
-and by a similar argument as \ref{varphi bij} and \ref{Coh cong}, we can get
+and by a similar argument as \ref{varphi bij} and \ref{Coh cong}, we obtain the following result
 \begin{prop}
     The map $\varphi$ defined above is an isomorphism.
 \end{prop}
@@ -1206,7 +1244,7 @@ For a nilpotent orbit $\CO = \CO_{\iota}$, we can get
     & = \sum_{\substack{(\iota_1,\cdots,\iota_r) \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \\ \iota_1 \mathop{\sqcup}\limits^r \cdots  \mathop{\sqcup}\limits^r \iota_r = \iota(\CO)}} \prod_{i=1}^r \sharp(\Irr_{\blam_i}(\GL_{\frac{e_i}{2}}(\BH);\CO_{\iota_i})).
 \end{align}
 
-We get the second part of Theorem \ref{H}.
+Thus, we obtain the second part of Theorem \ref{H}.
 
 
 
@@ -1280,7 +1318,7 @@ Now, we assume that $r = s$, $e_i = e_i'$ for each $i =1,2,\cdots,r$, and $\lamb
 
 The same as in section \ref{3.2}, we can define $\CP_{\Lambda_i}(\G(V_i))$ for each $i = 1,2,\cdots,r$, and we can also define the following map
 \defmap{\varphi}{\CP_{\Lambda_1}(\G(V_1))\times \cdots \times \CP_{\Lambda_r}(\G(V_r))}{\CP_{\Lambda}(G)}{((H_1,\xi_1,\Gamma_1),\cdots , (H_r,\xi_r,\Gamma_r))}{(H,\xi,\Gamma)}
-and by a similar argument as \ref{varphi bij} and \ref{Coh cong}, we can get
+and by a similar argument as \ref{varphi bij} and \ref{Coh cong}, we obtain the following result
 \begin{prop}
     The map $\varphi$ defined above is a bijection.
 \end{prop}
@@ -1299,7 +1337,7 @@ For a nilpotent orbit $\CO = \CO_{\iota} \times \CO_{\iota'}$, we can get
     & = \sum_{\substack{(\iota_1,\cdots,\iota_r), (\iota_1',\cdots,\iota_r') \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r}\\ \iota_1 \mathop{\sqcup}\limits^r \cdots \mathop{\sqcup}\limits^r \iota_r = \iota, \ \iota_1'  \mathop{\sqcup}\limits^r \cdots \mathop{\sqcup}\limits^r \iota_r' = \iota' }} \prod_{i=1}^{r} \sharp(\Irr_{\blam_i}(\G(V_i);\CO_{\iota_i} \times \CO_{\iota_i'})).
 \end{align}
 
-We get the second part of Theorem \ref{C}.
+Thus, we obtain the second part of Theorem \ref{C}.
 
 
 
