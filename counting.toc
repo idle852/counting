@@ -1,0 +1,24 @@
+\contentsline {section}{\tocsection {}{1}{Introduction}}{1}{section.1}%
+\contentsline {subsection}{\tocsubsection {}{1.1}{Background and goals}}{1}{subsection.1.1}%
+\contentsline {subsection}{\tocsubsection {}{1.2}{Structure of this article}}{2}{subsection.1.2}%
+\contentsline {section}{\tocsection {}{2}{The main results}}{2}{section.2}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{Lie group (algebra) notations}}{2}{subsection.2.1}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{The main results}}{3}{subsection.2.2}%
+\contentsline {section}{\tocsection {}{3}{Preliminaries}}{7}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Generalities on coherent families of Casselman-Wallach representations}}{7}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{j-induction}}{10}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{Counting irreducible representations}}{14}{subsection.3.3}%
+\contentsline {section}{\tocsection {}{4}{Counting results for general linear groups and unitay groups}}{14}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{Standard representations of classical groups}}{14}{subsection.4.1}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{Real general linear groups}}{15}{subsection.4.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.2.1}{Integral case}}{15}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.2.2}{General case}}{17}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.2.3}{Minimal nilpotent orbits for a fixed infinitesimal character}}{18}{subsubsection.4.2.3}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{Quaternion general linear groups}}{18}{subsection.4.3}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.3.1}{Integral case}}{18}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.3.2}{General case}}{19}{subsubsection.4.3.2}%
+\contentsline {subsection}{\tocsubsection {}{4.4}{Complex general linear groups}}{20}{subsection.4.4}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.1}{Integral case}}{20}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.2}{General case}}{21}{subsubsection.4.4.2}%
+\contentsline {subsection}{\tocsubsection {}{4.5}{Unitary groups}}{22}{subsection.4.5}%
+\contentsline {section}{\tocsection {}{}{References}}{24}{section*.2}%

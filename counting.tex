@@ -1,0 +1,1464 @@
+\documentclass[12pt, a4paper]{amsart}
+\usepackage[margin=1in]{geometry}  % set the margins to 1in on all sides
+\usepackage{amscd,latexsym,amsthm,amsfonts,amssymb,amsmath,amsxtra}
+\usepackage{mathrsfs}
+%\usepackage[mathscr]{eucal}
+\usepackage{hyperref}
+\usepackage{pdfsync}
+\usepackage[all,cmtip]{xy}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{color}
+\usepackage{hyperref}[colorlinks,linkcolor=blue]
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{decorations.pathreplacing}
+\newcommand{\tikznode}[3][inner sep=0pt]{\tikz[remember
+picture,baseline=(#2.base)]{\node(#2)[#1]{$#3$};}}
+\usepackage{ytableau}
+\usepackage{abstract}
+\usepackage{appendix}
+\usepackage{booktabs}
+\usepackage{upgreek}
+\numberwithin{equation}{section}
+\pagestyle{plain}
+\setcounter{secnumdepth}{5}
+
+\pagestyle{headings}
+\renewcommand\theequation{\thesection.\arabic{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Theorem style
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{assump}[thm]{Assumption}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{rk}[thm]{Remark}
+\newtheorem{question}[thm]{Question}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{con}[thm]{Construction}
+\newtheorem{examp}[thm]{Example}
+\newtheorem{notn}[thm]{Notation}
+\newtheorem{exer}[thm]{Exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bold Fonts
+\newcommand{\blam}{{\boldsymbol{\lambda}}}
+\newcommand{\br}{{\mathbf{r}}}
+\newcommand{\bc}{{\mathbf{c}}}
+\newcommand{\BA}{{\mathbb {A}}}
+\newcommand{\BB}{{\mathbb {B}}}
+\newcommand{\BC}{{\mathbb {C}}}
+\newcommand{\BD}{{\mathbb {D}}}
+\newcommand{\BE}{{\mathbb {E}}}
+\newcommand{\BF}{{\mathbb {F}}}
+\newcommand{\BG}{{\mathbb {G}}}
+\newcommand{\BH}{{\mathbb {H}}}
+\newcommand{\BI}{{\mathbb {I}}}
+\newcommand{\BJ}{{\mathbb {J}}}
+\newcommand{\BK}{{\mathbb {U}}}
+\newcommand{\BL}{{\mathbb {L}}}
+\newcommand{\BM}{{\mathbb {M}}}
+\newcommand{\BN}{{\mathbb {N}}}
+\newcommand{\BO}{{\mathbb {O}}}
+\newcommand{\BP}{{\mathbb {P}}}
+\newcommand{\BQ}{{\mathbb {Q}}}
+\newcommand{\BR}{{\mathbb {R}}}
+\newcommand{\BS}{{\mathbb {S}}}
+\newcommand{\BT}{{\mathbb {T}}}
+\newcommand{\BU}{{\mathbb {U}}}
+\newcommand{\BV}{{\mathbb {V}}}
+\newcommand{\BW}{{\mathbb {W}}}
+\newcommand{\BX}{{\mathbb {X}}}
+\newcommand{\BY}{{\mathbb {Y}}}
+\newcommand{\BZ}{{\mathbb {Z}}}
+\newcommand{\bi}{{\mathbf {i}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Curly Fonts
+
+\newcommand{\CA}{{\mathcal {A}}}
+\newcommand{\CB}{{\mathcal {B}}}
+\newcommand{\CC}{{\mathcal {C}}}
+%\newcommand{\CD}{{\mathcal {D}}}
+\newcommand{\CE}{{\mathcal {E}}}
+\newcommand{\CF}{{\mathcal {F}}}
+\newcommand{\CG}{{\mathcal {G}}}
+\newcommand{\CH}{{\mathcal {H}}}
+\newcommand{\CI}{{\mathcal {I}}}
+\newcommand{\CJ}{{\mathcal {J}}}
+\newcommand{\CK}{{\mathcal {K}}}
+\newcommand{\CL}{{\mathcal {L}}}
+\newcommand{\CM}{{\mathcal {M}}}
+\newcommand{\CN}{{\mathcal {N}}}
+\newcommand{\CO}{{\mathcal {O}}}
+\newcommand{\CP}{{\mathcal {P}}}
+\newcommand{\CQ}{{\mathcal {Q}}}
+\newcommand{\CR}{{\mathcal {R}}}
+\newcommand{\CS}{{\mathcal {S}}}
+\newcommand{\CT}{{\mathcal {T}}}
+\newcommand{\CU}{{\mathcal {U}}}
+\newcommand{\CV}{{\mathcal {V}}}
+\newcommand{\CW}{{\mathcal {W}}}
+\newcommand{\CX}{{\mathcal {X}}}
+\newcommand{\CY}{{\mathcal {Y}}}
+\newcommand{\CZ}{{\mathcal {Z}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Roman Fonts
+
+\newcommand{\RA}{{\mathrm {A}}}
+\newcommand{\RB}{{\mathrm {B}}}
+\newcommand{\RC}{{\mathrm {C}}}
+\newcommand{\RD}{{\mathrm {D}}}
+\newcommand{\RE}{{\mathrm {E}}}
+\newcommand{\RF}{{\mathrm {F}}}
+\newcommand{\RG}{{\mathrm {G}}}
+\newcommand{\RH}{{\mathrm {H}}}
+\newcommand{\RI}{{\mathrm {I}}}
+\newcommand{\RJ}{{\mathrm {J}}}
+\newcommand{\RK}{{\mathrm {K}}}
+\newcommand{\RL}{{\mathrm {L}}}
+\newcommand{\RM}{{\mathrm {M}}}
+\newcommand{\RN}{{\mathrm {N}}}
+\newcommand{\RO}{{\mathrm {O}}}
+\newcommand{\RP}{{\mathrm {P}}}
+\newcommand{\RQ}{{\mathrm {Q}}}
+\newcommand{\RR}{{\mathrm {R}}}
+\newcommand{\RS}{{\mathrm {S}}}
+\newcommand{\RT}{{\mathrm {T}}}
+\newcommand{\RU}{{\mathrm {U}}}
+\newcommand{\RV}{{\mathrm {V}}}
+\newcommand{\RW}{{\mathrm {W}}}
+\newcommand{\RX}{{\mathrm {X}}}
+\newcommand{\RY}{{\mathrm {Y}}}
+\newcommand{\RZ}{{\mathrm {Z}}}
+\renewcommand{\Re}{{\mathrm {Re}}}
+\newcommand{\Ri}{{\mathrm {i}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Gothic Fonts, Lie algebras
+
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fc}{\mathfrak{c}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\fk}{\mathfrak{k}}
+\newcommand{\fl}{\mathfrak{l}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fo}{\mathfrak{o}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\fr}{\mathfrak{r}}
+\newcommand{\fs}{\mathfrak{s}}
+\newcommand{\ft}{\mathfrak{t}}
+\newcommand{\fu}{\mathfrak{u}}
+\newcommand{\fv}{\mathfrak{v}}
+\newcommand{\fy}{\mathfrak{y}}
+\newcommand{\fz}{\mathfrak{z}}
+\newcommand{\fgl}{{\mathfrak{gl}}}
+\newcommand{\fsl}{{\mathfrak{sl}}}
+\newcommand{\fso}{{\mathfrak{so}}}
+\newcommand{\fsp}{{\mathfrak{sp}}}
+\newcommand{\fsu}{{\mathfrak{su}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Algebraic Groups and Representation
+
+\newcommand{\GL}{{\mathrm{GL}}}
+\newcommand{\G}{{\mathrm{G}}}
+\newcommand{\U}{{\mathrm{U}}}
+\newcommand{\Y}{{\mathrm{Y}}}
+%\newcommand{\P}{{\mathrm{P}}}
+\newcommand{\A}{{\mathrm{A}}}
+\newcommand{\SL}{{\mathrm{SL}}}
+\newcommand{\SU}{{\mathrm{SU}}}
+\newcommand{\GU}{{\mathrm{GU}}}
+\newcommand{\SO}{{\mathrm{SO}}}
+\newcommand{\GO}{{\mathrm{GO}}}
+\newcommand{\Sp}{{\mathrm{Sp}}}
+\newcommand{\GSp}{{\mathrm{GSp}}}
+\newcommand{\quo}{\backslash}
+\newcommand{\adequo}[1]{#1(\F)\quo #1(\mathds{A})}
+\newcommand{\ade}[1]{#1(\mathds{A})}
+\newcommand{\Hom}{{\mathrm{Hom}}}
+\newcommand{\Bil}{{\mathrm{Bil}}}
+\newcommand{\Id}{{\mathrm{Id}}}\newcommand{\id}{{\mathrm{id}}}
+\newcommand{\Ind}{{\mathrm{Ind}}}
+\newcommand{\Irr}{{\mathrm{Irr}}}
+\newcommand{\End}{{\mathrm{End}}}
+\newcommand{\Aut}{{\mathrm{Aut}}}
+\newcommand{\Inn}{{\mathrm{Inn}}}
+\newcommand{\Out}{{\mathrm{Out}}}
+\newcommand{\Ad}{{\mathrm{Ad}}}
+\newcommand{\ad}{{\mathrm{ad}}}
+\newcommand{\Der}{{\mathrm{Der}}}
+\newcommand{\Lie}{{\mathrm{Lie}}}
+\newcommand{\Ann}{{\mathrm{Ann}}}
+\newcommand{\Mat}{{\mathrm{Mat}}}
+\newcommand{\sgn}{{\mathrm{sgn}}}
+\newcommand{\Rep}{{\mathrm{Rep}}}
+\newcommand{\Nil}{{\mathrm{Nil}}}
+\newcommand{\ten}{\otimes}
+\newcommand{\proten}{\hat{\otimes}}
+\newcommand{\Mell}[1]{\mathcal{M}#1}
+\newcommand{\Gal}[1]{\Gamma_{#1}}
+\newcommand{\Tr}{{\mathrm{Tr}}}
+\newcommand{\gr}{{\mathrm{gr}}}
+\newcommand{\Sym}{{\mathrm{Sym}}}
+\newcommand{\diag}{\mathrm{diag}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   Math formula
+
+\newcommand{\sbst}{\subseteq}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\set}[2]{\{#1\,|\,#2\}}
+\newcommand{\bigset}[2]{\Biggl\{#1\,\bigg\lvert\,#2\Biggr\}}
+\newcommand{\defmap}[5]{
+           \begin{equation*}
+              \begin{aligned}
+                   #1:\quad  & #2 &\longrightarrow &\quad #3 \\
+                      \quad  & #4    &\longmapsto  &\quad #5
+              \end{aligned}
+           \end{equation*}
+          }
+\newcommand{\mtrtwo}[4]{\begin{pmatrix} #1 &#2 \\#3 &#4 \end{pmatrix}}
+\newcommand{\mtrthr}[9]{\begin{pmatrix} #1 &#2 &#3 \\#4 &#5 &#6\\ #7 &#8 &#9 \end{pmatrix}}
+\newcommand{\defmtrtwo}[6]{
+           \begin{equation*}
+               #1 = \bigset{\mtrtwo{#2}{#3}{#4}{#5}}{#6},
+           \end{equation*}
+           }
+\newcommand{\shortexact}[5]{#1\rightarrow #2 \rightarrow #3 \rightarrow #4\rightarrow #5}
+\renewcommand{\bar}{\overline}
+\renewcommand{\tilde}{\widetilde}
+\newcommand{\eps}{\epsilon}
+
+\author[QIUTONG WANG]{QIUTONG WANG}
+
+\address{Department of Mathematics\\
+Zhejiang University\\
+Hangzhou, China}\email{12235008@zju.edu.cn}
+
+\begin{document}
+\ytableausetup{centertableaux}
+\title[COUNTING IRREDUCIBLE REPRESENTATIONS]{COUNTING IRREDUCIBLE REPRESENTATIONS OF GENERAL LINEAR GROUPS AND UNITARY GROUPS}
+\maketitle
+
+\begin{abstract}
+    Let $G$ be a general linear group or a unitary group. In this paper, we provide a precise characterization of the number of irreducible Casselman-Wallach representations of $G$ with a given infinitesimal character and associated variety, described in terms of painted Young diagrams.
+\end{abstract}
+
+\tableofcontents
+
+
+
+\section{Introduction}
+
+\subsection{Background and goals}
+
+In their paper \cite{BMSZ}, the authors established a formula for counting the number of irreducible representations of a real reductive group $G$ with a given infinitesimal character and associated variety. Using this formula, they precisely determined the number of special unipotent representations of $G$ attached to $\check{\CO}$ in the sense of Arthur and Barbasch-Vogan, where $\check{\CO}$ is a nilpotent orbit in the Langlands dual group of $G$ (or the metaplectic dual of $G$ when $G$ is the real metaplectic group). Furthermore, they utilized these counting results to construct all special unipotent representations and demonstrated that all such representations are unitarizable.
+
+In this paper, we apply their counting formula to provide a precise description of the number of general irreducible representations with a given infinitesimal character and associated variety, in the case where $G$ is a general linear group or a unitary group.
+
+\subsection{Structure of this article}
+
+In Section 2, we first introduce some basic notations from Lie theory, then present several types of painted Young diagrams, and use them to state the main results on the counting of irreducible representations. In Section 3, we provide preliminaries for the counting formula, including coherent families, coherent continuation representations, and $j$-induction for Weyl groups. In Section 4, we apply the theories introduced in previous sections to the specific cases of general linear groups and unitary groups, and get counting results for irreducible Casselman-Wallach representations discussed in Section 2, along with illustrative examples. 
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{The main results}
+
+
+\subsection{Lie group (algebra) notations}
+Let $G$ be a real reductive Lie group in Harish-Chandra's class, meaning that $G$ satisfies the following properties:
+\begin{enumerate}
+   \item the corresponding Lie algebra $\Lie (G)$ is reductive;
+   \item $G$ has finitely many connected components;
+   \item the connected subgroup $G_{ss}$ of $G$ corresponding to $\Lie(G)_{ss} = [\Lie(G),\Lie(G)]$ has a finite center;
+   \item for any $g \in G$, $\Ad(g) \in \Inn(\Lie(G) \otimes_{\BR} \BC)$.
+\end{enumerate}
+
+Denote the complexified Lie algebra of $\Lie(G)$ by $\fg$. Let $\Rep(G)$ be the category of Casselman-Wallach representations of $G$, whose Grothendieck group (with coefficients in $\BC$) is denoted by $\CK(G)$. Let $\Irr (G)$ be the set of equivalence classes of irreducible Casselman-Wallach representations of $G$, which form a basis of $\CK(G)$.
+
+The universal enveloping algebra of $\fg$ is denoted by $\CU(\fg)$, and its center is denoted by $\CZ(\fg)$. Let $^{a}\fh$ denote the abstract Cartan subalgebra of $\fg$ (recall that for every Borel subalgebra $\fb$ of $\fg$, there is an identification $^{a}\fh = \fb/[\fb,\fb]$). Write 
+$$\Delta^+ \subseteq \Delta \subseteq {^{a}\fh^*} \ \textrm{and} \ \check{\Delta}^+ \subseteq \check{\Delta} \subseteq {^{a}\fh}$$
+for the positive root system, the root system, the positive coroot system, and coroot system, respectively, for the reductive Lie algebra $\fg$. Let $Q_{\fg}$ and $Q^{\fg}$ denote the root lattice and the weight group of $\fg$, respectively. Let $W \subseteq \GL(^{a}\fh)$ denote the abstract Weyl group. In general, we denote the linear dual of a vector space by a superscript $*$. By the Harish-Chandra isomorphism, there is a 1-1 correspondence between $W$-orbits of $\nu \in {^{a}\fh^*}$ and algebraic characters $\chi_{\nu}:\CZ(\fg) \to \BC$. We say that an ideal of $\CU(\fg)$ has infinitesimal character $\nu$ if it contains the kernel of $\chi_{\nu}$.
+
+Let $\Nil(\fg)$ (resp. $\Nil(\fg^*)$) denote the set of nilpotent elements in $[\fg,\fg]$ (resp. $[\fg,\fg]^*$), and define
+\begin{equation}
+   \bar{\Nil}(\fg) := \Inn(\fg) \backslash \Nil(\fg), \ \  \bar{\Nil}(\fg^*) := \Inn(\fg) \backslash \Nil(\fg^*),
+\end{equation}
+the set of $\Inn(\fg)$-orbits in $\Nil(\fg)$ and $\Nil(\fg^*)$. The Killing form on $[\fg,\fg]$ yields an identification $\bar{\Nil}(\fg) = \bar{\Nil}(\fg^*)$.
+
+For every two-sided ideal $I$ of $\CU(\fg)$, we define the associated variety of $I$ as the subvariety of $\fg^*$ annihilated by the ideal $\mathrm{gr}(I) \subseteq \RS(\fg)$.  Furthermore, if $V \in \Irr(G)$ be an irreducible Casselman-Wallach representation of $G$, we define the complex associated variety of $V$ as the associated variety of the ideal $\Ann(V)$. It is straightforward to verify that these complex associated varieties of representations are stable under the action of $\Inn(\mathfrak{g})$. Let $S$ be an $\Inn(\fg)$-stable Zariski closed subset of $\Nil(\fg^*)$, denote by $\Rep_S(G)$ the category of Casselman-Wallach representations of $G$ whose complex associated variety is contained in $S$.
+
+For every $\nu \in {^{a}\fh^*}$, let $\Rep_{\nu}(G)$ and $\Rep_{\nu,S}(G)$ denote the full subcategories of $\Rep(G)$ and $\Rep_S(G)$, respectively, consisting of the Casselman-Wallach representations with generalized infinitesimal character $\nu$. Denote by $\CK(G)$, $\CK_{\nu}(G)$, and $\CK_{\nu,S}(G)$ the Grothendieck groups of $\Rep(G)$, $\Rep_{\nu}(G)$, and $\Rep_{\nu,S}(G)$, respectively. The set of irreducible objects in $\Rep_{\nu}(G)$ and $\Rep_{\nu,S}(G)$ will be denoted by $\Irr_{\nu}(G)$ and $\Irr_{\nu,S}(G)$, respectively. 
+
+By the work of Borho and Brylinski \cite{BB}, and Joseph \cite{Jos}, the associated variety of any primitive ideal (annihilator of an irreducible $\fg$-module) is the closure of a single nilpotent orbit, since our group $G$ is in Harish-Chandra's class, through a simple verification we can see that the associated variety of any irreducible Casselman-Wallach representation is the closure of a single nilpotent orbit.
+
+Let $\nu \in {^{a}\fh^*}$ and let $\CO$ be a nilpotent orbit in $\fg^*$,   denote by $\Irr_{\nu}(G;\CO)$ the subset of $\Irr(G)$ consisting of irreducible representations with infinitesimal character $\nu \in {^{a}\fh^*}$ and complex associated variety $\bar{\CO}$, then we can see that
+\begin{equation}\label{(1.3)}
+    \Irr_{\nu,S}(G) = \bigsqcup_{\CO \subseteq S} \Irr_{\nu}(G;\CO).
+\end{equation}
+
+This article aims to describe the number of elements in $\Irr_{\nu}(G;\CO)$ when $G$ is general linear group or unitary group. There are four cases:
+
+\begin{center}
+   \begin{tabular}{ccc}
+      \toprule
+      Lable $\star $ & Classical Lie Group G & Complex Lie Group $G_{\BC}$    \\
+      \midrule
+      $A^{\BR}$      & $\GL_n(\BR)$          & $\GL_n(\BC)$                   \\
+      $A^{\BH}$      & $\GL_{\frac{n}{2}}(\BH)$      & $\GL_n(\BC)$                   \\
+      $A^{\BC}$      & $\GL_n(\BC)$          & $\GL_n(\BC) \times \GL_n(\BC)$ \\
+      $A$            & $\U(p,q)$              & $\GL_n(\BC)$                   \\
+      \bottomrule
+   \end{tabular}
+\end{center}
+
+
+
+\subsection{The main results}
+For a Young diagram $\iota$, write
+$$\br_1(\iota) \geq \br_2(\iota) \geq \br_3(\iota) \geq \cdots$$
+for its row lengths, and similarly, write
+$$\bc_1(\iota) \geq \bc_2(\iota) \geq \bc_3(\iota) \geq \cdots$$
+for its column lengths. Denote by $|\iota|:= \sum_{i=1}^{\infty}\br_i(\iota)$ the total size of $\iota$ and by $\mathrm{YD}_{n}$ the set of all Young diagrams with total size $n$. We identify set of Young diagrams of total size $n$ with set of partition of $n$ via sending each Young diagram to the partition given by row lengths. By abuse of notation, we also use Young diagrams to represent partitions.
+
+For any Young diagram $\iota$, we introduce the set $\mathrm{Box}(\iota)$ of boxes of $\iota$ as follows:
+\begin{equation}
+   \mathrm{Box}(\iota) := \set{(i,j) \in \BN^{+} \times \BN^{+}}{j \leq \br_i(\iota)}.
+\end{equation}
+A subset of $\BN^{+} \times \BN^{+}$ of this form also constitutes the Young diagram $\iota$.
+
+We introduce five symbols $\bullet, s, r, c \ \textrm{and} \ d$, and make the following definition.
+
+\begin{defn}
+   A painting on a Young diagram is a map (we place a symbol in each box):
+   $$\CP : \mathrm{Box}(\iota) \to \{ \bullet, s, r ,c ,d \}$$
+   with the following properties:
+
+   \begin{enumerate}
+      \item if we remove the boxes painted with $\{d\}, \{c,d\}, \{r,c,d\} \ \textrm{or} \  \{s ,r ,c ,d\}$, the remainder still constitutes a Young diagram;
+      \item every row of $\iota$ has at most one box painted with $s$, and has at most one box painted with $r$;
+      \item every column of $\iota$ has at most one box painted with $c$, and has at most one box painted with $d$.
+   \end{enumerate}
+   A painted Young diagram is a pair $(\iota, \CP)$ consisting of a Young diagram $\iota$ and a painting $\CP$ on $\iota$.
+\end{defn}
+
+
+We also have a notion of assigned Young diagrams:
+
+
+\begin{defn}
+   An assignment of type $[d_1,d_2, \cdots, d_N]$ (where $d_1 \geq d_2 \geq \cdots \geq d_N$ are positive integers, they form a partition of $|\iota|$) on a Young diagram is a map (we place a positive integer in each box)
+   $$\CQ: \mathrm{Box}(\iota) \to \{1,2,\cdots,N\} $$
+   with the following properties:
+
+   \begin{enumerate}
+      \item for each $i \in \{1,2,\cdots,N\}$, the preimage $\CP^{-1}(i)$ has exactly $d_i$ elements;
+      \item each positive integer exists at most once in each column;
+      \item for each $1 \leq n \leq N$, the preimage $\CP_2^{-1}(\{1,2,\cdots,n\})$ is still a Young diagram.
+   \end{enumerate}
+   An assigned Young diagram of type $[d_1,d_2, \cdots, d_N]$ is a pair $(\iota,\CQ)$ consisting of a Young diagram $\iota$ and an assignment $\CQ$ of type $[d_1,d_2, \cdots, d_N]$ on $\iota$.
+\end{defn}
+
+\begin{defn}
+   Suppose that $\star \in \{A^{\BR}, A^{\BH}\}$. A painting $\CP$ on a Young diagram $\iota$ has type $\star$ if
+   \begin{enumerate}
+      \item the symbols of $\CP$ are in
+            $$\left\{
+               \begin{array}{lr}
+                  \{\bullet,c,d\}, & \textrm{if $\star = A^{\BR}$},\\                   \{\bullet\},     & \textrm{if $\star = A^{\BH}$},
+               \end{array}
+               \right.
+            $$
+      \item every column of $\iota$ has an even number of boxes painted with $\bullet$.
+   \end{enumerate}
+
+   A painting (resp. degenerate painting) $\CP$ on a Young diagram $\iota$ has type $A$ if
+   \begin{enumerate}
+      \item the symbols of $\CP$ are in $\{\bullet, s ,r\}$ (resp. $\{\bullet\}$),
+      \item every row of $\iota$ has an even number of boxes painted with $\bullet$.
+   \end{enumerate}
+
+   Denote by $\mathrm{P}_{\star}(\iota)$ the set of paintings on $\iota$ that has type $\star$, and $\mathrm{P}_{A}'(\iota)$ the set of degenerate paintings on $\iota$ that has type $A$.
+
+   Now suppose that $\iota$ is a Young diagram and $\CP$ is a painting on $\iota$ that has type $A$. Define the signature of $\CP$ to be the pair 
+   \begin{equation}
+    (p_{\CP}, q_{\CP}) := (\frac{\sharp(\CP^{-1}(\bullet))}{2} + \sharp(\CP^{-1}(r)), \frac{\sharp(\CP^{-1}(\bullet))}{2}+ \sharp(\CP^{-1}(s))),
+   \end{equation}
+   for fixed integer $p,q$, we define
+   \begin{equation}
+        \mathrm{P}_{A}^{p,q}(\iota) := \set{\CP \in \mathrm{P}_{A}(\iota)}{(p_{\CP},q_{\CP}) = (p,q)}.       
+   \end{equation}
+\end{defn}
+
+\begin{defn}
+   For a Young diagram $\iota$, and a partition $[d_1,d_2,\cdots,d_N]$ of $|\iota|$, denote by $\RA_{[d_1,d_2,\cdots,d_N]}(\iota)$ the set of assignments on $\iota$ that has type $[d_1,d_2,\cdots,d_N]$.
+\end{defn}
+
+In the statement of the following theorems, we will use the canonical identification $^{a}\fh^* = \BC^n, \ \BC^n \times \BC^n$ defined in section \ref{3.1}, and identify nilpotent orbits in Lie algebras of type $A$ with partitions or Young diagrams in the usual way. For a partition $\iota$ denote by $\CO_\iota$ the corresponding nilpotent orbit, and for a nilpotent orbit $\CO$, denote by $\iota(\CO)$ the corresponding partition. We also define the "row by row" union of Young diagrams $\mathop{\sqcup}\limits^r$, e.g. $[5,3,1^2] \mathop{\sqcup}\limits^r [4,3^3] = [9,6,4^2]$
+
+\begin{thm}\label{R}
+   Let $G = \GL_n(\BR)$ and $\CO \in \bar{\Nil}(\fg^*)$.
+   \begin{enumerate}
+        \item If $\nu \in {^{a}\fh^*} = \BC^n$ is integral, it means that we can permute its entries such that 
+        \[
+        \nu = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \BC^n,
+        \]
+        where $[d_1, d_2, \cdots , d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \setminus \{0\}$ for $i \neq j$. Then
+        \begin{equation}
+            \sharp(\Irr_\nu(G;\CO)) = \sharp(\mathrm{P}_{A^{\BR}}(\iota(\CO)))\cdot \sharp(\RA_{[d_1,\cdots,d_k]}(\iota(\CO))).
+        \end{equation}
+        \item For a general $\nu \in {^{a}\fh}^*$, we can permute its entries so that 
+        \[
+        \nu = (\blam_1, \cdots, \blam_r) \in \BC^n,
+        \]
+        where each $\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i}$ is integral.\\
+        Here, $[d_{i,1}, \cdots d_{i,k_i} ]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \setminus \{0\}$ holds for different $p, q$. Moreover, we have $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i, j$. Then,
+        \begin{equation}
+            \sharp(\Irr_{\nu}(G;\CO)) = \sum_{\substack{(\iota_1,\cdots,\iota_r) \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \\ \iota_1 \mathop{\sqcup}\limits^r \iota_2 \cdots \mathop{\sqcup}\limits^r  \iota_r = \iota(\CO) }}\prod_{i=1}^{r}\sharp(\Irr_{\blam_i}(\GL_{e_i}(\BR);\CO_{\iota_i})).
+        \end{equation}
+    \end{enumerate}
+\end{thm}
+
+
+
+
+
+
+\begin{thm}\label{H}
+    Let $G= \GL_{\frac{n}{2}}(\BH)$ and $\CO \in \bar{\Nil}(\fg^*)$.
+    \begin{enumerate}
+        \item If $\nu \in {^a\fh^*} = \BC^n$ is integral, it means that we can permute its entries such that 
+        \[
+        \nu =  (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k} ) \in \BC^n,
+        \]
+        where $[d_1, d_2, \cdots, d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \backslash \{0\}$ for different $i,j$. Then
+        \begin{equation}
+            \sharp(\Irr_{\nu}(G;\CO)) = \sharp(\mathrm{P}_{A^{\BH}}(\iota(\CO)))\cdot \sharp(\A_{[d_1,\cdots,d_k]}(\iota(\CO))).
+        \end{equation}
+        \item For a general $\nu \in {^{a}\fh}$, we can permute its entries so that
+        \[    
+        \nu = (\blam_1, \cdots, \blam_r) \in \BC^n,
+        \]
+        where each $\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}},\cdots,\underbrace{\lambda_{i,k_i},\cdots,\lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i}$ is integral.\\ 
+        Here $[d_{i,1}, \cdots, d_{i,k_i}]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \backslash \{0\}$ holds for different $p,q$. Moreover, we have $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i,j$. Then,
+        \begin{equation}
+            \sharp(\Irr_{\nu}(G;\CO)) = \left\{
+            \begin{aligned}
+                &0 , & \textrm{$\exists$ odd $e_i$}\\
+                &\sum_{\substack{(\iota_1,\cdots,\iota_r) \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \\ \iota_1 \mathop{\sqcup}\limits^r \cdots  \mathop{\sqcup}\limits^r \iota_r = \iota(\CO)}} \prod_{i=1}^r \sharp(\Irr_{\blam_i}(\GL_{\frac{e_i}{2}}(\BH);\CO_{\iota_i})), & \textrm{otherwise}.
+            \end{aligned}
+            \right.
+        \end{equation}
+    \end{enumerate}
+\end{thm}
+
+\begin{thm}\label{C}
+    Let $G = \GL_{n}(\BC)$ and $\CO = \CO_{\iota} \times \CO_{\iota'} \in \bar{\Nil}(\fg^*)$.
+    \begin{enumerate}
+        \item If $\nu \in {^a\fh^*} = \BC^n \times \BC^n$ is integral, it means that we can permute its entries via Weyl group $\mathrm{S}_n \times \mathrm{S}_n$ such that
+        \[
+        \nu =  (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}, \underbrace{\lambda_1', \cdots, \lambda_1'}_{d_1'}, \cdots, \underbrace{\lambda_k', \cdots, \lambda_k'}_{d_{l}'} ) \in \BC^n \times \BC^n, 
+        \]
+        where $[d_1,d_2,\cdots,d_k]$ and $[d_1',d_2',\cdots,d_l']$ are partitions of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j, \ \lambda_i' - \lambda_j' \in \BZ \backslash \{0\}$ for different $i,j$. Then
+        \begin{equation}
+            \sharp(\Irr_{\nu}(G;\CO)) = \left\{ 
+            \begin{aligned}
+                &0, & \textrm{if $\lambda_1 - \lambda_1' \notin \BZ$},\\
+                &\sharp(\A_{[d_1,\cdots,d_k]}(\iota)) \cdot \sharp(\A_{[d_1',\cdots,d_l']}(\iota')) \cdot \delta_{\iota,\iota'} , & \textrm{if $\lambda_1 - \lambda_1' \in \BZ$}.
+            \end{aligned}
+            \right.
+        \end{equation}
+        Where $$\delta_{\iota,\iota'} = \left\{
+        \begin{aligned}
+            &0, & \textrm{if $\iota \neq  \iota'$}\\
+            &1, & \textrm{if $\iota = \iota'$}.
+        \end{aligned}
+        \right.$$
+        \item For a general $\nu \in {^{a}\fh^*}$, we can permute its entries via the Weyl group such that
+        \[
+        \nu = (\blam_1, \cdots, \blam_r, \blam_1', \cdots, \blam_s') \in \BC^n \times \BC^n,
+        \]
+        where 
+        \begin{align}
+            &\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i},\\
+            &\blam_j' = (\underbrace{\lambda_{j,1}, \cdots, \lambda_{j,1}}_{d_{j,1}'}, \cdots, \underbrace{\lambda_{j,l_j}, \cdots, \lambda_{j,l_j}}_{d_{j,l_j}'}) \in \BC^{e_j'},
+        \end{align}
+        are integral. Here, the sequence $[d_{i,1}, \cdots, d_{i,k_i}]$ forms a partition of $e_i$, and $[d_{j,1}', \cdots, d_{j,l_j}']$ forms a partition of $e_j'$. The conditions $\lambda_{i,p} - \lambda_{i,q} \in \BZ \setminus \{0\}$ and $\lambda_{j,p}' - \lambda_{j,q}' \in \BZ \setminus \{0\}$ hold for different $p,q$. Moreover, we have $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ and $\lambda_{i,1}' - \lambda_{j,1}' \notin \BZ$ for different $i,j$. 
+    
+        Then, there exist irreducible Casselman-Wallach representations with this infinitesimal character only if $r = s$, and we can permute the components of $\nu$ under the Weyl group such that $e_i = e_i'$ for all $i = 1, 2, \cdots, r$, and $\lambda_{i,1} - \lambda_{i,1}' \in \BZ$. In this case, 
+        \begin{equation}
+            \Irr_{\nu}(G;\CO) = \sum_{\substack{(\iota_1,\cdots,\iota_r), (\iota_1',\cdots,\iota_r') \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r}\\ \mathop{\sqcup}\limits^r \iota_i = \iota, \ \mathop{\sqcup}\limits^r \iota_i' = \iota' }} \prod_{i=1}^{r} \sharp(\Irr_{\blam_i}(\GL_{e_i}(\BC);\CO_{\iota_i} \times \CO_{\iota_i'})).
+        \end{equation}
+
+    \end{enumerate}
+
+
+\end{thm}
+
+\begin{thm}\label{U}
+    Let $G = \U(p,q)$ with $p + q = n$ and $\CO \in \bar{\Nil}(\fg^*)$.
+    \begin{enumerate}
+        \item If $\nu \in {^a\fh^*} = \BC^n$ and we can permute its entries such that 
+        \[ 
+        \nu =  (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k} ) \in \BC^n, 
+        \]
+        where $[d_1, d_2, \cdots, d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \backslash \{0\}$. Then
+        \begin{equation}
+            \sharp(\Irr_{\nu}(G;\CO)) = \left\{
+            \begin{aligned}
+                &\sharp(\mathrm{P}_{A}^{p,q}(\iota(\CO))) \cdot \sharp(\mathrm{A}_{[d_1,\cdots,d_{k}]}(\iota(\CO))), & \textrm{if $\lambda_i \in \frac{n-1}{2} + \BZ$}, \\ 
+                &\sharp(\mathrm{P}_{A}'(\iota(\CO)))\cdot\sharp(\mathrm{A}_{[d_1,\cdots,d_k]}(\iota(\CO)))\delta_{p,q}, & \textrm{if $\lambda_i \in \frac{n}{2} + \BZ$},\\
+                &0, & \textrm{otherwise}.
+            \end{aligned}
+            \right.
+        \end{equation}
+
+        \item For a general $\nu \in {^{a}\fh^*}$, there exist irreducible Casselman-Wallach representations with this infinitesimal character only if we can permute the components of $\nu$ such that $\nu$ takes the form
+        \begin{equation}
+            \nu = (\blam, \blam', \blam_1, \blam_1', \cdots, \blam_r, \blam_r') \in {^{a}\fh}^* = \BC^n,
+        \end{equation}
+        where 
+        \begin{align}
+            &\blam = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \left(\frac{n-1}{2} + \BZ\right)^{e},\\
+            &\blam' = (\underbrace{\lambda_1', \cdots, \lambda_1'}_{d_1'}, \cdots, \underbrace{\lambda_{k'}, \cdots, \lambda_{k'}}_{d_{k'}'}) \in \left(\frac{n}{2} + \BZ\right)^{e'},\\
+            &\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i},\\
+            &\blam_i' = (\underbrace{\lambda_{i,1}', \cdots, \lambda_{i,1}'}_{d_{i,1}'}, \cdots, \underbrace{\lambda_{i,k_i'}, \cdots, \lambda_{i,k_i'}}_{d_{i,k_i}'}) \in \BC^{e_i},
+        \end{align}
+        where the sequences $[d_{i,1}, \cdots, d_{i,k_i}]$ and $[d_{i,1}', \cdots, d_{i,k_i'}']$ are partitions of $e_i$. With the following conditions: 
+        \begin{align*}
+            &\lambda_{i,p} - \lambda_{i,q} \in \BZ, \\
+            &\lambda_{i,p}' - \lambda_{i,q}' \in \BZ, \\
+            &\lambda_{i,p} + \lambda_{i,q}' \in \BZ, \\
+            &\lambda_{i,p} \notin \frac{1}{2}\BZ, \\
+            &e' \text{ is even.}
+        \end{align*}
+        In this case, 
+        \begin{align*}
+            \sharp(\Irr_{\nu}(G;\CO)) = & \sum_{\substack{(\iota, \iota', \iota_1,\iota_1' \cdots,\iota_r, \iota_r') \in \mathrm{YD}_{e} \times \mathrm{YD}_{e'} \times \mathrm{YD}_{e_1} \times \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \times \mathrm{YD}_{e_r} \\ \iota \mathop{\sqcup}\limits^r \iota' \mathop{\sqcup}\limits^r \iota_1 \mathop{\sqcup}\limits^r \iota_1 \mathop{\sqcup}\limits^r \cdots  \mathop{\sqcup}\limits^r \iota_r \mathop{\sqcup}\limits^r \iota_r = \iota(\CO)}} \sharp(\Irr_{\blam}(\U(p',q');\CO(\iota)))\\
+            & \cdot \sharp(\Irr_{\blam'}(\U(\frac{e'}{2},\frac{e'}{2});\CO(\iota')))\cdot \prod_{i=1}^{r} \sharp(\Irr_{(\blam_i,\blam_i')}(\GL_{e_i}(\BC);\CO(\iota_i)\times \CO(\iota_i'))),
+        \end{align*}
+        where $p' = p - (\frac{e'}{2} + e_1 + \cdots + e_r) $, $q' = q - (\frac{e'}{2} + e_1 + \cdots + e_r)$.
+    \end{enumerate}
+\end{thm}
+
+
+\section{Preliminaries}
+
+In section \ref{2.1} and section \ref{2.2}, we review the concept of coherent families for Casselman-Wallach representations and double cells, special representations of Weyl groups. All of these concepts are taken from \cite[Chapter 4]{BMSZ}.
+
+\subsection{Generalities on coherent families of Casselman-Wallach representations}\label{2.1}
+Let $G$ be a real reductive group in Harish-Chandra's class. Fix a connected complex reductive Lie group $G_\BC$, together with a homomorphism of real Lie groups $\iota: G \to G_\BC$ such that the differential has the following properties:
+\begin{itemize}
+   \item the kernel of $\mathrm{d}\iota$ is contained in the center of $\mathrm{Lie}(G)$;
+   \item the image of $\mathrm{d}\iota$ is a real form of $\mathrm{Lie}(G_\BC)$.
+\end{itemize}
+It can be verified directly from the above assumption that the homomorphism $\iota$ induces a unique morphism between the abstract Cartan subalgebra of $\Lie(G)$ and that of $\Lie(G_{\BC})$. The analytic weight lattice $Q_{an}$ of $G_\BC$ is identified with a subgroup of ${^{a}\fh^*}$ via this morphism, and is denoted by $Q_{\iota} \subseteq  {^{a}\fh^*}$. Moreover, $Q_{\iota}$ is $W$-stable and $Q_{\fg} \subseteq Q_{\iota} \subseteq Q^{\fg}$. In the rest of this section, we fix a $Q_{\iota}$-coset $\Lambda = \lambda + Q_{\iota} \subseteq {^a\fh^*}$. Let $W_{\Lambda}$ denote the stabilizer of $\Lambda$ in $W$. Specifically 
+$$W_{\Lambda} := \set{w \in W}{w\lambda - \lambda \in Q_{\iota}}.$$
+
+We also put 
+\begin{equation}
+    \Delta(\Lambda) := \set{\alpha \in \Delta}{\textrm{$\langle \check{\alpha} , \nu \rangle \in \BZ$ for some (and all) $\nu \in \Lambda$}}.
+\end{equation}
+This is a root system with the corresponding coroots 
+\begin{equation}
+    \check{\Delta}(\Lambda) := \set{\check{\alpha} \in \check{\Delta}}{\textrm{$\langle \check{\alpha}, \nu \rangle \in \BZ$ for some (and all) $\alpha \in \Delta$}}.
+\end{equation}
+Let $W(\Lambda) \subseteq W$ denote the Weyl group of the root system $\Delta(\Lambda)$, which is referred to as the integral Weyl group associated with $\Lambda$.
+
+There are equivalences of categories:
+\begin{equation}
+   \CR(\fg, Q_{\iota}) \cong \CR(\mathrm{Lie}(G_\BC),Q_{\mathrm{an}}) \cong \CR_{\mathrm{hol}}(G_{\BC}),
+\end{equation}
+which induce canonical isomorphisms between the corresponding Grothendieck groups, where $\CR_{\mathrm{hol}}(G_{\BC})$ is the category of finite dimensional holomorphic representation of $G_{\BC}$. So the Grothendieck group $\CK(G)$ can be viewed as a $\CR(\fg, Q_{\iota})$-module.
+\begin{defn}
+   A $\CK(G)$-valued $\Lambda$-coherent family is a map
+   $$\Phi: \Lambda \to \CK(G),$$
+   such that:
+   \begin{itemize}
+      \item for any $\nu \in \Lambda$, $\Phi(\nu) \in \CK_{\nu}(G)$,
+      \item for any $F \in \CR(\fg, Q_{\iota})$ and $\nu \in \Lambda$, $F \cdot (\Phi(\nu)) = \sum_{\mu \in \Delta(F)} \Phi(\nu + \mu)$ (where $\Delta(F)$ is the set of weights of $F$ counted multiplicity).
+   \end{itemize}
+\end{defn}
+
+Let $\mathrm{Coh}_{\Lambda}(\CK(G))$ denote the complex vector space of all coherent families on $\Lambda$. It is a representation of $W_{\Lambda}$ under the action
+$$(w \cdot \Psi)(\nu) = \Psi(w^{-1}\nu), \ \textrm{for all $w \in W_{\Lambda}$, $\Psi \in \mathrm{Coh}_{\Lambda}(\CK(G))$, $\nu \in \Lambda$.}$$
+This is called the coherent continuation representation.
+
+We can define the concept of parameters for coherent continuation representations and compute them explicitly.
+Suppose $H$ is a Cartan subgroup of $G$, meaning it is the centralizer of a Cartan subalgebra of $\mathrm{Lie}(G)$ in $G$. Since $G$ is in Harish-Chandra's class, $H$ has a unique maximal compact subgroup $T$. Denote by $\Delta_{\fh} \subseteq \fh^*$ the root system of $\fg$. A root is called imaginary if $\check{\alpha} \in \ft$, where $\ft = \mathrm{Lie}(T)$, or equivalently, if it takes purely imaginary values on $\fh^*$. Moreover, an imaginary root $\alpha$ is called compact imaginary if the corresponding root space $\fg_{\alpha}$ is contained in a complexified Lie algebra of a compact subgroup of $G$.
+
+There are two fundamental facts about the representation theory of $H$:
+\begin{itemize}
+    \item Every irreducible Casselman-Wallach representation of $H$ has finite  dimension.
+    \item For every $\Gamma \in \mathrm{Irr}(H)$ differential of $\mathrm{\Gamma}$ is a direct sum of one-dimensional representations attached to a unique $\mathrm{d\Gamma} \in \fh^*$.
+\end{itemize}
+
+For every Borel subalgebra $\fb$ of $\fg$ containing $\fh$, write
+$$\xi_{\fb}: \fh \to {^{a}\fh},$$
+for the linear isomorphism attached to $\fb$ defined by
+$$\fh \hookrightarrow \fb \to \fb / [\fb , \fb] =  {^{a}\fh},$$
+the transpose inverse of this map is still denoted by $\xi_{\fb}: {^{a}\fh^*} \to \fh^*$.
+
+Write
+\begin{equation}
+    W(^{a}\fh^*,\fh^*) = \set{\xi_{\fb}: {^{a}\fh}^* \to \fh^*}{\textrm{$\fb$ is a Borel subalgebra containing $\fh$}},
+\end{equation}
+put
+\begin{equation}
+    \delta(\xi) := \frac{1}{2} \cdot \sum_{\textrm{$\alpha$ is an imaginary root in $\xi \Delta^{+}$}}\alpha - \sum_{\textrm{$\beta$ is a compact imaginary root in $\xi \Delta^{+}$}}\beta \in \fh^*.
+\end{equation}
+
+\begin{defn}\label{regular character}
+    Write $\mathscr{P}_{\Lambda}(G)$ for the set of all triples $\upgamma = (H,\xi,\mathrm{\Gamma})$, where $H$ is a Cartan subgroup of $G$, $\xi \in W(^{a}\fh^*,\fh^*)$, and
+    \defmap{\Gamma}{\Lambda}{\mathrm{Irr(H)}}{\nu}{\Gamma_{\nu}}
+    is a map with the following properties:
+    \begin{itemize}
+        \item $\Gamma_{\nu+\beta} = \Gamma_{\nu} \otimes \xi(\beta)$ for all $\beta \in Q_{\iota}$ and $\nu \in \Lambda$;
+        \item $\mathrm{d}\Gamma = \xi(\nu) + \delta(\xi)$ for all $\nu \in \Lambda$.
+    \end{itemize}
+    Here $\xi(\beta)$ is viewed as a character of $H$ via the homomorphism $\iota: H \to H_{\BC}$, $H_{\BC}$ is the unique Cartan subgroup of $G_{\BC}$ containing $\iota(H)$.
+\end{defn}
+
+The group $G$ acts on $\mathscr{P}_{\Lambda}(G)$ in the standard way, and we define the set of parameters for $\mathrm{Coh}_{\Lambda}(G)$ to be
+\begin{equation}
+    \CP_{\Lambda}(G) := G \backslash \mathscr{P}_{\Lambda}(G) .
+\end{equation}
+
+For each $\gamma \in \CP_{\Lambda}(G)$, represented by $\upgamma = (H,\xi,\Gamma)$, by \cite[Theorem 8.2.1]{Vog81}, we have two $\CK(G)$-valued coherent families $\Psi_{\gamma}$ and $\bar{\Psi}_{\gamma}$ on $\Lambda$ such that
+$$\Psi_{\gamma}(\nu) = X(\Gamma_{\nu},\xi(\nu)) \ \textrm{and}  \ \bar{X}_{\gamma}(\nu) = \bar{X}(\Gamma_{\nu},\xi(\nu))$$
+for all regular dominant element $\nu \in \Lambda$. Here $X(\Gamma_{\nu},\xi(\nu))$ is the standard representation defined in \cite[Notation Convention 6.6.3]{Vog81} and $\bar{X}_{\gamma}(\nu)$ is its unique irreducible subrepresentation (see \cite[Theorem 6.5.12]{Vog81}).
+
+By Langlands classification, $\{ \bar{\Psi}_{\gamma} \}_{\gamma \in \CP_{\Lambda}(G)}$ is a basis of $\mathrm{Coh}_{\Lambda}(\CK(G))$ (\cite[Proposition 6.6.7]{Vog81}), and view $\mathrm{Coh}_{\Lambda}(\CK(G))$ as a basel representation of $W_{\Lambda}$ with this basis  (basel representation means a representation with a fixed basis). The family $\{ \Psi_{\gamma} \}_{\gamma \in \CP_{\Lambda}(G)}$ is also a basis of $\mathrm{Coh}_{\Lambda}(\CK(G))$ (\cite[Theorem 6.5.12]{Vog81}).
+
+We now demonstrate how to compute coherent continuation representations using the parameters defined above.
+The cross action of $W_{\Lambda}$ on the set $\mathscr{P}_{\Lambda}(G)$ is defined by (\cite[Definition 4.2]{Vog82}):
+\begin{equation}
+    w \times (H, \xi, \Gamma) = (H, \xi \circ w^{-1}, (\nu \mapsto \Gamma_{\nu} \otimes (\xi \circ w^{-1}(\nu) + \delta(\xi \circ w^{-1}) - \xi (\nu) - \delta(\xi)))).
+\end{equation}
+
+This commutes with the action of $G$ and thus descends to an action on $\CP_{\Lambda}(G)$:
+\begin{equation}
+    W_{\Lambda} \times \CP_{\Lambda}(G) \to \CP_{\Lambda}(G), \ (w,\gamma) \mapsto w \times \gamma.
+\end{equation}
+
+Since $G$ is in Harish-Chandra's class, the real Weyl group
+\begin{equation}
+    W_{H} := N_{G}(H)/H
+\end{equation}
+is identified with a subgroup of the complex Weyl group $W_{\fh}$ of $\fg$ with respect to $\fh$.
+
+We have an inclusion:
+\begin{equation}
+    W(\Delta_{\fh,\mathrm{im}}) \hookrightarrow  W_{\fh,\ft}
+\end{equation}
+where $W(\Delta_{\mathrm{\fh,im}})$ is the Weyl group for the imaginary root system $\Delta_{\fh,\mathrm{im}}$. There is a group action of $W_{\fh,\ft}$ on the set of positive systems of $\Delta_{\fh,\mathrm{im}}$, with the subgroup $W(\Delta_{\fh,\mathrm{im}})$ acts simply transitively. It is easy to verify that for any choice of positive systems $\Delta_{\fh,\mathrm{im}}^{+}$ we obtain a decomposition:
+\begin{equation}
+    W_{\fh,\ft} = W_{\fh,\ft,\Delta_{\fh,\mathrm{im}}^{+}} \ltimes W(\Delta_{\fh,\mathrm{im}}),
+\end{equation}
+where $W_{\fh,\ft,\Delta_{\fh,\mathrm{im}}^{+}}$ is the stabilizer of $\Delta_{\fh,\mathrm{im}}^{+}$ in $W_{\fh,\ft}$. For different choice of $\Delta_{\fh,\mathrm{im}}^{+}$, the subgroups $W_{\fh,\ft,\Delta_{\fh,\mathrm{im}}^{+}}$ conjugate to each other. So there is a unique quartic character
+$$\mathrm{sgn_{im}}: W_{\fh,\ft} \to \BC^{\times}$$
+such that
+\begin{itemize}
+    \item its restriction to $W(\Delta_{\fh,\mathrm{im}})$ equals the sign character;
+    \item its restriction to $W_{\fh,\ft,\Delta_{\fh,\mathrm{im}}^{+}}$ is trivial for some (and hence all) positive system $\Delta_{\fh,\mathrm{im}}^{+}$ of $\Delta_{\fh,\mathrm{im}}$.
+\end{itemize}
+
+Fix a $\gamma \in \CP_{\Lambda}(G)$, and choose a representative $(H,\xi,\Gamma) \in \mathscr{P}_{\Lambda}(G)$ for it. Denote by $W_{\gamma} \subseteq W_{\Lambda}$ the stabilizer of $\gamma$ under the cross action, and by $W_{\fh,\ft}$ the stabilizer of $\ft$ in $W_{\fh}$, then there are inclusions
+$$\xi \circ W_{\gamma} \circ \xi^{-1} \subseteq W_{H} \hookrightarrow W_{\fh,\ft} \hookrightarrow W_{\fh}.$$
+
+Therefore, we obtain a quartic character on $W_{\gamma}$:
+\defmap{\mathrm{sgn_{\gamma}}}{W_{\gamma}}{\BC^{\times}}{w}{\mathrm{sgn_{im}}(\xi \circ w \circ \xi^{-1})}
+This character is independent of the choice of the representative $(H,\xi,\Gamma)$.
+
+The coherent continuation representation can be computed using the basis of standard modules $\{ \Psi_{\gamma} \}_{\gamma \in \CP_{\Lambda}(G)}$ (see \cite[Section14]{Vog82}). The following result is due to Barbasch-Vogan, in a suitably modified form from \cite[Proposition 2.4]{BV82}.
+
+\begin{thm}\label{Coh} 
+As a representation of $W_{\Lambda}$,
+    \begin{equation}
+        \mathrm{Coh}_{\Lambda}(\CK(G)) \cong \bigoplus_{\gamma} \mathrm{Ind}_{W_{\gamma}}^{W_{\Lambda}} \sgn_{\gamma}
+    \end{equation}
+    where $\gamma$ runs over a representative set of the $W_{\Lambda}$-orbits in $\CP_{\Lambda}(G)$ under the cross action.
+\end{thm}
+
+
+\subsection{j-induction}\label{2.2}
+Let $G$ be a finite group with a linear action on a complex vector space $V$, $H \subseteq G$ be a subgroup, denote by $V^{H}$ the subspace of $V$ defined by
+$$V^H := \set{v \in V}{hv = v, \textrm{for all $h \in H$}}$$
+it is an $H$-submodule of $V$, so there is a decomposition $V = V^H \oplus V'$, where $V'$ is an $H$-submodule which has no nonzero $H$-invariants.
+
+\begin{thm}[Macdonald, Lusztig, and Spaltenstein]\label{j-ind}
+    Denote by $\mathrm{S}^e(V')$ denote the $e$-th symmetric power of $V'$. Suppose $\sigma' \in \Irr(H)$ is an irreducible representation that occurs with multiplicity $1$ in $\mathrm{S}^e(V')$ and does not occur in $\mathrm{S}^{i}(V')$ if $0 \leq i \leq e-1$. We may regard $\sigma'$ as a subspace of $\mathrm{S}^e(V)$ via the inclusion $\sigma' \subseteq \BC \otimes \mathrm{S}^e(V') \subseteq \mathrm{S}^e(V)$, and consider the $G$-representation $\sigma$ of $\mathrm{S}^e(V)$ generated by $\sigma'$. Then
+    \begin{enumerate}
+        \item $\sigma$ is an irreducible $G$-representation;
+        \item $\sigma$ occurs with multiplicity $1$ in $\mathrm{S}^e(V)$;
+        \item $\sigma$ does not occur in $\mathrm{S}^{i}(V)$ if $0 \leq i \leq e-1$.
+    \end{enumerate}
+\end{thm}
+
+\begin{proof}
+    See \cite[Theorem 11.2.1]{Car}.
+\end{proof}
+
+Let $\Irr(H,e)$ denote the subset of all $\sigma \in \Irr(H)$ such that $\sigma$ occurs with multiplicity $1$ in $\mathrm{S}^e(V)$ and does not occur in $\mathrm{S}^{i}(V')$ if $0 \leq i \leq e-1$.  Then by the theorem above, we have a map called $j$-induction
+\defmap{j_H^G}{\Irr(H,e)}{\Irr(G,e)}{\sigma}{j_{H}^{G}(\sigma)}
+where $j_{H}^{G}(\sigma)$ is the subrepresentation of $\mathrm{S}^e(V)$ generated by $\sigma$.
+
+The following are some basic facts about $j$-induction.
+
+\begin{prop}\label{2.5}
+    Let $H' \subseteq H \subseteq G$ be subgroups. Suppose that
+    \begin{equation}
+        \begin{split}
+            V = V' \oplus V^H, \ & \textrm{where $V'$ is an $H$-submodule}; \\
+            V' = V'' \oplus V'^{H'}, \ & \textrm{where $V''$ is an $H''$-submodule}.
+        \end{split}
+    \end{equation}
+    Then $V = V'' \oplus V^{W''}$, and we have
+    \begin{equation}
+        j_{H'}^{H} = j_{H}^{G} \circ j_{H'}^{H}.
+    \end{equation}
+\end{prop}
+
+\begin{proof}
+    See \cite[Proposition 11.2.4]{Car}.
+\end{proof}
+
+\begin{prop}\label{2.6}
+    Let $G_1$ and $G_2$ be finite groups, with linear actions on complex vector spaces $V_1$, $V_2$ respectively, $H_1 \subseteq G_1$ and $H_2 \subseteq G_2$ be subgroups. Let $\sigma_1 \in \Irr(H_1,e_1)$ and $\sigma_2 \in \Irr(H_2,e_2)$, then
+    \begin{enumerate}
+        \item $\sigma_1 \boxtimes \sigma_2 \in \Irr(H_1 \times H_2,e_1 + e_2)$;
+        \item we have the following equation 
+            \begin{equation}
+            j_{H_1 \times H_2}^{G_1 \times G_2}(\sigma_1 \boxtimes \sigma_2) = j_{H_1}^{G_1}\sigma_1 \boxtimes j_{H_2}^{G_2}\sigma_2,
+            \end{equation}
+            where $j_{H_1 \times H_2}^{G_1 \times G_2}$ is defined by the representation $V_1 \oplus V_2$ of $G_1 \times G_2$.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    This is well known, we provide a sketch of proof for completeness.
+    Since
+    $$\mathrm{S}^{n}(V_1 \oplus V_2) = \bigoplus_{i = 0}^{n}\mathrm{S}^{i}(V_1) \otimes \mathrm{S}^{n-i}(V_2),$$
+    $\sigma_1 \boxtimes \sigma_2 $ does not occur in $\mathrm{S}^{n}(V_1 \oplus V_2)$ if $n \leq e_1 + e_2$, and in $\mathrm{S}^{e_1+e_2}(V_1 \oplus V_2)$,
+    %$ = \bigoplus_{i=0}^{e_1 + e_2}\mathrm{S}^{i}(V_1)\otimes \mathrm{S^{n-i}}(V_2),$
+    only $\mathrm{S}^{e_1}(V_1) \boxtimes \mathrm{S}^{e_2}(V_2)$ contains $\sigma_1 \boxtimes \sigma_2$ as subrepresentation, the multiplicity is $1$ by assumption, so $\sigma_1 \boxtimes \sigma_2 \in \Irr(H_1 \times H_2, e_1+e_2)$.
+    The second statement can be checked via direct verification.
+\end{proof}
+
+Back to our setting of real reductive groups, $W \subseteq \GL({^{a}\fh})$ denote the abstract Weyl group. For every $\sigma \in \Irr(W)$, its fake degree is defined as 
+\begin{equation}
+    a(\sigma) := \mathrm{min}\set{k \in \BN}{\textrm{$\sigma$ occurs in the k-th symmetric power $\mathrm{S}^{k}({^{a}\fh})$}}.
+\end{equation}
+This is well-defined since every $\sigma \in \Irr(W)$ occurs in the symmetric algebra $\mathrm{S}(^{a}\fh)$. The representation is called univalent if it occurs in $\mathrm{S}^{a(\sigma)}(^{a}\fh_{s})$ with multiplicity one, where $^{a}\fh_{s}:= \mathrm{Span}(\check{\Delta})$ denotes the span of the coroots.
+
+Recall Lusztig's notion of a special representation of a Weyl group \cite{Lus79}. An irreducible representation of $W$ is called Springer if it corresponds to the trivial local system on a nilpotent orbit in $\fg^*$ via the Springer correspondence  \cite{Spr}. Note that every special irreducible representation is Springer, and the corresponding nilpotent orbit is called a special nilpotent orbit. Every Springer representation is univalent \cite{BM}.
+
+We have a decomposition
+$$^{a}\fh = (\Delta(\Lambda))^{\perp} \oplus \mathrm{Span}(\check{\Delta}(\Lambda))$$
+where
+$$(\Delta(\Lambda))^{\perp} := \set{x \in {^{a}\fh}}{\textrm{$\langle x , \alpha \rangle = 0$ for all $\alpha \in \Delta(\Lambda)$}}.$$
+Then $(\Delta(\Lambda))^{\perp} = {^{a}\fh}^{W(\Lambda)}$. For every univalent irreducible representation $\sigma_0$ of $W(\Lambda)$, we view it as a subrepresentation of $\mathrm{S}^{a(\sigma_0)}({^{a}\fh})$ via the inclusions
+$$\sigma_0 = \BC \otimes \sigma_0 \subseteq \mathrm{S}^0((\Delta(\Lambda))^{\perp})\otimes \mathrm{S}^{a(\sigma_0)}(\mathrm{Span}(\check{\Delta}(\Lambda))) \subseteq \mathrm{S}^{a(\sigma_0)}({^{a}\fh})$$
+The $W$-subrepresentation of $\mathrm{S}^{a(\sigma_0)}({^{a}\fh})$ generated by $\sigma_0$ is just $j_{W(\Lambda)}^{W}(\sigma_0)$, it is irreducible and univalent by Theorem \ref{j-ind}, with the same fake degree as that of $\sigma_0$.
+
+
+
+If $\sigma_0$ is special, then the $j$-induction $j_{W(\Lambda)}^{W}(\sigma_0)$ is Springer. Write
+\begin{equation}
+    \CO_{\sigma_0} \in \bar{\mathrm{Nil}}(\fg^*) \textrm{for the nilpotent orbit corresponding to $j_{W(\Lambda)}^{W}(\sigma_0)$},
+\end{equation}
+
+There is also an equivalence relation $\approx$ on $\Irr(W(\Lambda))$, which depends only on $W(\Lambda)$ as an abstract Coxter group, for precise definition, see \cite[Chapter 3]{BMSZ}. 
+
+An equivalence class of this equivalence relation is called a double cell in $\Irr(W(\Lambda))$. Note that this definition of double cell in $\Irr(W(\Lambda))$ coincides with that of Lusztig in \cite{Lus82}, and each double cell contains a unique special representation.
+
+Denote by $\Irr^{\mathrm{sp}}(W(\Lambda))$ the set of special irreducible representations of $W(\Lambda)$.
+
+\begin{defn}
+    For an $\Ad(\fg)$-stable closed subset of $\fg^*$, define
+    $$\Irr^{\mathrm{sp}}_{S}(W(\Lambda)) := \set{\sigma_0 \in \Irr^{\mathrm{sp}}(W(\Lambda))}{\CO_{\sigma_0} \subseteq S},$$
+    and
+    $$\Irr_{S}(W(\Lambda)) := \set{\sigma \in \Irr(W(\Lambda))}{\textrm{there is a $\sigma_0 \in \Irr^{\mathrm{sp}}_S(W(\Lambda))$ such that $\sigma \approx \sigma_0$}}.$$
+
+    For a nilpotent orbit $\CO \in \bar{\Nil}(\fg^*)$, define
+    $$\Irr^{\mathrm{sp}}(W(\Lambda);\CO) := \set{\sigma_0 \in \Irr^{\mathrm{sp}}(W(\Lambda))}{\CO_{\sigma_0} = \CO},$$
+    and
+    $$\Irr(W(\Lambda);\CO) := \set{\sigma \in \Irr(W(\Lambda))}{\textrm{there is a $\sigma_0 \in \Irr^{\mathrm{sp}}(W(\Lambda;\CO))$ such that $\sigma \approx \sigma_0$}}.$$
+\end{defn}
+
+It follows directly from the definition that
+\begin{equation}
+    \Irr_{S}^{\mathrm{sp}}(W(\Lambda)) = \bigsqcup_{\CO \subseteq S} \Irr^{\mathrm{sp}}(W(\Lambda);\CO),
+\end{equation}
+and 
+\begin{equation}\label{(2.16)}
+    \Irr_{S}(W(\Lambda)) = \bigsqcup_{\CO \subseteq S}\Irr(W(\Lambda);\CO).
+\end{equation}
+
+In the rest of this section, we mainly focus on the Weyl group of type $A$, in which case $W = \mathrm{S}_n$ is the symmetric group, it has a linear action on the $n$-dimensional complex vector space $^{a}\fh = \BC^n$. Then, all irreducible representations are special, and each double cell is a singleton (see \cite{Lus79} and \cite{Lus82}).
+
+The following is a construction of irreducible representations of symmetric group $\mathrm{S}_n$, see \cite[Chapter 5.4]{GP} for a proof.
+
+\begin{thm}
+    There is a bijection between $\mathrm{YD}_n$ and $\Irr(\mathrm{S}_n)$:
+    \defmap{\phi}{\mathrm{YD}_n}{\Irr(\mathrm{S}_n)}{\iota}{j_{\mathrm{S}_{\iota^t}}^{\mathrm{S}_n}\sgn_{\iota^t}}
+    where $\iota^t$ is the transpose young diagram of $\iota$, $\mathrm{S}_{\iota^t} := \mathrm{S}_{\br_1(\iota^t)} \times \cdots \times \mathrm{S}_{\br_k(\iota^t)}$ ($k$ is the number of rows of $\iota^t$) viewed as a subgroup of $\mathrm{S}_n$, $\sgn_{\iota^t} := \sgn_{\br_1(\iota^t)} \times \cdots \times \sgn_{\br_{k}(\iota^t)}$ is the sign character of $\mathrm{S}_{\iota^t}$, and the $j$-induction is defined via the standard representation of $\mathrm{S}_n$ on $^{a}\fh$.
+\end{thm}
+
+When we identify nilpotent orbits with partitions of $n$, the bijection $\phi$ coincides with the Springer correspondence.
+
+Using the bijection $\phi$, we can describe the $j$-induction of symmetric groups specifically.
+
+\begin{prop}\label{2.9}
+    Let $\iota = [d_1,d_2,\cdots,d_r]$ be a partition of $n$, and for each $i \in \{1,\cdots,r\}$, let $\iota_i \in \mathrm{YD}_{d_i}$, then
+    \begin{equation}
+        j_{\mathrm{S}_1 \times \cdots \mathrm{S}_{d_r}}^{\mathrm{S}_n}\phi(\iota_1) \boxtimes \cdots \boxtimes \phi(\iota_r) = \phi(\iota_1 \mathop{\sqcup}\limits^r \cdots \mathop{\sqcup}\limits^r \iota_r).
+    \end{equation}
+\end{prop}
+
+\begin{proof}
+    We indecate the ideal of the proof for the convenience of the reader.
+    According to Proposition \ref{2.6}, the $j$-induction compatible with direct product, we have
+    \begin{align}
+        \phi(\iota_1) \boxtimes \cdots \boxtimes \phi(\iota_r) & = j^{\mathrm{S}_{d_1}}_{\mathrm{S}_{\iota_{1}^t}}\sgn_{\iota_1^t} \boxtimes \cdots \boxtimes j^{\mathrm{S}_{d_r}}_{\mathrm{S}_{\iota_{r}^t}}\sgn_{\iota_r^t}\\
+        & = j_{\mathrm{S}_{\iota_{1}^t} \times \cdots \times \mathrm{S}_{\iota_{r}^t}}^{\mathrm{S}_{d_1} \times \cdots \times \mathrm{S}_{d_r}}\sgn_{\iota_{1}^t} \boxtimes \cdots \boxtimes \sgn_{\iota_{r}^t}.
+    \end{align}
+    Then use Proposition \ref{2.5}
+    \begin{align}
+         j_{\mathrm{S}_1 \times \cdots \mathrm{S}_{d_r}}^{\mathrm{S}_n}\phi(\iota_1) \boxtimes \cdots \boxtimes \phi(\iota_r) & = j_{\mathrm{S}_1 \times \cdots \mathrm{S}_{d_r}}^{\mathrm{S}_n}(j_{\mathrm{S}_{\iota_{1}^t} \times \cdots \times \mathrm{S}_{\iota_{r}^t}}^{\mathrm{S}_{d_1} \times \cdots \times \mathrm{S}_{d_r}}\sgn_{\iota_{1}^t} \boxtimes \cdots \boxtimes \sgn_{\iota_{r}^t})\\
+         & = j^{\mathrm{S}_n}_{\mathrm{S}_{\iota_{1}^t} \times \cdots \times \mathrm{S}_{\iota_{r}^t}}\sgn_{\iota_{1}^t} \boxtimes \cdots \boxtimes \sgn_{\iota_{r}^t}\\
+         & = \phi(\iota_1 \mathop{\sqcup}\limits^r \iota_2 \cdots \mathop{\sqcup}\limits^r  \iota_r),
+    \end{align}
+    where the third equality is the definition of $\phi$.
+\end{proof}
+
+We end this section with some branching formulas for the induction of representations of symmetry groups. 
+
+Let $\mathrm{W}_n = \mathrm{S}_{n} \ltimes \{\pm 1\}^n$ be the Weyl group of type $B/C$, and define quadratic character 
+\defmap{\epsilon}{\mathrm{W}_n}{\{\pm 1\}}{(s,(x_1, \cdots, x_n))}{x_1\cdots x_n}
+and as always, $\sgn$ denote the sign character.
+
+\begin{prop}[Pieri's rule]\label{Pieri}
+    Let $k + l = n$ be positive integers, $\iota \in \mathrm{YD}_{k}$ then
+    \begin{equation}
+        \Ind_{\mathrm{S}_k \times \mathrm{S}_l}^{\mathrm{S}_{n}}\phi(\iota) \boxtimes 1 = \bigoplus_{\nu} \phi(\nu),
+    \end{equation}
+    where the sum is over all Young diagram $\nu \in \mathrm{YD}_n$, which is obtained from adding $l$ boxes to $\iota$, with no two boxes in the same column.
+    
+    Similarly, we have
+    \begin{equation}
+        \Ind_{\mathrm{S}_{k} \times \mathrm{S}_{l}}^{\mathrm{S}_n}\phi(\iota) \boxtimes \sgn = \bigoplus_{\nu}\phi(\nu),
+    \end{equation}
+    where the sum is over all Young diagrams $\nu \in \mathrm{YD}_n$, which is obtained from adding $l$ boxes to $\iota$, with no two boxes in the same row.
+\end{prop}
+
+\begin{proof}
+    See \cite[Corollary 6.1.7]{GP}.
+\end{proof}
+
+\begin{prop}\label{branch}
+    If we identify $\mathrm{W_n}$ as a subgroup of $\mathrm{S}_{2n}$ in the natural way, then
+    \begin{align}
+        &\Ind_{\mathrm{W}_n}^{\mathrm{S}_{2n}} \epsilon = \bigoplus_{\substack{\sigma \in \mathrm{YD}_{2n}\\ \textrm{ $\bc_{i}(\sigma)$ is even for all $i \in \BN^+$}}} \phi(\sigma),\\
+        &\Ind_{\mathrm{W}_n}^{\mathrm{S}_{2n}} 1 = \bigoplus_{\substack{\sigma \in \mathrm{YD}_{2n}\\ \textrm{ $\br_{i}(\sigma)$ is even for all $i \in \BN^+$}}} \phi(\sigma)
+    \end{align}
+\end{prop}
+
+\begin{proof}
+    See \cite[Lemma 4.1 (b)]{BV83}.
+\end{proof}
+
+\subsection{Counting irreducible representations}
+
+The following inequality is the main tool for counting irreducible representations, as proved in \cite{BMSZ}. 
+
+\begin{thm}\label{counting}
+    Let $G$ be a real reductive group in Harish-Chandra's class, we have an inequality
+    \begin{equation}
+        \sharp(\Irr_{\nu,S}(G)) \leq \sum_{\sigma \in \Irr_{S}(W(\Lambda))} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))],
+    \end{equation}
+    where $1_{W_\nu}$ denotes the trivial representation of the stabilizer $W_\nu$ of $\nu$ in $W$. The equality holds if the Coxeter group $W(\Lambda)$ has no simple factor of type $F_4$, $E_6$, $E_7$, or $E_8$, and $G$ is linear or isomorphic to a real metaplectic group.
+\end{thm}
+
+Moreover, through a direct verification together with equation \ref{(1.3)} and \ref{(2.16)}, we can obtain
+
+\begin{thm}
+    Under the setting of Theorem \ref{counting}, we have an inequality
+    \begin{equation}
+        \sharp(\Irr_{\nu}(G;\CO)) \leq \sum_{\sigma \in \Irr(W(\Lambda);\CO)}[1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))]
+    \end{equation}
+    where $\CO \in \bar{\Nil}(\fg^*)$ is a nilpotent orbit.  The equality holds if the Coxeter group $W(\Lambda)$ has no simple factor of type $F_4$, $E_6$, $E_7$, or $E_8$, and $G$ is linear or isomorphic to a real metaplectic group.
+\end{thm}
+
+
+
+
+\section{Counting results for general linear groups and unitay groups}
+
+   \subsection{Standard representations of classical groups}\label{3.1}
+
+   Given a label $\star$, we define the notion of a $\star$-structure, which consists of a finite dimensional complex vector space $V$ and some additional data. The group $\G(V)$ will be defined as the (real) subgroup of $\GL(V)$ fixing the $\star$-structure. Its Zariski closure in $\GL(V)$ will be denoted by $\G_{\BC}(V)$. The natural inclusion $\iota: \G(V) \hookrightarrow \G_{\BC}(V)$ satisfies the assumptions at the beginning of section \ref{2.1}. Our classical group will be denoted by $\G_{\star}(V)$.
+
+   \textbf{The case when $\star \in \{A^{\BR},A^{\BH}\}$}. In this case, a $\star$-structure consists of a finite dimensional complex vector space $V$, and a conjugate linear automorphism $\mathbf{j}: V \to V$ such that
+   $$\mathbf{j}^2 = \left\{
+   \begin{aligned}
+    1 , & \  \textrm{if $\star = A^{\BR}$}; \\
+      -1, & \  \textrm{if $\star = A^{\BH}$}.
+   \end{aligned}
+   \right.$$
+   The group $\G(V)$ is $\GL_n(\BR)$ when $\mathbf{j}^2 = 1$, and $\GL_{\frac{n}{2}}(\BH)$ when $\mathbf{j}^2 = -1$. Here $n = \mathrm{dim}(V)$.
+
+   \textbf{The case when $\star = A$}. In this case, a $\star$-structure consists of a finite dimensional complex vector space $V$, and a non-degenerate Hermitian form $\langle -,- \rangle : V \times V \to \BC$ (which is linear on the first variable and conjugate linear on the second variable). The Hermitian form has signature $(p,q)$ so $\G(V)$ is $\U(p,q)$ with $p+q=n$.
+
+    \textbf{The case when $\star = A^\BC$}. In this case, a $\star$-structure consists of an even-dimensional complex vector space
+    $V$, with a decomposition $V = W \oplus W'$, and a conjugate linear isomorphism $j: W \to W'$. The group $\G(V)$ is $\GL_n(\BC)$.
+
+   Now we assume that $G$ is identified with $\G_{\star}(V)$. We call $V$ the standard representation of $G$. Recall that $n$ is the rank of $\fg$ in all cases. 
+   In the case when $\star \in \{A^\BR,A^\BH,A\}$, we fix a flag
+\begin{equation}\label{flag}
+   \{0\} = V_0 \subseteq V_1 \subseteq \cdots \subseteq V_n
+\end{equation}
+in $V$ such that $\mathrm{dim}(V_i) = i$ for all $i = 1,2,\cdots,n$.
+
+When $\star = A^\BC$, we fix two flags
+\begin{align}
+    \{0\} = W_0 \subseteq W_1 \subseteq \cdots \subseteq W_n = W \\
+    \{0\} = W'_0 \subseteq W_1' \subseteq \cdots \subseteq W_n' = W'
+\end{align}
+in $W$ and $W'$ such that $\dim W_i = \dim W_i' = i$ for $i = 0, 1, \cdots ,n$.
+
+The stabilizer of the flag in $\fg$ is a Borel subalgebra of $\fg$. Using this Borel subalgebra, we get canonical identifications
+$$ {^{a}\fh} = \left\{
+   \begin{aligned}
+       &\prod^{n}_{i=1}\fgl(V_i/V_{i-1}) = \BC^n, & \textrm{if $\star \in \{A^\BR,A^\BH,A\}$};\\
+       &\prod^{n}_{i=1}\fgl(W_i/W_{i-1}) \times \prod^{n}_{i=1}\fgl(W_{i}'/W_{i-1}') = \BC^n \times \BC^n, & \textrm{if $\star = A^\BC$}.
+   \end{aligned}
+   \right.$$
+This identification is independent of the choice of flag \ref{flag}. As in the section \ref{2.1}, we have a canonical identification:
+$$
+    Q_{\iota} = \left\{
+    \begin{aligned}
+        & \BZ^n \subseteq \BC^n = (\BC^n)^* = {^{a}\fh^*}, \ &\textrm{if $\star \in \{A^\BR, A^\BH,A\}$};\\
+        & \BZ^n \times \BZ^n \subseteq \BC^n \times \BC^n = (\BC^n)^*\times(\BC^n)^* = {^{a}\fh^*}, \ &\textrm{if $\star = A^\BC$},
+   \end{aligned}
+   \right.
+$$
+and the positive roots are 
+$$ \Delta^+ = \left\{
+    \begin{aligned}
+        &\set{e_i - e_j}{1 \leq i < j \leq n}, \ &\textrm{if $\star \in \{A^\BR,A^\BH,A\}$};\\
+        &\set{e_i - e_j, \ e_i' - e_j'}{1\leq i<j\leq n}, \ & \textrm{if $\star = A^\BC$}.
+    \end{aligned}
+   \right.
+$$
+Where $e_1,e_2,\cdots,e_n$ and $e_1', e_2', \cdots, e_n'$ are both the standard basis of $\BC^n$, they also correspond to all the weights of the standard representation.
+The abstract Weyl group 
+$$
+   W = \left\{
+   \begin{aligned}
+       &\mathrm{S}_n, & \textrm{if $\star \in \{A^\BR,A^\BH,A\}$};\\
+       &\mathrm{S}_n \times \mathrm{S}_n, & \textrm{if $\star = A^\BC$}.
+   \end{aligned}
+   \right.
+$$
+Where $\mathrm{S}_n \subseteq \GL_n(\BZ)$ is the group of permutation matrices.
+
+
+
+
+\subsection{Real general linear groups}\label{3.2}
+\subsubsection{Integral case}
+If $\nu$ is an inteegral character in ${^{a}\fh}^*$, i.e. 
+$$\nu = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k} ) \in {^{a}\fh}^* = \BC^n,$$ 
+where $\lambda_i - \lambda_j \in \BZ$. In this case $W_{\Lambda} = W(\Lambda) = W$, $W_\nu = \mathrm{S}_{d_1} \times \cdots \times \mathrm{S}_{d_k}$. 
+
+The conjugacy classes of the Cartan subgroup are parameterized by non-negative integers in $\{0,1,\cdots,\lfloor \frac{n}{2}\rfloor\}$, fix a parameter $r$, a representative element of this conjugacy class is given by a Cartan subgroup $H_r$, which is isomorphic to:
+$$(\BC^{\times})^r \times (\BR^{\times})^{n-2r}$$
+with the corresponding weights $f_1,f_2,\cdots ,f_n$ in the standard representation, where
+\begin{align}
+    &f_{2i-1}(z_1,\cdots,z_r,t_{2r+1},\cdots,t_{n}) = z_i, \ & \textrm{if $i \leq r$};\\
+    &f_{2i}(z_1,\cdots,z_r,t_{2r+1},\cdots,t_{n}) = \bar{z_i}, \ & \textrm{if $i \leq r$};\\
+    &f_{i}(z_1,\cdots,z_r,t_{2r+1},\cdots,t_{n}) = t_i, \ & \textrm{if $i \geq 2r$}.
+\end{align}
+Since the adjoint representation of $G$ on $\fg$ is isomorphic to the second symmetric power of the standard representation, the set of roots is given by
+$$\set{\pm (f_i - f_j)}{1 \leq i < j \leq n}$$
+with the subset of real roots
+$$\set{\pm(f_i - f_j)}{2r \leq i < j \leq n}$$
+and the subset of imaginary roots
+$$\set{\pm(f_{2i-1} - f_{2i})}{1 \leq i \leq r}$$
+moreover, they are all compact imaginary. 
+
+Denote the complexified Lie algebra of $H_r$ by $\fh_r$. Let $\xi \in W({^{a}\fh}^*,\fh_r^*)$ be the unique element such that $\xi(e_i) = f_i$. By abuse of notation, we may also identify $f_i$ with their differentials which are linear functionals on $\fh_r$.
+
+The real Weyl group $W_{H_r}$ of $H_r$ is given by
+$$W_{H_r} = (\mathrm{S}_r \ltimes  (W(A_1))^r) \times \mathrm{S}_{n-2r},$$
+where 
+\begin{itemize}
+    \item $\mathrm{S}_r$ is generated by $s_{f_{2i-1}-f_{2i+1}}s_{f_{2i}-f_{2i+2}}$ for $1 \leq i \leq r-1$;
+    \item $W(A_1)^r$ is generated by $s_{f_{2i-1}-f_{2i}}$ for $1 \leq i \leq r$ which is the Weyl group of imaginary root system;
+    \item $\mathrm{S}_{n-2r}$ is generated by $s_{f_{i}-f_{i+1}}$ for $n-2r +1 \leq i \leq n-1$.
+\end{itemize}
+
+Then the quadratic character $\sgn_{\mathrm{im}}$ of $W_{H_r}$ is
+
+\begin{itemize}
+    \item sign character on $(W(A_1))^r$;
+    \item trivial character on other factros.
+\end{itemize}
+
+
+Let $\CP_r$ denote the set of parameters in $\CP_{\Lambda}(G)$ which are represented by triples of the form $(H,\zeta,\Gamma) \in \mathscr{P}_{\Lambda}(G)$, where $H$ conjugate to $H_r$. Under the cross action the $W$-orbits of $\CP_r$ is parameterized by non-negative integers in $\{0,1,\cdots,n-2r\}$. Each $i \in \{0,1,\cdots,n-2r\}$ corresponds to a $W$-orbit of $\CP_r$ represented by $\gamma_{r,i} = G \cdot \upgamma_{r,i} = G \cdot (H_r,\xi,\Gamma^i) \in \CP_{\Lambda}(G)$, where $\Gamma_{\nu}^i|_{\{\pm1\}^{n-2r}} = \underbrace{1 \otimes \cdots \otimes 1}_{i} \otimes \underbrace{\sgn \otimes \cdots \otimes \sgn }_{n-2r-i}$. ($\{\pm1\}^{n-2r} \subseteq (\BR^\times)^{n-2r}$ is the component subgroup.)
+
+We can identify $W$ with $W_{\fh_r}$ through the isomorphism $\xi$, then the centralizer $W_{{\gamma_{r,i}}}$ of ${\gamma_{r,i}} \in \CP_{\Lambda}(G)$ in $W$ is identified with the subgroup $\xi \circ W_{{\gamma_{r,i}}}\circ \xi = (\mathrm{S}_{r} \ltimes (W(A_1))^r) \times (\mathrm{S}_{i} \times \mathrm{S}_{n-2r-i}) \subseteq (\mathrm{S}_{r} \ltimes (W(A_1))^r) \times \mathrm{S}_{n-2r} = W_{H_r} \subseteq W_{\fh}$.
+
+Now, using Theorem \ref{Coh}, we can give the coherent continuation representation as
+\begin{equation}
+    \mathrm{Coh}_{\Lambda}(\CK(G)) = \bigoplus_{2r + i \leq n} \Ind _{\mathrm{W}_{r} \times \mathrm{S}_{i} \times \mathrm{S}_{n-2r-i}}^{\mathrm{S}_{n}} \epsilon \otimes 1 \otimes 1.
+\end{equation}
+
+For a given nilpotent orbit $\CO = \CO_{\iota}$, $\Irr(W;\CO) = \{\phi(\iota)\}$ is a singleton, so 
+\begin{equation}
+    \Irr_{\nu}(G;\CO) = [1_{W_v}: \phi(\iota)]\cdot [\phi(\iota): \bigoplus_{2r + i \leq n} \Ind _{\mathrm{W}_{r} \times \mathrm{S}_{i} \times \mathrm{S}_{n-2r-i}}^{\mathrm{S}_{n}} \epsilon \otimes 1 \otimes 1].
+\end{equation}
+By Frobenuis reciprocity, 
+\begin{equation}
+[1_{W_\nu}: \phi(\iota)] = [\phi(\iota): \Ind_{W_\nu}^{W}1] = [\phi(\iota): \Ind_{\mathrm{S}_{d_1} \times \cdots \times \mathrm{S}_{d_k}}^{\mathrm{S}_n}1] = \sharp(\A_{[d_1,\cdots,d_k]}(\iota)),
+\end{equation}
+the last equality is due to Pieri's rule \ref{Pieri}.
+
+Also use \ref{Pieri}, \ref{branch}, and induction by step, we can see
+\begin{equation}
+    [\phi(\iota): \bigoplus_{2r + i \leq n} \Ind _{\mathrm{W}_{r} \times \mathrm{S}_{i} \times \mathrm{S}_{n-2r-i}}^{\mathrm{S}_{n}} \epsilon \otimes 1 \otimes 1] = \sharp(\mathrm{P}_{A^\BR}(\iota)).
+\end{equation}
+And hence, we have proved the first part of Theorem \ref{R}.
+
+
+\subsubsection{General case}
+For the case of non-integral infinitesimal character, i.e. 
+$$\nu = (\blam_1, \cdots, \blam_r) \in {^{a}\fh},$$ 
+where 
+$$\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}},\cdots,\underbrace{\lambda_{i,k_i},\cdots,\lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i},$$  $d_{i,1} \geq \cdots \geq d_{i,k_i} \geq 1$ is a partition of $e_i$, and $\lambda_{i,p} - \lambda_{i,q} \in \BZ$, $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i,j$. The integral Weyl group is $W_{\Lambda} = W(\Lambda) = \mathrm{S}_{e_1} \times \cdots \times \mathrm{S}_{e_r} \subseteq \mathrm{S}_{n} = W$. 
+
+We have a decomposition of abstract Cartan subalgebras $^{a}\fh = {^{a}\fh_1} \times \cdots \times {^{a}\fh_r}$ such that $\blam_i \in {^{a}\fh_i^*}$, let $\Lambda_i \subseteq {^{a}\fh_i^*}$ be the integral lattices correspond to $\blam_i$. Also, we fix a decomposition of the standard representation $V = V_1 \oplus V_2 \oplus \cdots \oplus V_r$ with $\dim V_i = e_i$ and each $V_i$ is stable under $\mathbf{j}$, this corresponds to a levi subgroup $\G(V_1) \times \cdots \times \G(V_r)$ of $\G(V)$ and $^{a}\fh_i$ can be identified with abstract Cartan subalgebra of $\G(V_i)$. For each $i$, define $\mathscr{P}_{\Lambda_i}(\G(V_i))$ to be the set of triples $(H_i, \xi_i, \Gamma_i)$, such that $H_i$ is a Cartan subgroup of $\G(V_i)$, $\xi_i \in W({^{a}\fh_i^*},\fh_i^*)$ where $\fh_i$ is the Lie algebra of $H_i$, and \defmap{\Gamma_i}{\Lambda_i}{\Irr(H_i)}{\nu_i}{\Gamma_{\nu_i}}
+which satisfies the same condition as Definition \ref{regular character}. Similarly, define $\CP_{\Lambda_i}(\G(V_i))$ to be the set of $\G(V_i)$-conjugacy classes under the standard adjoint action of $\G(V_i)$.
+
+Now we can define a map \defmap{\varphi}{\CP_{\Lambda_i}(\G(V_1)) \times \cdots \times \CP_{\Lambda_r}(\G(V_r))}{\CP_{\Lambda}(G)}{((H_1,\xi_1,\Gamma_1),\cdots,(H_r,\xi_r,\Gamma_r))}{(H,\xi,\Gamma)}
+where $H = H_1 \times \cdots \times H_r \subseteq G$ is the product of small Cartan subgroups, $\xi$ is the composition of
+\[
+    ^{a}\fh^*={^{a}\fh}_1^*\times \cdots \times  {^{a}\fh}_{r}^* \xrightarrow{\xi_1 \times \cdots \times \xi_r} \fh_1^* \times \cdots \times \fh_r^* = \fh^*,
+\]
+and $\Gamma: \Lambda \to \Irr(H)$ is the map
+$$\nu = (\nu_1,\cdots ,\nu_r) \mapsto \Gamma_{1,\nu_1} \otimes \cdots \otimes \Gamma_{r,\nu_r}.$$
+
+
+
+\begin{prop}\label{varphi bij}
+    The map $\varphi$ defined above is a bijection.
+\end{prop}
+
+\begin{proof}
+    Note that for every triple $(H,\xi,\Gamma) \in \mathscr{P}_{\Lambda}(G)$, $H$ can be embedding into the Levi subgroup $\G(V_1) \times \cdots \times \G(V_r)$ after conjugation. The rest follows from direct verification.
+\end{proof}
+
+We can get the following isomorphism using this bijection of parameters and Theorem \ref{Coh}.
+
+\begin{prop}\label{Coh cong}
+    There is an isomorphism of $W_{\Lambda}$-representations
+    \begin{equation}
+        \mathrm{Coh}_{\Lambda}(\CK(G)) \cong \mathrm{Coh}_{\Lambda_1}(\CK(\G(V_1))) \boxtimes \cdots \boxtimes \mathrm{Coh}_{\Lambda_r}(\CK(\G(V_r))).
+    \end{equation}
+\end{prop}
+
+Now for an irreducible representation $\sigma = \phi(\iota_1) \boxtimes \cdots \boxtimes \phi(\iota_r)$ of $W_{\Lambda} = \mathrm{S}_{e_1} \times \cdots \times \mathrm{S}_{e_r}$ we have 
+\begin{align*}
+[\sigma:&\mathrm{Coh}_{\Lambda}(\CK(G))] \\
+ & = [\phi(\iota_1) \boxtimes \cdots \boxtimes \phi(\iota_r) : \mathrm{Coh}_{\Lambda_1}(\CK(\G(V_1))) \boxtimes \cdots \boxtimes \mathrm{Coh}_{\Lambda_r}(\CK(\G(V_r)))]\\
+ & = [\phi(\iota_1): \mathrm{Coh}_{\Lambda_1}(\CK(\G(V_1)))]\cdots [\phi(\iota_r):\mathrm{Coh}_{\Lambda_r}(\CK(\G(V_r)))]\\
+ & = \sharp(\mathrm{P}_{A^\BR}(\iota_1)) \cdots \sharp(\mathrm{P}_{A^\BR}(\iota_r)),
+\end{align*}
+and use Frobenuis reciprocity
+\begin{align*}
+    [1_{W_\nu} : \sigma ] & = [\sigma: \Ind_{W_{\nu}}^{W}1]\\
+    & = [\phi(\iota_1) \boxtimes \cdots \boxtimes \phi(\iota_r): \Ind_{W_{\blam_1}}^{W_1}1 \boxtimes \cdots \boxtimes \Ind_{W_{\blam_r}}^{W_r}1 ]\\
+    & = [\phi(\iota_1):\Ind_{W_{\blam_1}}^{W_1}1] \cdots [\phi(\iota_r):\Ind_{W_{\blam_r}}^{W_r}1]\\
+    & = \sharp(\A_{[d_{1,1},\cdots,d_{1,r_1}]}(\iota_1))\cdots \sharp(\A_{[d_{k,1},\cdots,d_{r,k_r}]}(\iota_r)),
+\end{align*}
+where $W_i$ is the corresponding abstract Weyl groups on $^{a}\fh_i$.
+
+For a fixed nilpotent orbit $\CO = \CO_{\iota} \in \bar{\Nil}(\fg^*)$, 
+\begin{align*}
+    \Irr_{\CO_{\iota}}(W_{\Lambda}) & = \Irr_{\CO_{\iota}}(\mathrm{S}_{e_1} \times \cdots \times \mathrm{S}_{e_r})\\
+    & = \set{\sigma \in \Irr(\mathrm{S}_{e_1} \times \cdots \times \mathrm{S}_{e_r})}{j_{\mathrm{S}_{e_1} \times \cdots \times \mathrm{S}_{e_r}}^{\mathrm{S}_n}\sigma = \phi(\iota)}\\
+    & = \set{(\iota_1,\cdots,\iota_r) \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r}}{\iota_1 \mathop{\sqcup}\limits^r \iota_2 \cdots \mathop{\sqcup}\limits^r  \iota_r = \iota(\CO)},
+\end{align*}
+here, the third equality is the consequence of Proposition \ref{2.9}.
+
+Combining the above three identities, we get the second part of Theorem \ref{R}.
+
+\subsubsection{Minimal nilpotent orbits for a fixed infinitesimal character}
+
+\begin{prop}
+    
+\end{prop}
+
+
+
+
+\subsection{Quaternion general linear groups}
+\subsubsection{Integral case}
+If $\nu$ is an integral character in $^{a}\fh^*$, i.e. 
+$$\nu =  (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k} ) \in {^{a}\fh^*} = \BC^n,$$ 
+where $d_1 \geq d_2 \geq \cdots \geq d_k \geq 1$ is a partition of $n$ and $\lambda_i - \lambda_j \in \BZ$. 
+
+There is only one conjugacy class of Cartan subgroups, a representative is given by $H$, which is isomorphic to
+$$(\BC^\times)^{\frac{n}{2}}$$
+with the corresponding weights $f_1, f_2, \cdots ,f_n$ in the standard representation, where
+\begin{align}
+    &f_{2i-1}(z_1,\cdots,z_{\frac{n}{2}}) = z_i,\\
+    &f_{2i}(z_1,\cdots,z_{\frac{n}{2}}) = \bar{z_i}.
+\end{align}
+Since the adjoint representation of $G$ on $\fg$ is isomorphic to the second symmetric power of the standard representation, the set of roots is given by
+$$\set{\pm(f_i - f_j)}{1\leq i < j \leq n}$$
+with no real roots and the subset of imaginary roots is
+$$\set{\pm(f_{2i-1}-f_{2i})}{1 \leq i \leq \frac{n}{2}}$$
+they are all compact imaginary. 
+
+Denote the complexified Lie algebra of $H$ by $\fh$, let $\xi \in W({^{a}\fh^*},\fh^*)$ be the unique element such that $\xi(e_i) = f_i$.
+
+The real Weyl group $W_{H}$ is given by
+$$W_{H} = \mathrm{S}_{\frac{n}{2}} \ltimes W(A_1)^{\frac{n}{2}},$$
+where 
+\begin{itemize}
+    \item $\mathrm{S}_{\frac{n}{2}}$ is generated by $s_{f_{2i-1}-f_{2i+1}}s_{f_{2i}-f_{2i+2}}$;
+    \item $W(A_1)^r$ is generated by $s_{f_{2i-1}-f_{2i}}$.
+\end{itemize}
+
+
+
+The quadratic character $\sgn_{\mathrm{im}}$ of $W_{H}$ is 
+\begin{itemize}
+    \item sign character on $W(A_1)^r$;
+    \item trivial character on $\mathrm{S}_{\frac{n}{2}}$.
+\end{itemize}
+
+Since the abstract Weyl group $W$ acts transitively on the set $W({^{a}\fh}^*,\fh^*)$, and $\Gamma$ in a character $\upgamma' = (H,\xi',\Gamma)$ is uniquely determined by $H$ and $\xi'$, the cross action of $W$ on $\CP_{\Lambda}(G)$ is transitive.  Choose a representative element $\upgamma = (H,\xi,\Gamma)$, where $\Gamma$ is the unique map determined by $H$ and $\xi$.
+
+We can identify $W$ with $W_{\fh}$ through the isomorphism $\xi$, then the centralizer $W_{{\gamma}}$ of $\gamma = G \cdot \upgamma$ in $W$ can be identified with $W_{H} \subseteq W_{\fh}$.
+
+Now using Theorem \ref{Coh}, we can give the coherent continuation representation as 
+\begin{equation}
+    \mathrm{Coh}_{\Lambda}(\CK(G)) = \Ind_{\mathrm{W}_{\frac{n}{2}}}^{\mathrm{S}_n} \epsilon.
+\end{equation}
+
+So for a given nilpotent orbit $\CO = \CO_{\iota}$, $\Irr(W;\CO) = \{\phi(\iota)\}$ is a singleton, we can use Pieri's rule \ref{Pieri}, and branching formula \ref{branch} again
+\begin{equation}
+    \Irr_{\nu}(G;\CO) = [\phi(\iota):\Ind_{W_\nu}^{W}1]\cdot[\phi(\iota): \Ind_{\mathrm{W}_{\frac{n}{2}}}^{\mathrm{S}_n}\epsilon] = \sharp(\A_{[d_1,\cdots,d_k]}(\iota))\cdot \sharp(\mathrm{P}_{A^\BH}(\iota)).
+\end{equation}
+
+And hence, we have proved the first part of Theorem \ref{H}.
+
+\subsubsection{General case}
+For the case of non-integral infinitesimal character, i.e. 
+$$\nu = (\blam_1, \cdots, \blam_r) \in {^{a}\fh}^*,$$ 
+where 
+$$\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}},\cdots,\underbrace{\lambda_{i,k_i},\cdots,\lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i},$$ $d_{i,1} \geq \cdots \geq d_{i,k_i} \geq 1$ is a partition of $e_i$ and $\lambda_{i,p} - \lambda_{i,q} \in \BZ$, $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i,j$. The integral Weyl group is $W_{\Lambda} = W(\Lambda) = \mathrm{S}_{e_1} \times \cdots \times \mathrm{S}_{e_r} \subseteq \mathrm{S}_n$. 
+
+If there exists any odd $e_i$, then $\xi(\nu) + \delta(\xi)$ cannot be the differential of a continuous character of $H$. Consequently, the number of corresponding irreducible Casselman-Wallach representations is zero. 
+
+Now, we assume that all the $e_i$'s are even, there is a decomposition of abstract Cartan subalgebra $^{a}\fh = {^{a}\fh_1} \times \cdots \times {^{a}\fh_r}$ corresponding to the infinitesimal character $\nu$, fix a decomposition of standard representation $V = V_1 \oplus \cdots \oplus V_r$ with $\dim V_{i} = e_i$ and each $V_i$ is stable under $\mathbf{j}$, it induces a Levi subgroup $\G(V_1) \times \cdots \times \G(V_r)$ of $\G(V)$, let $^{a}\fh_i$ be the abstract Cartan subalgebra of $\G(V_i)$.
+
+The same as in section \ref{3.2}, we can define $\CP_{\Lambda_i}(\G(V_i))$ for each $i = 1,2,\cdots,r$, and we can also define the following map
+\defmap{\varphi}{\CP_{\Lambda_1}(\G(V_i))\times \cdots \times \CP_{\Lambda_r}(\G(V_r))}{\CP_{\Lambda}(G)}{((H_1,\xi_1,\Gamma_1), \cdots,(H_r,\xi_r,\Gamma_r))}{(H,\xi,\Gamma)}
+and by a similar argument as \ref{varphi bij} and \ref{Coh cong}, we can get
+\begin{prop}
+    The map $\varphi$ defined above is an isomorphism.
+\end{prop}
+
+\begin{prop}
+    There is an isomorphism of $W_{\Lambda}$-representations
+    \begin{equation}
+        \mathrm{Coh}_{\Lambda}(\CK(G)) \cong \mathrm{Coh}_{\Lambda_1}(\CK(\G(V_1))) \boxtimes \cdots \boxtimes \mathrm{Coh}_{\Lambda_r}(\CK(\G(V_r))).
+    \end{equation}
+\end{prop}
+
+For a nilpotent orbit $\CO = \CO_{\iota}$, we can get
+
+\begin{align}
+    \Irr_{\nu}(G;\CO) & = \sum_{\sigma \in \Irr(W_\Lambda;\CO)}[1_{W_\nu}:\sigma]\cdot[\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))]\\
+    & = \sum_{\substack{(\iota_1,\cdots,\iota_r) \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \\ \iota_1 \mathop{\sqcup}\limits^r \cdots  \mathop{\sqcup}\limits^r \iota_r = \iota(\CO)}}\prod_{i=1}^r [\phi(\iota_i): \Ind_{W_{\blam_i}}^{W_i}1]\cdot \prod_{i=1}^r[\phi(\iota_i):\mathrm{Coh}_{\Lambda_i}(\CK(\G(V_i)))]\\
+    & = \sum_{\substack{(\iota_1,\cdots,\iota_r) \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \\ \iota_1 \mathop{\sqcup}\limits^r \cdots  \mathop{\sqcup}\limits^r \iota_r = \iota(\CO)}} \prod_{i=1}^{r}\sharp(\mathrm{A}_{[d_{i,1}, \cdots,d_{i,k_i}]}(\iota_i)) \cdot \prod_{i=1}^r \sharp(\mathrm{P}_{A^\BH}(\iota_i))\\
+    & = \sum_{\substack{(\iota_1,\cdots,\iota_r) \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \\ \iota_1 \mathop{\sqcup}\limits^r \cdots  \mathop{\sqcup}\limits^r \iota_r = \iota(\CO)}} \prod_{i=1}^r \sharp(\Irr_{\blam_i}(\GL_{\frac{e_i}{2}}(\BH);\CO_{\iota_i})).
+\end{align}
+
+We get the second part of Theorem \ref{H}.
+
+
+
+
+
+
+
+
+
+
+\subsection{Complex general linear groups}
+
+\subsubsection{Integral case}
+If $\nu$ is an integral character in $^{a}\fh^*$, i.e. 
+$$\nu =  (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}, \underbrace{\lambda_1', \cdots, \lambda_1'}_{d_1'}, \cdots, \underbrace{\lambda_k', \cdots, \lambda_k'}_{d_{l}'} ) \in {^{a}\fh^*} = \BC^n \times \BC^n,$$ 
+where $[d_1,d_2,\cdots,d_k]$ and $[d_1',d_2',\cdots,d_l']$ are partitions of $n$, and $\lambda_i - \lambda_j, \ \lambda_i' - \lambda_j' \in \BZ$, then $W_{\Lambda} =W(\Lambda) = W = \mathrm{S}_n \times \mathrm{S}_n$, and $W_\nu = (\mathrm{S}_{d_1} \times \cdots \times \mathrm{S}_{d_k}) \times (\mathrm{S}_{d_1'} \times \cdots \times \mathrm{S}_{d_l'})$. 
+
+There is only one conjugacy class of Cartan subgroups, a representative is given by $H$, which is isomorphic to
+$$(\BC^\times)^n$$
+with the corresponding weights $f_1,f_2,\cdots,f_n$ and $f_1',f_2',\cdots,f_n'$ in the standard representation, where
+\begin{align}
+    & f_i(z_1,z_2,\cdots,z_n) = z_i\\
+    & f_i'(z_1,z_2,\cdots,z_n) = \bar{z_i}.
+\end{align}
+Then the set of roots is 
+$$\set{\pm(f_i - f_j), \ \pm(f_i'-f_j')}{1\leq i< j \leq n}$$
+all of them are complex roots.
+
+Denote the complexified Lie algebra of $H$ by $\fh$, fix a $\xi \in W({^{a}\fh^*},\fh^*)$ such that $\xi(e_i) = f_i$ and $\xi(e_i') = f_i'$.
+
+The real Weyl group of $H$ is given by
+$$W_H = \mathrm{S}_n,$$
+which is generated by $s_{f_i-f_{i+1}}s_{f_i'-f_{i+1}'}$. 
+
+The quadratic character $\sgn_{\mathrm{im}}$ of $W_{H}$ is the trivial character.
+
+If $\lambda_1 - \lambda_1' \notin \BZ$, $\xi(\nu) + \delta(\xi) = \xi(\nu)$ cannot be the differential of a continues character of $H$. Consequently, there will be no irreducible representation with this infinitesimal character.  
+
+Now, suppose that $\lambda_1 - \lambda_1' \in \BZ$. In this case, there is only one $W$ acts transitively on $\CP_{\Lambda}(G)$, we choose the representative element $\upgamma = (H,\xi, \Gamma)$, where $\Gamma$ is determined by $\xi$ since $H$ is connected.
+
+We can identify $W$ with $W_\fh$ through the isomorphism $\xi$, then the centralizer $W_{{\gamma}}$ of ${\gamma} = G \cdot \upgamma \in \CP_{\Lambda}(G)$ in $W$ is identified with the real Weyl group $W_{H} = \mathrm{S}_n \subseteq \mathrm{S}_n \times \mathrm{S}_n = W_{\fh}$, the inclusion is diagonal embedding.
+
+Now, using Theorem \ref{Coh}, we can give the coherent continuation representation as 
+\begin{equation}
+    \mathrm{Coh}_{\Lambda}(\CK(G)) = \Ind^{\mathrm{S}_n \times \mathrm{S}_n}_{\mathrm{S}_n}1.
+\end{equation}
+
+Given a nilpotent orbit $\CO = \CO_{\iota} \times \CO_{\iota'}$, $\Irr(W,\CO) = \{\phi(\iota) \boxtimes \phi(\iota')\}$ is a singleton, so
+\begin{align}
+    \Irr_{\nu}(G;\CO) & = [1_{W_\nu}:\phi(\iota) \boxtimes \phi(\iota')]\cdot[\phi(\iota)\boxtimes \phi(\iota'):\Ind^{\mathrm{S}_n \times \mathrm{S}_n}_{\mathrm{S}_n}1]\\
+    & = [\phi(\iota)\boxtimes \phi(\iota'):\Ind_{W_\nu}^{W}1] \cdot [1_{\mathrm{S}_n}:\phi(\iota) \otimes \phi(\iota)]\\
+    & = \sharp(\A_{[d_1,\cdots,d_k]}(\iota)) \cdot \sharp(\A_{[d_1',\cdots,d_l']}(\iota')) \cdot \epsilon_{\iota,\iota'},
+\end{align}
+the last equation is because all irreducible representations of symmetry groups are self-dual.
+
+And hence, we have proved the first part of Theorem \ref{C}.
+
+\subsubsection{General case}
+For the case of non-integral infinitesimal character, i.e. 
+$$\nu = (\blam_1, \cdots, \blam_r, \blam_1',\cdots, \blam_s') \in {^{a}\fh} = \BC^n \times \BC^n,$$ 
+where 
+\begin{align}
+    &\blam_i = (\underbrace{\lambda_{i,1}, \cdots,\lambda_{i,1}}_{d_{i,1}},\cdots,\underbrace{\lambda_{i,k_i},\cdots,\lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i}\\
+    &\blam_j' = (\underbrace{\lambda_{j,1},\cdots,\lambda_{j,1}}_{d_{j,1}'}, \cdots ,\underbrace{\lambda_{j,l_j},\cdots, \lambda_{j,l_j}}_{d_{j,l_j}'}) \in \BC^{e_j'},
+\end{align}
+ $[d_{i,1} , \cdots , d_{i,k_i}]$ is a partition of $e_i$, $[d_{j,1}', \cdots , d_{j,l_j}']$ is a partition of $e_j'$, and $\lambda_{i,p} - \lambda_{i,q} \in \BZ$, $\lambda_{i,1} - \lambda_{j,1}, \ \lambda_{i,1}' - \lambda_{j,1}' \notin \BZ$ for different $i,j$. The integral Weyl group is $W_\Lambda = W(\Lambda) = (\mathrm{S}_{e_1} \times \cdots \mathrm{S}_{e_r}) \times (\mathrm{S}_{e_1} \times \cdots \times \mathrm{S}_{e_r}) \subseteq \mathrm{S}_n \times \mathrm{S}_n = W$.
+
+If there exist $\xi \in W({^{a}\fh^*},\fh^*)$ such that $\xi(\nu) + \delta(\xi)$ becomes the differential of a character of the group $H$, there must be a permutation of $\nu$ under $W$, such that $r = s$, $e_i = e_i'$ for all $i = 1,2,\cdots,r$, and $\lambda_{i,1} - \lambda_{i,1}' \in \BZ$, otherwise there will be no irreducible Casselman-Wallach representations with character $\nu$.
+
+Now, we assume that $r = s$, $e_i = e_i'$ for each $i =1,2,\cdots,r$, and $\lambda_{i,1} - \lambda_{i,1}' \in \BZ$, we have a canonical decomposition $^{a}\fh = {^{a}\fh_1} \times \cdots \times {^{a}\fh_r}$ such that $(\blam_i, \blam_i')\in {^{a}\fh_i}$. Also, we fix a decomposition $V = W \oplus W' = (W_1 \oplus W_1') \oplus \cdots \oplus (W_r \oplus W_r') = V_1 \oplus \cdots \oplus V_r$, where $\dim W_i = \dim W_i' = e_i$ and $j(W_i) = W_i'$, this decomposition induces a Levi subgroup $\G(V_1) \times \G (V_2) \times \cdots \times \G(V_r)$ of $G$, let $^{a}\fh_i$ denote the abstract Cartan subalgebra of $\G(V_i)$. 
+
+The same as in section \ref{3.2}, we can define $\CP_{\Lambda_i}(\G(V_i))$ for each $i = 1,2,\cdots,r$, and we can also define the following map
+\defmap{\varphi}{\CP_{\Lambda_1}(\G(V_1))\times \cdots \times \CP_{\Lambda_r}(\G(V_r))}{\CP_{\Lambda}(G)}{((H_1,\xi_1,\Gamma_1),\cdots , (H_r,\xi_r,\Gamma_r))}{(H,\xi,\Gamma)}
+and by a similar argument as \ref{varphi bij} and \ref{Coh cong}, we can get
+\begin{prop}
+    The map $\varphi$ defined above is a bijection.
+\end{prop}
+
+\begin{prop}
+    There is an isomorphism of $W_{\Lambda}$-representations
+    \begin{equation}
+        \mathrm{Coh}_{\Lambda}(\CK(G)) \cong \mathrm{Coh}_{\Lambda_1}(\CK(\G(V_1))) \boxtimes \cdots \boxtimes \mathrm{Coh}_{\Lambda_r}(\CK(\G(V_r))).
+    \end{equation}
+\end{prop}
+
+For a nilpotent orbit $\CO = \CO_{\iota} \times \CO_{\iota'}$, we can get
+
+\begin{align}
+    \Irr_{\nu}(G;\CO) & = \sum_{\sigma \in \Irr(W_{\Lambda};\CO)}[1_{W_\nu}:\sigma]\cdot[\sigma: \mathrm{Coh}_{\Lambda}(\CK(G))]\\
+    & = \sum_{\substack{(\iota_1,\cdots,\iota_r), (\iota_1',\cdots,\iota_r') \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r}\\ \iota_1 \mathop{\sqcup}\limits^r \cdots \mathop{\sqcup}\limits^r \iota_r = \iota, \ \iota_1'  \mathop{\sqcup}\limits^r \cdots \mathop{\sqcup}\limits^r \iota_r' = \iota' }} \prod_{i=1}^{r} \sharp(\Irr_{\blam_i}(\G(V_i);\CO_{\iota_i} \times \CO_{\iota_i'})).
+\end{align}
+
+We get the second part of Theorem \ref{C}.
+
+
+
+
+
+\subsection{Unitary groups}
+
+First, we give the coherent continuation representation for general $\nu \in {^{a}\fh^*}$. The conjugacy classes of Cartan subgroups are parametrized by non-negative integers in $\{0,1,\cdots,\lfloor\frac{\mathrm{min}(p,q)}{2}\rfloor\}$. Fix a parameter $s$, a representative element of the conjugacy class is given by a Cartan subgroup $H_s$, which is isomorphic to 
+$$(\BC^{\times})^s \times (\BS^1)^{p-s} \times (\BS^1)^{q-s}$$
+with the corresponding weights in the standard representation $f_1,\cdots ,f_n$ where
+\begin{align}
+    & f_{i}(z_1,\cdots,z_s,a_1,\cdots,a_{p-s},b_1,\cdots,b_{q-s}) = z_i, & \textrm{if $i \leq s$};\\
+    & f_{i}(z_1,\cdots,z_s,a_1,\cdots,a_{p-s},b_1,\cdots,b_{q-s}) = \bar{z_i}^{-1}, & \textrm{if $s+1 \leq i \leq 2s$};\\
+    &f_i(z_1,\cdots,z_s,a_1,\cdots,a_{p-s},b_1,\cdots,b_{q-s}) = a_{i-2s}, & \textrm{if $2s+1 \leq i \leq s+p$};\\
+    &f_i(z_1,\cdots,z_s,a_1,\cdots,a_{p-s},b_1,\cdots,b_{q-s}) = b_{i-s-p}, & \textrm{if $s+p+1 \leq i \leq n$}.
+\end{align}
+Since the adjoint representation of $G$ on $\fg$ is isomorphic to the second symmetric power of the standard representation, the set of roots is 
+$$\set{\pm(f_i-f_j)}{1\leq i <j \leq n}$$
+there are no real roots, and the subset of imaginary roots is
+$$\set{\pm(f_i-f_j)}{2s+1 \leq i < j \leq n}$$
+moreover, the subset of compact imaginary roots is
+$$\set{\pm(f_i-f_j)}{2s+1 \leq i < j \leq s+p \  \textrm{or} \ s+p+1 \leq i<j \leq n }$$
+Denote the complexified Lie algebra of $H_s$ by $\fh_s$. 
+
+The real Weyl group $W_{H_s}$ is given by
+$$W_{H_s} = (\mathrm{S}_s \ltimes  (W(A_1))^s) \times \mathrm{S}_{p-s} \times \mathrm{S}_{q-s},$$
+
+\begin{itemize}
+    \item $\mathrm{S}_s$ is generated by $s_{f_{2i-1}-f_{2i+1}}s_{f_{2i}-f_{2i+2}}$ for $1 \leq i \leq s-1$;
+    \item $W(A_1)^r$ is generated by $s_{f_{2i-1}-f_{2i}}$ for $1 \leq i \leq s$ which is the Weyl group of imaginary root system;
+    \item $\mathrm{S}_{p-s}$ (resp. $\mathrm{S}_{q-s}$) is generated by $s_{f_{i}-f_{i+1}}$ for $2r+1 \leq i \leq s+p-1$ (resp. $s+p+1 \leq i \leq n-1$).
+\end{itemize}
+
+The quadratic character $\sgn_{\mathrm{im}}$ of $W_{H_{s}}$ is just the trivial character.
+
+We can see that the parameter set $\CP_{\Lambda}(G)$ is nonempty only if we can make a permutation of components of $\nu$ under the Weyl group $W$ such that $\nu$ has the form
+\begin{equation}
+    \nu = (\blam_1,\cdots,\blam_r,\blam_1', \cdots, \blam_r',\blam',\blam) \in {^{a}\fh}^* = \BC^n,
+\end{equation}
+where 
+\begin{align}
+    &\blam = (\underbrace{\lambda_1,\cdots,\lambda_1}_{d_1},\cdots,\underbrace{\lambda_k,\cdots,\lambda_k}_{d_k}) \in (\frac{n-1}{2} + \BZ)^{l},\\
+    &\blam' = (\underbrace{\lambda_1',\cdots,\lambda_1'}_{d_1'},\cdots,\underbrace{\lambda_{k'},\cdots,\lambda_{k'}}_{d_{k'}'}) \in (\frac{n}{2} + \BZ)^{l'},\\
+    &\blam_i = (\underbrace{\lambda_{i,1},\cdots,\lambda_{i,1}}_{d_{i,1}},\cdots,\underbrace{\lambda_{i,k_i},\cdots,\lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{l_i},\\
+    &\blam_i' = (\underbrace{\lambda_{i,1}',\cdots,\lambda_{i,1}'}_{d_{i,1}'},\cdots,\underbrace{\lambda_{i,k_i'}',\cdots,\lambda_{i,k_i'}'}_{d_{i,k_i}}) \in \BC^{l_i}
+\end{align}
+$[d_{i,1} , \cdots , d_{i,k_i}]$ and $[d_{i,1}',\cdots,d_{i,k_i'}']$ are partitions of $l_i$, $\lambda_{i,p} - \lambda_{i,q} \in \BZ$, $\lambda_{i,p}' - \lambda_{i,q}' \in \BZ$, $\lambda_{i,p} + \lambda_{i,q}' \in \BZ$, $\lambda_{i,p} \notin \frac{1}{2}\BZ$, $l'$ is even. 
+
+In this case, the $W$-orbits in $\CP_{\Lambda}(G)$ are parameterized by the set $\{0,1,\cdots,\lfloor \frac{l}{2} \rfloor\}$. For each $s \in \{0,1,\cdots,\lfloor \frac{l}{2} \rfloor\}$, the corresponding representative element is given by $\gamma_s =G \cdot \upgamma = G \cdot (H_{s + \frac{l'}{2} + \sum_{i=1}^{r} l_i},\xi,\Gamma)$, where $\xi$ is defined as follows:
+$$
+\xi(e_i) = \left\{
+    \begin{aligned}
+    &  f_i , & \textrm{if $1 \leq i \leq \sum_{j=1}^{r} l_j$}\\
+    &  f_{i+s - \sum_{j=1}^r l_j}, & \textrm{if $\sum_{j=1}^{r} l_j +1 \leq i \leq 2\sum_{j=1}^{r} l_j$}\\
+    &  f_{i - \sum_{j=1}^{r}l_j}, & \textrm{if $2\sum_{j=1}^{r}l_j+1 \leq i \leq 2\sum_{j=1}^{r}l_j + \frac{l'}{2}$}\\
+    &  f_{i+s-\sum_{j=1}^{r}l_j-\frac{l'}{2}}, & \textrm{if $2\sum_{j=1}^{r}l_j + \frac{l'}{2} +1 \leq i \leq 2\sum_{j=1}^{r}l_j + l'$}\\
+    & f_{i - \frac{l'}{2}-\sum_{j=1}^{r}l_j}, & \textrm{if $2\sum_{j=1}^{r}l_j + l' + 1 \leq i \leq s+2\sum_{j=1}^{r}l_j + l'$}\\
+    &f_{i}, & \textrm{if $s+2\sum_{j=1}^{r}l_j + l' +1 \leq i \leq n$}
+    \end{aligned}
+\right.
+$$
+
+
+$\Gamma$ is uniquely determined by $\xi$. And in this case, the integral Weyl group is given by $W(\Lambda) = \mathrm{S}_{l} \times \mathrm{S}_{l'} \times \mathrm{S}_{l_1} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r} \times \mathrm{S}_{l_r} \subseteq W$.
+
+Fix a representative parameter $\upgamma_s$, we can identify $W$ with $W_{\fh_s}$ via the isomorphism $\xi$, then the centralizer $W_{{\gamma_{s}}}$ of ${\gamma_{s}} \in \CP_{\Lambda}(G)$ in $W$ is identified with $W_{H_{s + \frac{l'}{2} + \sum_{i=1}^{r} l_i}} \cap \xi \circ W(\Lambda) \circ \xi^{-1} = (\mathrm{W}_{s} \times \mathrm{S}_{p'} \times \mathrm{S}_{q'}) \times W_{\frac{l'}{2}} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r}$.
+
+Now, using Theorem \ref{Coh}, we can give the coherent continuation representation as
+\begin{align*}
+    \mathrm{Coh}_{\Lambda}(\CK(G))  = &\bigoplus_{0 \leq s \leq \lfloor\frac{l}{2}\rfloor} \Ind _{(\mathrm{W}_{s} \times \mathrm{S}_{p'} \times \mathrm{S}_{q'}) \times W_{\frac{l'}{2}} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r}}^{\mathrm{S}_{l} \times \mathrm{S}_{l'} \times \mathrm{S}_{l_1} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r} \times \mathrm{S}_{l_r}} (1 \boxtimes \sgn \boxtimes \sgn) \boxtimes 1 \boxtimes \cdots \boxtimes 1 \\
+    = &(\bigoplus_{0 \leq s \leq \lfloor\frac{l}{2}\rfloor}\Ind _{\mathrm{W}_{s} \times \mathrm{S}_{p'} \times \mathrm{S}_{q'}}^{\mathrm{S}_{l}}1 \boxtimes \sgn \boxtimes \sgn ) \otimes \Ind_{W_{\frac{l'}{2}}}^{\mathrm{S}_{l'}} 1 \otimes \Ind_{\mathrm{S}_{l_1}}^{\mathrm{S}_{l_1}\times \mathrm{S}_{l_1}}1 \otimes \cdots \\
+    & \otimes \Ind_{\mathrm{S}_{l_r}}^{\mathrm{S}_{l_r}\times \mathrm{S}_{l_r}}1.
+\end{align*}
+Where $p' = p - (s + \frac{l'}{2} + l_1 + \cdots + l_r) $, $q' = q - (s + \frac{l'}{2} + l_1 + \cdots + l_r)$.
+
+For each irreducible representation $\sigma = \phi(\iota) \boxtimes \phi(\iota') \boxtimes \phi(\iota_1) \boxtimes \phi(\iota_1') \boxtimes \cdots \boxtimes \phi(\iota_r) \boxtimes \phi(\iota_r')$ of $W(\Lambda) = \mathrm{S}_{l} \times \mathrm{S}_{l'} \times \mathrm{S}_{l_1} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r} \times \mathrm{S}_{l_r}$, we have
+\begin{align*}
+    [\sigma: &\mathrm{Coh}_{\Lambda}(\CK(G))]\\
+    &= [\phi(\iota) \boxtimes \phi(\iota') \boxtimes \phi(\iota_1) \boxtimes \phi(\iota_1') \boxtimes \cdots \boxtimes \phi(\iota_r) \boxtimes \phi(\iota_r')\\
+    &:(\bigoplus_{0 \leq s \leq \lfloor\frac{l}{2}\rfloor}\Ind _{\mathrm{W}_{s} \times \mathrm{S}_{p'} \times \mathrm{S}_{q'}}^{\mathrm{S}_{l}}1 \boxtimes \sgn \boxtimes \sgn ) \otimes \Ind_{W_{\frac{l'}{2}}}^{\mathrm{S}_{l'}} 1 \otimes \Ind_{\mathrm{S}_{l_1}}^{\mathrm{S}_{l_1}\times \mathrm{S}_{l_1}}1 \otimes \cdots \otimes \Ind_{\mathrm{S}_{l_r}}^{\mathrm{S}_{l_r}\times \mathrm{S}_{l_r}}1]\\
+    & = \sharp(\mathrm{P}_A(\iota))\cdot \sharp(\mathrm{P}_{A}'(\iota'))\cdot \delta_{\iota_1,\iota_1'} \cdots \delta_{\iota_r,\iota_r'}. 
+\end{align*}
+
+And use Frobenuis reciprocity
+\begin{align*}
+    [1_{W_{\nu}}: \sigma] = \sharp(\mathrm{A}_{[d_1,\cdots,d_k]}(\iota))\cdot \sharp(\mathrm{A}_{[d_1',\cdots,d_{k'}']}(\iota'))\cdots \sharp(\mathrm{A}_{[d_{r,1}',\cdots,d_{r,k_r'}']}(\iota_r')).
+\end{align*}
+Combining the above two identities, we get the second part of Theorem \ref{U}.
+
+
+
+
+
+
+
+\begin{thebibliography}{99}
+
+    \bibitem[BB]{BB}
+    W. Borho, J. Brylinski. \textit{Differential operators on homogeneous spaces I: irreducibility of the associated variety}, Inv. Math. \textbf{69} (1982), 437-476. 
+
+
+   \bibitem[BMSZ]{BMSZ}
+   D. Barbasch, J.-J. Ma, B. Sun, and C.-B. Zhu, \textit{Special unipotent representations of real classical groups: counting and reduction (2022)}, available at arXiv: 2205.05266.
+
+    \bibitem[BM]{BM}
+    W. Borho and R. MacPherson, \textit{Repr\'esentations des groupes de Weyl et homologie d'intersection pour les vari\'et\'es nilpotentes}, C. R. Acad. Sci. Paris S\'er. I Math. \textbf{292} (1981), no. 15, 707-710 (French, with English summary).
+
+   \bibitem[BV82]{BV82}
+   D. Barbasch and D. A. Vogan, \textit{Primitive ideals and orbital integrals in complex classical groups}, Math. Ann. \textbf{259} (1982), no. 2, 153-199.
+
+    \bibitem[BV83]{BV83}
+    D. Barbasch and D. A. Vogan, \textit{Weyl Group Representations and Nilpotent Orbits}, Representation Theory of Reductive Groups: Proc. Univ. Utah Conference (1982), 1983, pp. 21-33.
+
+
+
+    \bibitem[Car]{Car}
+    R. W. Carter, \textit{Finite groups of Lie type}, Wiley Classics Library, John Wiley $\&$ Sons, Ltd., Chichester, 1993
+
+   \bibitem[CM]{CM}
+   D. Collingwood and W. McGovern, \textit{Nilpotent Orbits In Semisimple Lie Algebra: An Introduction.} Chapman and Hall/CRC, 1993.
+
+    \bibitem[GP]{GP}
+    M. Geck and G. Pfeiffer, \textit{Characters of finite Coxeter groups and Iwahori-Hecke algebras}. No. 21. Oxford University Press, 2000.
+    
+    \bibitem[Jos]{Jos}
+    A. Joseph. \textit{On the associated variety of a primitive ideal}, J. Algebra. \textbf{93} (1985), no. 2, 509-523.
+
+   \bibitem[KV]{KV} W. Knapp and D. Vogan, \textit{Cohomological Induction and Unitary Representations}, Princeton Mathematical Series, vol. 45, Princeton University Press, Princeton, NJ, 1995.
+
+    \bibitem[Lus79]{Lus79}
+    G. Lusztig, \textit{A class of irreducible representations of a Weyl group}, Nederl. Akad. Wetensch. Indag. Math. \textbf{41} (1979), no. 3, 323-335.
+
+    \bibitem[Lus82]{Lus82}
+    G. Lusztig, \textit{A class of irreducible representations of a Weyl group. II}, Nedrel. Akad. Wetensch. Indag. Math. \textbf{44} (1982), no. 2, 219-226.
+
+    \bibitem[Spr]{Spr}
+    T. A. Springer, \textit{A construction of representations of Weyl groups}, Invent. Math. \textbf{44} (1978), 279-293.
+
+    %\bibitem[Vog79]{Vog79}
+    %D. A. Vogan, \textit{Irreducible characters of semisimple Lie groups. I}, Duke Math. J. \textbf{46} (1979), no. 1, 61-108.
+
+
+    \bibitem[Vog81]{Vog81}
+   D. A. Vogan, \textit{Representations of real reductive Lie groups}, Progr. Math., vol. 15, Birkh\"{a}user, Boston, Mass., 1981.
+
+   \bibitem[Vog82]{Vog82}
+   D. A. Vogan, \textit{Irreducible characters of semisimple Lie groups. IV. Character-multiplicity duality}, Duke Math. J. \textbf{49} (1982), no. 4, 943-1073.
+
+
+
+
+
+
+
+
+
+
+
+\end{thebibliography}
+
+
+\end{document}
