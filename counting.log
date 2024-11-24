@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.15)  24 NOV 2024 11:09
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.15)  24 NOV 2024 21:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -648,43 +648,43 @@ File: l3backend-xetex.def 2024-02-20 L3 backend support: XeTeX
 ) (./counting.aux)
 \openout1 = `counting.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 242.
-LaTeX Font Info:    ... okay on input line 242.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 242.
-LaTeX Font Info:    ... okay on input line 242.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 242.
-LaTeX Font Info:    ... okay on input line 242.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 242.
-LaTeX Font Info:    ... okay on input line 242.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 242.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 242.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 243.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 243.
  (d:/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 242.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 242.
-LaTeX Font Info:    ... okay on input line 242.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 242.
-LaTeX Font Info:    ... okay on input line 242.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 242.
-LaTeX Font Info:    ... okay on input line 242.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 242.
-LaTeX Font Info:    ... okay on input line 242.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 242.
-LaTeX Font Info:    ... okay on input line 242.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 242.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 243.
  (d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 242.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 243.
  (d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 242.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 243.
  (d:/texlive/2024/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 242.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 243.
  (d:/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
@@ -722,7 +722,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 242.
+Package hyperref Info: Link coloring OFF on input line 243.
 (./counting.out) (./counting.out)
 \@outlinefile=\write5
 \openout5 = `counting.out'.
@@ -747,14 +747,14 @@ Configuring pdfsync
 \openout7 = `counting.toc'.
 
  [1]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 293.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 294.
  (d:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [2] [3]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 428.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 429.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 428.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 429.
  [4] [5]
 Underfull \vbox (badness 2189) has occurred while \output is active []
 
@@ -767,10 +767,10 @@ Package rerunfilecheck Info: File `counting.out' has not changed.
 (rerunfilecheck)             Checksum: 8797407AA5BB44206C33519802026C77;3763.
  ) 
 Here is how much of TeX's memory you used:
- 25527 strings out of 474773
- 470351 string characters out of 5761288
- 1947842 words of memory out of 5000000
- 46999 multiletter control sequences out of 15000+600000
+ 25528 strings out of 474773
+ 470354 string characters out of 5761288
+ 1946842 words of memory out of 5000000
+ 47000 multiletter control sequences out of 15000+600000
  577827 words of font info for 137 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
  84i,34n,97p,1211b,583s stack positions out of 10000i,1000n,20000p,200000b,200000s

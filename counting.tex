@@ -45,6 +45,7 @@ picture,baseline=(#2.base)]{\node(#2)[#1]{$#3$};}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bold Fonts
 \newcommand{\blam}{{\boldsymbol{\lambda}}}
+\newcommand{\bnu}{{\boldsymbol{\nu}}}
 \newcommand{\br}{{\mathbf{r}}}
 \newcommand{\bc}{{\mathbf{c}}}
 \newcommand{\BA}{{\mathbb {A}}}
@@ -531,14 +532,14 @@ In the statement of the following theorems, we will use the canonical identifica
 
         \item For a general $\nu \in {^{a}\fh^*}$, there exist irreducible Casselman-Wallach representations with this infinitesimal character only if we can permute the components of $\nu$ such that $\nu$ takes the form
         \begin{equation}
-            \nu = (\blam, \blam', \blam_1, \blam_1', \cdots, \blam_r, \blam_r') \in {^{a}\fh}^* = \BC^n,
+            \nu = (\blam_1, \blam_1', \cdots, \blam_r, \blam_r', \blam, \blam') \in {^{a}\fh}^* = \BC^n,
         \end{equation}
         where 
-        \begin{align}
-            &\blam = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \left(\frac{n-1}{2} + \BZ\right)^{e},\\
-            &\blam' = (\underbrace{\lambda_1', \cdots, \lambda_1'}_{d_1'}, \cdots, \underbrace{\lambda_{k'}, \cdots, \lambda_{k'}}_{d_{k'}'}) \in \left(\frac{n}{2} + \BZ\right)^{e'},\\
+        \begin{align} 
             &\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i},\\
-            &\blam_i' = (\underbrace{\lambda_{i,1}', \cdots, \lambda_{i,1}'}_{d_{i,1}'}, \cdots, \underbrace{\lambda_{i,k_i'}, \cdots, \lambda_{i,k_i'}}_{d_{i,k_i}'}) \in \BC^{e_i},
+            &\blam_i' = (\underbrace{\lambda_{i,1}', \cdots, \lambda_{i,1}'}_{d_{i,1}'}, \cdots, \underbrace{\lambda_{i,k_i'}, \cdots, \lambda_{i,k_i'}}_{d_{i,k_i}'}) \in \BC^{e_i},\\
+            &\blam = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \left(\frac{n}{2} + \BZ\right)^{e},\\
+            &\blam' = (\underbrace{\lambda_1', \cdots, \lambda_1'}_{d_1'}, \cdots, \underbrace{\lambda_{k'}, \cdots, \lambda_{k'}}_{d_{k'}'}) \in \left(\frac{n-1}{2} + \BZ\right)^{e'},
         \end{align}
         where the sequences $[d_{i,1}, \cdots, d_{i,k_i}]$ and $[d_{i,1}', \cdots, d_{i,k_i'}']$ are partitions of $e_i$. With the following conditions: 
         \begin{align*}
@@ -562,7 +563,7 @@ Recall that a partial order is defined on the set of nilpotent orbits defined by
     \sum_{1 \leq j \leq k} d_{j} \leq \sum_{1 \leq j \leq k} d_{j}' \ \textrm{for $1 \leq k \leq \mathrm{max}\{k,k'\}$},
 \]
 is satisfied. Here, zeros are added to the shorter partition if necessary.
-This partial order naturally induces a corresponding partial order on the set of associated varieties of irreducible representations. We now describe the minimal associated variety that can arise for irreducible representations with a given infinitesimal character.
+This partial order naturally induces a corresponding partial order on the set of associated varieties of irreducible representations. We now describe the minimal associated variety that can arise for irreducible representations with a given infinitesimal character for real general linear groups.
 
 \begin{thm}\label{minimal}
     Let $G = \GL_n(\BR)$, and $\nu \in {^{a}\fh}^* = \BC^n$.
@@ -1012,7 +1013,7 @@ If $\nu$ is an inteegral character in ${^{a}\fh}^*$, i.e.
 $$\nu = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k} ) \in {^{a}\fh}^* = \BC^n,$$ 
 where $\lambda_i - \lambda_j \in \BZ$. In this case $W_{\Lambda} = W(\Lambda) = W$, $W_\nu = \mathrm{S}_{d_1} \times \cdots \times \mathrm{S}_{d_k}$. 
 
-The conjugacy classes of the Cartan subgroup are parameterized by non-negative integers in $\{0,1,\cdots,\lfloor \frac{n}{2}\rfloor\}$, fix a parameter $r$, a representative element of this conjugacy class is given by a Cartan subgroup $H_r$, which is isomorphic to:
+The set of conjugacy classes of the Cartan subgroup is parameterized by non-negative integers in $\{0,1,\cdots,\lfloor \frac{n}{2}\rfloor\}$, fix a parameter $r$, a representative element of this conjugacy class is given by a Cartan subgroup $H_r$, which is isomorphic to:
 $$(\BC^{\times})^r \times (\BR^{\times})^{n-2r}$$
 with the corresponding weights $f_1,f_2,\cdots ,f_n$ in the standard representation, where
 \begin{align}
@@ -1054,11 +1055,11 @@ Let $\CP_r$ denote the set of parameters in $\CP_{\Lambda}(G)$ which are represe
 \end{lem}
 
 \begin{proof}
-    Without lose of generality, assume $H = H_r$ for some $r$, and $\zeta = \xi$. Then, $\delta(\xi) = -\frac{1}{2} \cdot (1,-1,1,-1,\cdots,1,-1,0,\cdots,0)$, where the first $2r$ entries are nonzero. $\xi(\nu) = (\nu_1,\cdots,\nu_n)$, with $\nu_i \in \BZ$. The difference between $2i$-th entry and $(2i-1)$-th entry of $\zeta(\nu) + \delta(\zeta)$ is always an integer for $1 \leq i \leq r$, and hence $\zeta(\nu) + \delta(\zeta)$ comes from the differential of a group character.
+    Without lose of generality, assume $H = H_r$ for some $r$, and $\zeta = \xi$. Then, $\delta(\xi) = -\frac{1}{2} \cdot (1,-1,1,-1,\cdots,1,-1,0,\cdots,0)$, where we identify ${^{a}\fh^*}$ with $\fh^*$ through $\xi$, and the first $2r$ entries are nonzero. $\xi(\nu) = (\nu_1,\cdots,\nu_n)$, with $\nu_i \in \BZ$. The difference between $2i$-th entry and $(2i-1)$-th entry of $\zeta(\nu) + \delta(\zeta)$ is always an integer for $1 \leq i \leq r$, and hence $\zeta(\nu) + \delta(\zeta)$ comes from the differential of a group character.
 
 \end{proof}
 
-Thus, under the cross action, the $W$-orbits of $\CP_r$ is parameterized by non-negative integers in $\{0,1,\cdots,n-2r\}$. Each $i \in \{0,1,\cdots,n-2r\}$ corresponds to a $W$-orbit of $\CP_r$ represented by $\gamma_{r,i} = G \cdot \upgamma_{r,i} = G \cdot (H_r,\xi,\Gamma^i) \in \CP_{\Lambda}(G)$, where $\Gamma_{\nu}^i|_{\{\pm1\}^{n-2r}} = \underbrace{1 \otimes \cdots \otimes 1}_{i} \otimes \underbrace{\sgn \otimes \cdots \otimes \sgn }_{n-2r-i}$. ($\{\pm1\}^{n-2r} \subseteq (\BR^\times)^{n-2r}$ is the component subgroup.)
+Thus, under the cross action, the set of $W$-orbits in $\CP_r$ under the cross action is parameterized by non-negative integers in $\{0,1,\cdots,n-2r\}$. Each $i \in \{0,1,\cdots,n-2r\}$ corresponds to a $W$-orbit of $\CP_r$ represented by $\gamma_{r,i} = G \cdot \upgamma_{r,i} = G \cdot (H_r,\xi,\Gamma^i) \in \CP_{\Lambda}(G)$, where $\Gamma_{\nu}^i|_{\{\pm1\}^{n-2r}} = \underbrace{1 \otimes \cdots \otimes 1}_{i} \otimes \underbrace{\sgn \otimes \cdots \otimes \sgn }_{n-2r-i}$. ($\{\pm1\}^{n-2r} \subseteq (\BR^\times)^{n-2r}$ is the component subgroup.)
 
 We can identify $W$ with $W_{\fh_r}$ through the isomorphism $\xi$, then the centralizer $W_{{\gamma_{r,i}}}$ of ${\gamma_{r,i}} \in \CP_{\Lambda}(G)$ in $W$ is identified with the subgroup $\xi \circ W_{{\gamma_{r,i}}}\circ \xi = (\mathrm{S}_{r} \ltimes (W(A_1))^r) \times (\mathrm{S}_{i} \times \mathrm{S}_{n-2r-i}) \subseteq (\mathrm{S}_{r} \ltimes (W(A_1))^r) \times \mathrm{S}_{n-2r} = W_{H_r} \subseteq W_{\fh}$.
 
@@ -1193,7 +1194,14 @@ The quadratic character $\sgn_{\mathrm{im}}$ of $W_{H}$ is
     \item trivial character on $\mathrm{S}_{\frac{n}{2}}$.
 \end{itemize}
 
-Using a similar calculation as in lemma \ref{gp char}, we observe that for any Cartan subgroup $H'$ and any $\zeta \in W({^{a}\fh^*,\fh'^*})$, $\zeta(\nu) + \delta(\zeta)$ is always the differential of a continuous group character.
+\begin{lem}
+For any Cartan subgroup $H'$ and any $\zeta \in W({^{a}\fh^*,\fh'^*})$, $\zeta(\nu) + \delta(\zeta)$ is always the differential of a continuous group character on $H'$.
+\end{lem}
+
+\begin{proof}
+    Without lose of generality, we may assume $H' = H$ and $\zeta = \xi$. Then, $\xi(\nu) + \delta(\xi) = (\nu_1,\cdots,\nu_n) - \frac{1}{2}(1,-1,1,-1,\cdots,1,-1)$, where we identify ${^{a}\fh^*}$ with $\fh'^*$ through $\xi$, and $\nu_i \in \BZ$. It always comes from a group character.
+\end{proof}
+
 
 Since the abstract Weyl group $W$ acts transitively on the set $W({^{a}\fh}^*,\fh^*)$, and $\Gamma$ in a character $\upgamma' = (H,\xi',\Gamma)$ is uniquely determined by $H$ and $\xi'$, the cross action of $W$ on $\CP_{\Lambda}(G)$ is transitive.  Choose a representative element $\upgamma = (H,\xi,\Gamma)$, where $\Gamma$ is the unique map determined by $H$ and $\xi$.
 
@@ -1217,7 +1225,7 @@ $$\nu = (\blam_1, \cdots, \blam_r) \in {^{a}\fh}^*,$$
 where 
 $$\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}},\cdots,\underbrace{\lambda_{i,k_i},\cdots,\lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i},$$ $d_{i,1} \geq \cdots \geq d_{i,k_i} \geq 1$ is a partition of $e_i$ and $\lambda_{i,p} - \lambda_{i,q} \in \BZ$, $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i,j$. The integral Weyl group is $W_{\Lambda} = W(\Lambda) = \mathrm{S}_{e_1} \times \cdots \times \mathrm{S}_{e_r} \subseteq \mathrm{S}_n$. 
 
-If there exists any odd $e_i$, then $\xi(\nu) + \delta(\xi)$ cannot be the differential of a continuous character of $H$. Consequently, the number of corresponding irreducible Casselman-Wallach representations is zero. 
+If there exists any odd $e_i$, then $\xi(\nu) + \delta(\xi)$ cannot be the differential of a continuous character of $H$, as the entries with integral differences in a group character should appear in pairs. Consequently, there are no corresponding irreducible Casselman-Wallach representations. 
 
 Now, we assume that all the $e_i$'s are even, there is a decomposition of abstract Cartan subalgebra $^{a}\fh = {^{a}\fh_1} \times \cdots \times {^{a}\fh_r}$ corresponding to the infinitesimal character $\nu$, fix a decomposition of standard representation $V = V_1 \oplus \cdots \oplus V_r$ with $\dim V_{i} = e_i$ and each $V_i$ is stable under $\mathbf{j}$, it induces a Levi subgroup $\G(V_1) \times \cdots \times \G(V_r)$ of $\G(V)$, let $^{a}\fh_i$ be the abstract Cartan subalgebra of $\G(V_i)$.
 
@@ -1281,9 +1289,18 @@ which is generated by $s_{f_i-f_{i+1}}s_{f_i'-f_{i+1}'}$.
 
 The quadratic character $\sgn_{\mathrm{im}}$ of $W_{H}$ is the trivial character.
 
-If $\lambda_1 - \lambda_1' \notin \BZ$, $\xi(\nu) + \delta(\xi) = \xi(\nu)$ cannot be the differential of a continues character of $H$. Consequently, there will be no irreducible representation with this infinitesimal character.  
+\begin{lem}
+    For any Cartan subgroup $H'$ and any $\zeta \in W({^{a}\fh^*,\fh'^*})$, $\zeta(\nu) + \delta(\zeta)$ is the differential of a continuous character of $H'$ if and only if $\lambda_1 - \lambda_1' \in \BZ$.
+\end{lem}
 
-Now, suppose that $\lambda_1 - \lambda_1' \in \BZ$. In this case, there is only one $W$ acts transitively on $\CP_{\Lambda}(G)$, we choose the representative element $\upgamma = (H,\xi, \Gamma)$, where $\Gamma$ is determined by $\xi$ since $H$ is connected.
+\begin{proof}
+    Without lose of generality, we may assume that $H' = H$ and $\zeta = \xi$. Then, $\xi(\nu) + \delta(\xi) = \xi(\nu) = (\lambda_1,\cdots,\lambda_n,\lambda_1',\cdots,\lambda_n')$, where we identify ${^{a}\fh^*}$ with $\fh'^*$ through $\xi$. It comes from a group character if and only if $\lambda_i - \lambda_i' \in \BZ$ for any $1 \leq i \leq n$, which is equivalent to $\lambda_1 - \lambda_1' \in \BZ$.
+\end{proof}
+
+
+So, if $\lambda_1 - \lambda_1' \notin \BZ$. There will be no irreducible representation with this infinitesimal character.  
+
+Now, suppose that $\lambda_1 - \lambda_1' \in \BZ$. In this case, $W$ acts transitively on $\CP_{\Lambda}(G)$, we choose the representative element $\upgamma = (H,\xi, \Gamma)$, where $\Gamma$ is determined by $\xi$ since $H$ is connected.
 
 We can identify $W$ with $W_\fh$ through the isomorphism $\xi$, then the centralizer $W_{{\gamma}}$ of ${\gamma} = G \cdot \upgamma \in \CP_{\Lambda}(G)$ in $W$ is identified with the real Weyl group $W_{H} = \mathrm{S}_n \subseteq \mathrm{S}_n \times \mathrm{S}_n = W_{\fh}$, the inclusion is diagonal embedding.
 
@@ -1312,12 +1329,12 @@ where
 \end{align}
  $[d_{i,1} , \cdots , d_{i,k_i}]$ is a partition of $e_i$, $[d_{j,1}', \cdots , d_{j,l_j}']$ is a partition of $e_j'$, and $\lambda_{i,p} - \lambda_{i,q} \in \BZ$, $\lambda_{i,1} - \lambda_{j,1}, \ \lambda_{i,1}' - \lambda_{j,1}' \notin \BZ$ for different $i,j$. The integral Weyl group is $W_\Lambda = W(\Lambda) = (\mathrm{S}_{e_1} \times \cdots \mathrm{S}_{e_r}) \times (\mathrm{S}_{e_1} \times \cdots \times \mathrm{S}_{e_r}) \subseteq \mathrm{S}_n \times \mathrm{S}_n = W$.
 
-If there exist $\xi \in W({^{a}\fh^*},\fh^*)$ such that $\xi(\nu) + \delta(\xi)$ becomes the differential of a character of the group $H$, there must be a permutation of $\nu$ under $W$, such that $r = s$, $e_i = e_i'$ for all $i = 1,2,\cdots,r$, and $\lambda_{i,1} - \lambda_{i,1}' \in \BZ$, otherwise there will be no irreducible Casselman-Wallach representations with character $\nu$.
+If there exist $\xi \in W({^{a}\fh^*},\fh^*)$ such that $\xi(\nu) + \delta(\xi)$ becomes the differential of a character of the group $H$, there must be a permutation of $\nu$ under $W$, such that $r = s$, $e_i = e_i'$ for all $i = 1,2,\cdots,r$, and $\lambda_{i,1} - \lambda_{i,1}' \in \BZ$, otherwise there will be no irreducible Casselman-Wallach representations with infinitesimal character $\nu$.
 
 Now, we assume that $r = s$, $e_i = e_i'$ for each $i =1,2,\cdots,r$, and $\lambda_{i,1} - \lambda_{i,1}' \in \BZ$, we have a canonical decomposition $^{a}\fh = {^{a}\fh_1} \times \cdots \times {^{a}\fh_r}$ such that $(\blam_i, \blam_i')\in {^{a}\fh_i}$. Also, we fix a decomposition $V = W \oplus W' = (W_1 \oplus W_1') \oplus \cdots \oplus (W_r \oplus W_r') = V_1 \oplus \cdots \oplus V_r$, where $\dim W_i = \dim W_i' = e_i$ and $j(W_i) = W_i'$, this decomposition induces a Levi subgroup $\G(V_1) \times \G (V_2) \times \cdots \times \G(V_r)$ of $G$, let $^{a}\fh_i$ denote the abstract Cartan subalgebra of $\G(V_i)$. 
 
 The same as in section \ref{3.2}, we can define $\CP_{\Lambda_i}(\G(V_i))$ for each $i = 1,2,\cdots,r$, and we can also define the following map
-\defmap{\varphi}{\CP_{\Lambda_1}(\G(V_1))\times \cdots \times \CP_{\Lambda_r}(\G(V_r))}{\CP_{\Lambda}(G)}{((H_1,\xi_1,\Gamma_1),\cdots , (H_r,\xi_r,\Gamma_r))}{(H,\xi,\Gamma)}
+\defmap{\varphi}{\CP_{\Lambda_1}(\G(V_1))\times \cdots \times \CP_{\Lambda_r}(\G(V_r))}{\CP_{\Lambda}(G)}{((H_1,\xi_1,\Gamma_1),\cdots, (H_r,\xi_r,\Gamma_r))}{(H,\xi,\Gamma)}
 and by a similar argument as \ref{varphi bij} and \ref{Coh cong}, we obtain the following result
 \begin{prop}
     The map $\varphi$ defined above is a bijection.
@@ -1345,7 +1362,7 @@ Thus, we obtain the second part of Theorem \ref{C}.
 
 \subsection{Unitary groups}
 
-First, we give the coherent continuation representation for general $\nu \in {^{a}\fh^*}$. The conjugacy classes of Cartan subgroups are parametrized by non-negative integers in $\{0,1,\cdots,\lfloor\frac{\mathrm{min}(p,q)}{2}\rfloor\}$. Fix a parameter $s$, a representative element of the conjugacy class is given by a Cartan subgroup $H_s$, which is isomorphic to 
+First, we give the coherent continuation representation for general $\nu \in {^{a}\fh^*}$. The set of conjugacy classes of Cartan subgroups is parameterized by non-negative integers in $\{0,1,\cdots,\lfloor\frac{\mathrm{min}(p,q)}{2}\rfloor\}$. Fix a parameter $s$, a representative element of the conjugacy class is given by a Cartan subgroup $H_s$, which is isomorphic to 
 $$(\BC^{\times})^s \times (\BS^1)^{p-s} \times (\BS^1)^{q-s}$$
 with the corresponding weights in the standard representation $f_1,\cdots ,f_n$ where
 \begin{align}
@@ -1367,53 +1384,55 @@ $$W_{H_s} = (\mathrm{S}_s \ltimes  (W(A_1))^s) \times \mathrm{S}_{p-s} \times \m
 
 \begin{itemize}
     \item $\mathrm{S}_s$ is generated by $s_{f_{2i-1}-f_{2i+1}}s_{f_{2i}-f_{2i+2}}$ for $1 \leq i \leq s-1$;
-    \item $W(A_1)^r$ is generated by $s_{f_{2i-1}-f_{2i}}$ for $1 \leq i \leq s$ which is the Weyl group of imaginary root system;
+    \item $W(A_1)^r$ is generated by $s_{f_{2i-1}-f_{2i}}$ for $1 \leq i \leq s$ which is the Weyl group of real root system;
     \item $\mathrm{S}_{p-s}$ (resp. $\mathrm{S}_{q-s}$) is generated by $s_{f_{i}-f_{i+1}}$ for $2r+1 \leq i \leq s+p-1$ (resp. $s+p+1 \leq i \leq n-1$).
 \end{itemize}
 
-The quadratic character $\sgn_{\mathrm{im}}$ of $W_{H_{s}}$ is just the trivial character.
+The quadratic character $\sgn_{\mathrm{im}}$ of $W_{H_{s}}$ is
+\begin{itemize}
+    \item sign character on $\mathrm{S}_{p-s}$ and $\mathrm{S}_{q-S}$;
+    \item trivial character on $\mathrm{S}_s \ltimes  (W(A_1))^s$.
+\end{itemize}
 
-We can see that the parameter set $\CP_{\Lambda}(G)$ is nonempty only if we can make a permutation of components of $\nu$ under the Weyl group $W$ such that $\nu$ has the form
+
+\begin{lem}
+    The parameter set $\mathscr{P}_{\Lambda}(G)$ is nonempty only if we can make a permutation of components of $\nu$ under the Weyl group $W$ such that $\nu$ has the form
 \begin{equation}
-    \nu = (\blam_1,\cdots,\blam_r,\blam_1', \cdots, \blam_r',\blam',\blam) \in {^{a}\fh}^* = \BC^n,
+    \nu = (\blam_1, \blam_1', \cdots, \blam_r, \blam_r', \blam,\blam') \in {^{a}\fh}^* = \BC^n,
 \end{equation}
 where 
 \begin{align}
-    &\blam = (\underbrace{\lambda_1,\cdots,\lambda_1}_{d_1},\cdots,\underbrace{\lambda_k,\cdots,\lambda_k}_{d_k}) \in (\frac{n-1}{2} + \BZ)^{l},\\
-    &\blam' = (\underbrace{\lambda_1',\cdots,\lambda_1'}_{d_1'},\cdots,\underbrace{\lambda_{k'},\cdots,\lambda_{k'}}_{d_{k'}'}) \in (\frac{n}{2} + \BZ)^{l'},\\
-    &\blam_i = (\underbrace{\lambda_{i,1},\cdots,\lambda_{i,1}}_{d_{i,1}},\cdots,\underbrace{\lambda_{i,k_i},\cdots,\lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{l_i},\\
-    &\blam_i' = (\underbrace{\lambda_{i,1}',\cdots,\lambda_{i,1}'}_{d_{i,1}'},\cdots,\underbrace{\lambda_{i,k_i'}',\cdots,\lambda_{i,k_i'}'}_{d_{i,k_i}}) \in \BC^{l_i}
+    &\blam_i = (\lambda_{i,1}, \lambda_{i,2} \cdots , \lambda_{i,l_i} ) \in \BC^{l_i},\\
+    &\blam_i' = (\lambda_{i,1}', \lambda_{i,2}' \cdots , \lambda_{i,l_i'}' ) \in \BC^{l_i},\\
+    &\blam = (\lambda_{1}, \lambda_{2} \cdots , \lambda_{l} ) \in (\frac{n}{2}+ \BZ)^{l},\\
+    &\blam' = (\lambda_{1}', \lambda_{2}' \cdots , \lambda_{l'}' ) \in (\frac{n-1}{2}+ \BZ)^{l'},
 \end{align}
-$[d_{i,1} , \cdots , d_{i,k_i}]$ and $[d_{i,1}',\cdots,d_{i,k_i'}']$ are partitions of $l_i$, $\lambda_{i,p} - \lambda_{i,q} \in \BZ$, $\lambda_{i,p}' - \lambda_{i,q}' \in \BZ$, $\lambda_{i,p} + \lambda_{i,q}' \in \BZ$, $\lambda_{i,p} \notin \frac{1}{2}\BZ$, $l'$ is even. 
+and $\lambda_{i,p} - \lambda_{i,q} \in \BZ$, $\lambda_{i,p}' - \lambda_{i,q}' \in \BZ$, $\lambda_{i,p} + \lambda_{i,q}' \in \BZ$, $\lambda_{i,p} \notin \frac{1}{2}\BZ$, and $l'$ is even. 
+\end{lem}
 
-In this case, the $W$-orbits in $\CP_{\Lambda}(G)$ are parameterized by the set $\{0,1,\cdots,\lfloor \frac{l}{2} \rfloor\}$. For each $s \in \{0,1,\cdots,\lfloor \frac{l}{2} \rfloor\}$, the corresponding representative element is given by $\gamma_s =G \cdot \upgamma = G \cdot (H_{s + \frac{l'}{2} + \sum_{i=1}^{r} l_i},\xi,\Gamma)$, where $\xi$ is defined as follows:
-$$
-\xi(e_i) = \left\{
-    \begin{aligned}
-    &  f_i , & \textrm{if $1 \leq i \leq \sum_{j=1}^{r} l_j$}\\
-    &  f_{i+s - \sum_{j=1}^r l_j}, & \textrm{if $\sum_{j=1}^{r} l_j +1 \leq i \leq 2\sum_{j=1}^{r} l_j$}\\
-    &  f_{i - \sum_{j=1}^{r}l_j}, & \textrm{if $2\sum_{j=1}^{r}l_j+1 \leq i \leq 2\sum_{j=1}^{r}l_j + \frac{l'}{2}$}\\
-    &  f_{i+s-\sum_{j=1}^{r}l_j-\frac{l'}{2}}, & \textrm{if $2\sum_{j=1}^{r}l_j + \frac{l'}{2} +1 \leq i \leq 2\sum_{j=1}^{r}l_j + l'$}\\
-    & f_{i - \frac{l'}{2}-\sum_{j=1}^{r}l_j}, & \textrm{if $2\sum_{j=1}^{r}l_j + l' + 1 \leq i \leq s+2\sum_{j=1}^{r}l_j + l'$}\\
-    &f_{i}, & \textrm{if $s+2\sum_{j=1}^{r}l_j + l' +1 \leq i \leq n$}
-    \end{aligned}
-\right.
-$$
+\begin{proof}
+    This follows from a direct calculation as in the previous sections, which we omit here.
+\end{proof}
 
 
-$\Gamma$ is uniquely determined by $\xi$. And in this case, the integral Weyl group is given by $W(\Lambda) = \mathrm{S}_{l} \times \mathrm{S}_{l'} \times \mathrm{S}_{l_1} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r} \times \mathrm{S}_{l_r} \subseteq W$.
 
-Fix a representative parameter $\upgamma_s$, we can identify $W$ with $W_{\fh_s}$ via the isomorphism $\xi$, then the centralizer $W_{{\gamma_{s}}}$ of ${\gamma_{s}} \in \CP_{\Lambda}(G)$ in $W$ is identified with $W_{H_{s + \frac{l'}{2} + \sum_{i=1}^{r} l_i}} \cap \xi \circ W(\Lambda) \circ \xi^{-1} = (\mathrm{W}_{s} \times \mathrm{S}_{p'} \times \mathrm{S}_{q'}) \times W_{\frac{l'}{2}} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r}$.
+
+And if $\nu$ satisfies the condition above, the set of $W$-orbits in $\CP_{\Lambda}(G)$ under the cross action is parameterized by the set $\{0,1,\cdots,\lfloor \frac{l'}{2} \rfloor\}$. For each $s \in \{0,1,\cdots,\lfloor \frac{l'}{2} \rfloor\}$, the corresponding representative element is given by $\gamma_s =G \cdot \upgamma_s = G \cdot (H, \xi, \Gamma)$, where $H = H_{\frac{n-l'}{2} + s}$, and $\xi \in W({^{a}\fh^*},\fh_s^*)$ is a morphism such that $\xi(\nu) + \delta(\xi)$ is the differential of a group character on $H$.
+
+
+$\Gamma$ is uniquely determined by $\xi$. And in this case, the integral Weyl group is given by $W(\Lambda) =  \mathrm{S}_{l_1} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r} \times \mathrm{S}_{l_r} \times \mathrm{S}_{l} \times \mathrm{S}_{l'} \subseteq W$.
+
+Fix a representative parameter $\upgamma_s$, we can identify $W$ with $W_{\fh}$ through the isomorphism $\xi$, then the centralizer $W_{{\gamma_{s}}}$ of ${\gamma_{s}} \in \CP_{\Lambda}(G)$ in $W$ is identified with $W_{H} \cap \xi \circ W(\Lambda) \circ \xi^{-1} = \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r} \times W_{\frac{l}{2}} \times (\mathrm{W}_{s} \times \mathrm{S}_{p'} \times \mathrm{S}_{q'}) \subseteq W_{H}$, where $p' = p - (s + \frac{l'}{2} + l_1 + \cdots + l_r) $, $q' = q - (s + \frac{l'}{2} + l_1 + \cdots + l_r)$.
+
 
 Now, using Theorem \ref{Coh}, we can give the coherent continuation representation as
 \begin{align*}
-    \mathrm{Coh}_{\Lambda}(\CK(G))  = &\bigoplus_{0 \leq s \leq \lfloor\frac{l}{2}\rfloor} \Ind _{(\mathrm{W}_{s} \times \mathrm{S}_{p'} \times \mathrm{S}_{q'}) \times W_{\frac{l'}{2}} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r}}^{\mathrm{S}_{l} \times \mathrm{S}_{l'} \times \mathrm{S}_{l_1} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r} \times \mathrm{S}_{l_r}} (1 \boxtimes \sgn \boxtimes \sgn) \boxtimes 1 \boxtimes \cdots \boxtimes 1 \\
-    = &(\bigoplus_{0 \leq s \leq \lfloor\frac{l}{2}\rfloor}\Ind _{\mathrm{W}_{s} \times \mathrm{S}_{p'} \times \mathrm{S}_{q'}}^{\mathrm{S}_{l}}1 \boxtimes \sgn \boxtimes \sgn ) \otimes \Ind_{W_{\frac{l'}{2}}}^{\mathrm{S}_{l'}} 1 \otimes \Ind_{\mathrm{S}_{l_1}}^{\mathrm{S}_{l_1}\times \mathrm{S}_{l_1}}1 \otimes \cdots \\
-    & \otimes \Ind_{\mathrm{S}_{l_r}}^{\mathrm{S}_{l_r}\times \mathrm{S}_{l_r}}1.
+    \mathrm{Coh}_{\Lambda}(\CK(G))  = &\bigoplus_{0 \leq s \leq \lfloor\frac{l}{2}\rfloor} \Ind _{\mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r} \times W_{\frac{l}{2}} \times (\mathrm{W}_{s} \times \mathrm{S}_{p'} \times \mathrm{S}_{q'})}^{(\mathrm{S}_{l_1} \times \mathrm{S}_{l_1}) \times \cdots \times (\mathrm{S}_{l_r} \times \mathrm{S}_{l_r}) \times \mathrm{S}_{l} \times \mathrm{S}_{l'}} 1 \boxtimes \cdots \boxtimes 1 \boxtimes (1 \boxtimes \sgn \boxtimes \sgn) \\
+    = &\Ind_{\mathrm{S}_{l_1}}^{\mathrm{S}_{l_1}\times \mathrm{S}_{l_1}}1 \boxtimes \cdots \boxtimes \Ind_{\mathrm{S}_{l_r}}^{\mathrm{S}_{l_r}\times \mathrm{S}_{l_r}}1 \boxtimes \Ind_{W_{\frac{l'}{2}}}^{\mathrm{S}_{l'}} 1\\
+    & \boxtimes (\bigoplus_{0 \leq s \leq \lfloor\frac{l}{2}\rfloor}\Ind _{\mathrm{W}_{s} \times \mathrm{S}_{p'} \times \mathrm{S}_{q'}}^{\mathrm{S}_{l}}1 \boxtimes \sgn \boxtimes \sgn ).
 \end{align*}
-Where $p' = p - (s + \frac{l'}{2} + l_1 + \cdots + l_r) $, $q' = q - (s + \frac{l'}{2} + l_1 + \cdots + l_r)$.
 
-For each irreducible representation $\sigma = \phi(\iota) \boxtimes \phi(\iota') \boxtimes \phi(\iota_1) \boxtimes \phi(\iota_1') \boxtimes \cdots \boxtimes \phi(\iota_r) \boxtimes \phi(\iota_r')$ of $W(\Lambda) = \mathrm{S}_{l} \times \mathrm{S}_{l'} \times \mathrm{S}_{l_1} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r} \times \mathrm{S}_{l_r}$, we have
+For each irreducible representation $\sigma =  \phi(\iota_1) \boxtimes \phi(\iota_1') \boxtimes \cdots \boxtimes \phi(\iota_r) \boxtimes \phi(\iota_r')\boxtimes \phi(\iota) \boxtimes \phi(\iota')$ of $W(\Lambda) = \mathrm{S}_{l_1} \times \mathrm{S}_{l_1} \times \cdots \times \mathrm{S}_{l_r} \times \mathrm{S}_{l_r} \times \mathrm{S}_{l} \times \mathrm{S}_{l'}$, we have
 \begin{align*}
     [\sigma: &\mathrm{Coh}_{\Lambda}(\CK(G))]\\
     &= [\phi(\iota) \boxtimes \phi(\iota') \boxtimes \phi(\iota_1) \boxtimes \phi(\iota_1') \boxtimes \cdots \boxtimes \phi(\iota_r) \boxtimes \phi(\iota_r')\\
@@ -1425,6 +1444,7 @@ And use Frobenuis reciprocity
 \begin{align*}
     [1_{W_{\nu}}: \sigma] = \sharp(\mathrm{A}_{[d_1,\cdots,d_k]}(\iota))\cdot \sharp(\mathrm{A}_{[d_1',\cdots,d_{k'}']}(\iota'))\cdots \sharp(\mathrm{A}_{[d_{r,1}',\cdots,d_{r,k_r'}']}(\iota_r')).
 \end{align*}
+
 Combining the above two identities, we get the second part of Theorem \ref{U}.
 
 
