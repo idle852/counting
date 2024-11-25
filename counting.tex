@@ -263,7 +263,7 @@ In this paper, we apply their counting formula to provide a precise description 
 
 \subsection{Structure of this article}
 
-In Section 2, we first introduce some basic notations from Lie theory, then present several types of painted Young diagrams, and use them to state the main results on the counting of irreducible representations. In Section 3, we provide preliminaries for the counting formula, including coherent families, coherent continuation representations, and $j$-induction for Weyl groups. In Section 4, we apply the theories introduced in previous sections to the specific cases of general linear groups and unitary groups, and get counting results for irreducible Casselman-Wallach representations discussed in Section 2, along with illustrative examples. 
+In Section 2, we first introduce some basic notations from Lie theory, then present several types of painted Young diagrams, and use them to state the main results on the counting of irreducible representations. In Section 3, we provide preliminaries for the counting formula, including coherent families, coherent continuation representations, and $j$-induction for Weyl groups. In Section 4, we apply the theories introduced in previous sections to the specific cases of general linear groups and unitary groups, and get counting results for irreducible Casselman-Wallach representations discussed in Section 2。
 
    
 
@@ -309,7 +309,7 @@ For every $\nu \in {^{a}\fh^*}$, let $\Rep_{\nu}(G)$ and $\Rep_{\nu,S}(G)$ denot
 
 By the work of Borho and Brylinski \cite{BB}, and Joseph \cite{Jos}, the associated variety of any primitive ideal (annihilator of an irreducible $\fg$-module) is the closure of a single nilpotent orbit, since our group $G$ is in Harish-Chandra's class, through a simple verification we can see that the associated variety of any irreducible Casselman-Wallach representation is the closure of a single nilpotent orbit.
 
-Let $\nu \in {^{a}\fh^*}$ and let $\CO$ be a nilpotent orbit in $\fg^*$,   denote by $\Irr_{\nu}(G;\CO)$ the subset of $\Irr(G)$ consisting of irreducible representations with infinitesimal character $\nu \in {^{a}\fh^*}$ and complex associated variety $\bar{\CO}$, then we can see that
+Let $\nu \in {^{a}\fh^*}$ and let $\CO$ be a nilpotent orbit in $\fg^*$,   denote by $\Irr_{\nu}(G;\CO)$ the subset of $\Irr(G)$ consisting of irreducible representations with infinitesimal character $\nu \in {^{a}\fh^*}$ and complex associated variety $\bar{\CO}$. Then, we observe that:
 \begin{equation}\label{(1.3)}
     \Irr_{\nu,S}(G) = \bigsqcup_{\CO \subseteq S} \Irr_{\nu}(G;\CO).
 \end{equation}
@@ -334,7 +334,7 @@ This article aims to describe the number of elements in $\Irr_{\nu}(G;\CO)$ when
 \subsection{The main results}
 For a Young diagram $\iota$, write
 $$\br_1(\iota) \geq \br_2(\iota) \geq \br_3(\iota) \geq \cdots$$
-for its row lengths, and similarly, write
+for its row lengths, and similarly, and
 $$\bc_1(\iota) \geq \bc_2(\iota) \geq \bc_3(\iota) \geq \cdots$$
 for its column lengths. Let $|\iota|:= \sum_{i=1}^{\infty}\br_i(\iota)$ denote the total size of $\iota$, and let $\mathrm{YD}_{n}$ denote the set of all Young diagrams with total size $n$. We identify this set with the set of partitions of $n$ by associating each Young diagram with the partition given by row lengths. By abuse of notation, we also use Young diagrams to represent partitions.
 
@@ -360,7 +360,7 @@ We introduce five symbols $\bullet, s, r, c \ \textrm{and} \ d$, and make the fo
 \end{defn}
 
 
-We also have a notion of assigned Young diagrams:
+We also introduce the notion of assigned Young diagrams:
 
 
 \begin{defn}
@@ -382,7 +382,8 @@ We also have a notion of assigned Young diagrams:
       \item the symbols of $\CP$ are in
             $$\left\{
                \begin{array}{lr}
-                  \{\bullet,c,d\}, & \textrm{if $\star = A^{\BR}$},\\                   \{\bullet\},     & \textrm{if $\star = A^{\BH}$},
+                  \{\bullet,c,d\}, & \textrm{if $\star = A^{\BR}$};\\                   
+                  \{\bullet\},     & \textrm{if $\star = A^{\BH}$},
                \end{array}
                \right.
             $$
@@ -457,7 +458,7 @@ In the statement of the following theorems, we will use the canonical identifica
         \nu = (\blam_1, \cdots, \blam_r) \in \BC^n,
         \]
         where each $\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}},\cdots,\underbrace{\lambda_{i,k_i},\cdots,\lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i}$ is integral.\\ 
-        Here $[d_{i,1}, \cdots, d_{i,k_i}]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \backslash \{0\}$ holds for different $p,q$. Moreover, we have $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i,j$. Then,
+        $[d_{i,1}, \cdots, d_{i,k_i}]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \backslash \{0\}$ holds for different $p,q$. Moreover, we have $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i,j$. Then,
         \begin{equation}
             \sharp(\Irr_{\nu}(G;\CO)) = \left\{
             \begin{aligned}
@@ -671,12 +672,16 @@ In the statement of the following theorems, we will use the canonical identifica
 
 
 
-Recall that a partial order is defined on the set of nilpotent orbits defined by $\CO \leq \CO'$ if $\bar{\CO} \subseteq \bar{\CO'}$. It can also be described in terms of corresponding partitions as follows: $[d_1, d_2, \cdots , d_k] \leq [d_1', d_2', \cdots , d_{k'}']$ if the following condition
+Recall that a partial order is defined on the set of nilpotent orbits by $\CO \leq \CO'$ if $\bar{\CO} \subseteq \bar{\CO'}$. It can also be described in terms of corresponding partitions as follows: 
+\[
+[d_1, d_2, \cdots , d_k] \leq [d_1', d_2', \cdots , d_{k'}']
+\]
+if the condition
 \[
     \sum_{1 \leq j \leq k} d_{j} \leq \sum_{1 \leq j \leq k} d_{j}' \  \ \textrm{for $1 \leq k \leq \mathrm{max}\{k,k'\}$},
 \]
 is satisfied. Here, zeros are added to the shorter partition if necessary.
-This partial order naturally induces a corresponding partial order on the set of associated varieties of irreducible representations. We now describe the minimal associated variety that can arise for irreducible representations with a given infinitesimal character for real general linear groups.
+This partial order naturally induces a corresponding partial order on the set of associated varieties of irreducible representations. We now describe the minimal associated variety that can arise for irreducible representations with a given infinitesimal character in the context of real general linear groups.
 
 \begin{thm}\label{minimal}
     Let $G = \GL_n(\BR)$, and $\nu \in {^{a}\fh}^* = \BC^n$.
