@@ -246,7 +246,7 @@ Hangzhou, China}\email{12235008@zju.edu.cn}
 \maketitle
 
 \begin{abstract}
-    Let $G$ be a general linear group or a unitary group. In this paper, we provide a precise characterization of the number of irreducible Casselman-Wallach representations of $G$ with a given infinitesimal character and associated variety, described in terms of painted Young diagrams.
+    Let $G$ be a general linear group or a unitary group. In this paper, we provide a precise discription of the number of irreducible Casselman-Wallach representations of $G$ with a given infinitesimal character and associated variety, expressed in terms of painted Young diagrams.
 \end{abstract}
 
 \tableofcontents
@@ -399,7 +399,7 @@ We also have a notion of assigned Young diagrams:
 
    Now suppose that $\iota$ is a Young diagram and $\CP$ is a painting on $\iota$ that has type $A$. Define the signature of $\CP$ to be the pair 
    \begin{equation}
-    (p_{\CP}, q_{\CP}) := (\frac{\sharp(\CP^{-1}(\bullet))}{2} + \sharp(\CP^{-1}(r)), \frac{\sharp(\CP^{-1}(\bullet))}{2}+ \sharp(\CP^{-1}(s))),
+    (p_{\CP}, q_{\CP}) := (\frac{\sharp(\CP^{-1}(\bullet))}{2} + \sharp(\CP^{-1}(s)), \frac{\sharp(\CP^{-1}(\bullet))}{2}+ \sharp(\CP^{-1}(r))),
    \end{equation}
    for fixed integer $p,q$, we define
    \begin{equation}
@@ -469,6 +469,68 @@ In the statement of the following theorems, we will use the canonical identifica
     \end{enumerate}
 \end{thm}
 
+\begin{examp}
+    \begin{enumerate}
+    \item  Suppose $G = \GL_{4}(\BH)$, $\nu = (1,1,1,2,2,2,3,3) \in \BC^{8}$.
+           Then, the associated variety of irreducible Casselman-Wallach representations with this infinitesimal character can only be the closure of the nilpotent orbit $\CO$, whose Young diagram is
+           \[
+                \begin{ytableau}
+                ~ & & & \\
+                 & & & 
+                \end{ytableau}.
+           \]
+            And there is a unique assigment of type $[3,3,2]$ on this diagram, given by
+            \[
+                \begin{ytableau}
+                    1 & 1 & 1 & 2\\
+                    2 & 2 & 3 & 3
+                \end{ytableau}.
+            \]
+            This implies that $\sharp(\Irr_{\nu}(G;\CO)) = 1$.
+
+    \item   Suppose $G = \GL_{5}(\BH)$, $\nu = (1,1,1,1,2,2,2,3,3,4) \in \BC^{10}$.       
+            There are two nilpotent orbits $\CO_1$ and $\CO_2$, whose closures can appear as the associated variety of an irreducible Casselman-Wallach representation with this infinitesimal character. The corresponding Young diagrams are, respectively:
+            \[
+                \begin{ytableau}
+                    ~& & & & \\
+                    & & & &
+                \end{ytableau}
+                ~,~
+                \begin{ytableau}
+                    ~&~&~&~\\
+                    ~&~&~&~\\
+                    ~\\
+                    ~
+                \end{ytableau}.
+            \]
+            
+            On the first diagram, there are two assigment of type $[4,3,2,1]$, given by
+            \[
+                \begin{ytableau}
+                    1&1&1&1&2\\
+                    2&2&3&3&4
+                \end{ytableau}
+                ~,~
+                \begin{ytableau}
+                    1&1&1&1&3\\
+                    2&2&2&3&4
+                \end{ytableau}.
+            \]
+            
+            On the second diagram, there is only one assigment of type $[4,3,2,1]$, given by
+            \[
+                \begin{ytableau}
+                    1&1&1&1\\
+                    2&2&2&3\\
+                    3\\
+                    4
+                \end{ytableau}.
+            \]
+            This implies that $\sharp(\Irr_{\nu}(G;\CO_1)) = 2$ and $\sharp(\Irr_{\nu}(G;\CO_2)) = 1$.
+    \end{enumerate}
+\end{examp}
+
+
 \begin{thm}\label{C}
     Let $G = \GL_{n}(\BC)$, and $\CO = \CO_{\iota} \times \CO_{\iota'} \in \bar{\Nil}(\fg^*)$.
     \begin{enumerate}
@@ -531,9 +593,9 @@ In the statement of the following theorems, we will use the canonical identifica
         \end{equation}
 
         \item For a general $\nu \in {^{a}\fh^*}$, there exist irreducible Casselman-Wallach representations with this infinitesimal character only if we can permute the components of $\nu$ such that $\nu$ takes the form
-        \begin{equation}
+        \[
             \nu = (\blam_1, \blam_1', \cdots, \blam_r, \blam_r', \blam, \blam') \in {^{a}\fh}^* = \BC^n,
-        \end{equation}
+        \]
         where 
         \begin{align} 
             &\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i},\\
@@ -541,14 +603,14 @@ In the statement of the following theorems, we will use the canonical identifica
             &\blam = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \left(\frac{n}{2} + \BZ\right)^{e},\\
             &\blam' = (\underbrace{\lambda_1', \cdots, \lambda_1'}_{d_1'}, \cdots, \underbrace{\lambda_{k'}, \cdots, \lambda_{k'}}_{d_{k'}'}) \in \left(\frac{n-1}{2} + \BZ\right)^{e'},
         \end{align}
-        where the sequences $[d_{i,1}, \cdots, d_{i,k_i}]$ and $[d_{i,1}', \cdots, d_{i,k_i'}']$ are partitions of $e_i$. With the following conditions: 
-        \begin{align*}
-            &\lambda_{i,p} - \lambda_{i,q} \in \BZ, \\
-            &\lambda_{i,p}' - \lambda_{i,q}' \in \BZ, \\
-            &\lambda_{i,p} + \lambda_{i,q}' \in \BZ, \\
-            &\lambda_{i,p} \notin \frac{1}{2}\BZ, \\
-            &e' \text{ is even.}
-        \end{align*}
+        and $[d_{i,1}, \cdots, d_{i,k_i}]$, $[d_{i,1}', \cdots, d_{i,k_i'}']$ are partitions of $e_i$, with the following conditions: 
+        \begin{itemize}
+            \item $\lambda_{i,p} - \lambda_{i,q} \in \BZ$;
+            \item $\lambda_{i,p}' - \lambda_{i,q}' \in \BZ$;
+            \item $\lambda_{i,p} + \lambda_{i,q}' \in \BZ$;
+            \item $\lambda_{i,p} \notin \frac{1}{2}\BZ$;
+            \item $e' \text{ is even.}$
+        \end{itemize}
         In this case, 
         \begin{align*}
             \sharp(\Irr_{\nu}(G;\CO)) = & \sum_{\substack{(\iota, \iota', \iota_1,\iota_1' \cdots,\iota_r, \iota_r') \in \mathrm{YD}_{e} \times \mathrm{YD}_{e'} \times \mathrm{YD}_{e_1} \times \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \times \mathrm{YD}_{e_r} \\ \iota \mathop{\sqcup}\limits^r \iota' \mathop{\sqcup}\limits^r \iota_1 \mathop{\sqcup}\limits^r \iota_1 \mathop{\sqcup}\limits^r \cdots  \mathop{\sqcup}\limits^r \iota_r \mathop{\sqcup}\limits^r \iota_r = \iota(\CO)}} \sharp(\Irr_{\blam}(\U(p',q');\CO(\iota)))\\
@@ -558,9 +620,60 @@ In the statement of the following theorems, we will use the canonical identifica
     \end{enumerate}
 \end{thm}
 
+\begin{examp}
+    Suppose $G = \U(2,1)$, and $\nu = (\frac{1}{2},\frac{1}{2},\frac{3}{2}) \in \BC^3$. Let $\CO_1$, $\CO_2$, and $\CO_3$ be the nilpotent orbit of $\fg$, whose Young diagrams are, respectively:
+            \[
+                \begin{ytableau}
+                    ~&~&~
+                \end{ytableau}
+            ~,~
+                \begin{ytableau}
+                    ~&~\\
+                    ~
+                \end{ytableau}
+            ~,~
+                \begin{ytableau}
+                    ~\\
+                    ~\\
+                    ~
+                \end{ytableau}
+            \]
+            the number of assigments of type $[2,1]$ on $\CO_1$, $\CO_2$, and $\CO_3$ are, respectively $1$, $1$, and $0$.
+
+            On the first diagram, there is only one painting, given by
+            \[
+                \begin{ytableau}
+                    \bullet & \bullet & s
+                \end{ytableau}.
+            \]
+
+            On the second diagram, there are two paintings, given by
+            \[
+            \begin{ytableau}
+                \bullet & \bullet\\
+                s    
+            \end{ytableau}
+            ~,~
+            \begin{ytableau}
+                s & r\\
+                s
+            \end{ytableau}.
+            \]
+            
+            So, we can conclude that 
+            \begin{itemize}
+                \item $\sharp(\Irr_{\nu}(G;\CO_{1})) = 1$;
+                \item $\sharp(\Irr_{\nu}(G;\CO_{2})) = 2$;
+                \item $\sharp(\Irr_{\nu}(G;\CO_{3})) = 0$.
+            \end{itemize}
+\end{examp}
+
+
+
+
 Recall that a partial order is defined on the set of nilpotent orbits defined by $\CO \leq \CO'$ if $\bar{\CO} \subseteq \bar{\CO'}$. It can also be described in terms of corresponding partitions as follows: $[d_1, d_2, \cdots , d_k] \leq [d_1', d_2', \cdots , d_{k'}']$ if the following condition
 \[
-    \sum_{1 \leq j \leq k} d_{j} \leq \sum_{1 \leq j \leq k} d_{j}' \ \textrm{for $1 \leq k \leq \mathrm{max}\{k,k'\}$},
+    \sum_{1 \leq j \leq k} d_{j} \leq \sum_{1 \leq j \leq k} d_{j}' \  \ \textrm{for $1 \leq k \leq \mathrm{max}\{k,k'\}$},
 \]
 is satisfied. Here, zeros are added to the shorter partition if necessary.
 This partial order naturally induces a corresponding partial order on the set of associated varieties of irreducible representations. We now describe the minimal associated variety that can arise for irreducible representations with a given infinitesimal character for real general linear groups.
@@ -1446,7 +1559,6 @@ And use Frobenuis reciprocity
 \end{align*}
 
 Combining the above two identities, we get the second part of Theorem \ref{U}.
-
 
 
 
