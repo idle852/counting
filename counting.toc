@@ -8,7 +8,7 @@
 \contentsline {subsection}{\tocsubsection {}{3.1}{Generalities on coherent families of Casselman-Wallach representations}}{9}{subsection.3.1}%
 \contentsline {subsection}{\tocsubsection {}{3.2}{Representation of Weyl groups}}{12}{subsection.3.2}%
 \contentsline {subsection}{\tocsubsection {}{3.3}{Counting formula}}{15}{subsection.3.3}%
-\contentsline {section}{\tocsection {}{4}{Counting results for general linear groups and unitay groups}}{16}{section.4}%
+\contentsline {section}{\tocsection {}{4}{Counting results for general linear groups and unitary groups}}{16}{section.4}%
 \contentsline {subsection}{\tocsubsection {}{4.1}{Standard representations of classical groups}}{16}{subsection.4.1}%
 \contentsline {subsection}{\tocsubsection {}{4.2}{Real general linear groups}}{17}{subsection.4.2}%
 \contentsline {subsubsection}{\tocsubsubsection {}{4.2.1}{Integral case}}{17}{subsubsection.4.2.1}%

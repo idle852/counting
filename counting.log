@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.15)  26 NOV 2024 18:59
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.15)  27 NOV 2024 13:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -757,13 +757,18 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 430.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 430.
- [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] (./counting.aux)
+ [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24]
+Overfull \hbox (11.10237pt too wide) detected at line 1570
+[][][]
+ []
+
+[25] [26] (./counting.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `counting.out' has not changed.
-(rerunfilecheck)             Checksum: 80840B1BC180C59C3AD865173AF45797;3759.
+(rerunfilecheck)             Checksum: 87C2B15D6EB0016A4C84DCD0A3090279;3764.
  ) 
 Here is how much of TeX's memory you used:
  25532 strings out of 474773
@@ -772,6 +777,6 @@ Here is how much of TeX's memory you used:
  47004 multiletter control sequences out of 15000+600000
  577827 words of font info for 137 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
- 84i,34n,97p,1211b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,34n,97p,1205b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on counting.pdf (26 pages).
