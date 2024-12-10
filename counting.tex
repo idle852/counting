@@ -246,7 +246,7 @@ Hangzhou, China}\email{wang.qt@zju.edu.cn}
 \maketitle
 
 \begin{abstract}
-    Let $G$ be a general linear group over or a unitary group. In this paper, we provide a precise description of the number of irreducible Casselman-Wallach representations of $G$ with a given infinitesimal character and associated variety, expressed in terms of painted Young diagrams.
+    Let $G$ be a general linear group over $\BR$, $\BC$, or $\BH$, or a real unitary group. In this paper, we precisely describe the number of irreducible Casselman-Wallach representations of $G$ with a given infinitesimal character and a given associated variety, expressed in terms of painted and assigned Young diagrams.
 \end{abstract}
 
 \tableofcontents
@@ -257,44 +257,27 @@ Hangzhou, China}\email{wang.qt@zju.edu.cn}
 
 \subsection{Background and goals}
 
-In their paper \cite{BMSZ}, the authors established a formula for counting the number of irreducible representations of a real reductive group $G$ with a given infinitesimal character and associated variety. Using this formula, they precisely determined the number of special unipotent representations of $G$ attached to $\check{\CO}$ in the sense of Arthur and Barbasch-Vogan, where $\check{\CO}$ is a nilpotent orbit in the Langlands dual group of $G$ (or the metaplectic dual of $G$ when $G$ is the real metaplectic group). Furthermore, they utilized these counting results to construct all special unipotent representations and demonstrated that all such representations are unitarizable.
+In their paper \cite{BMSZ}, D. Barbasch, J.-J. Ma, B. Sun, and C.-B. Zhu established a formula for counting the number of irreducible representations of a real reductive group $G$ with a given infinitesimal character and associated variety. Using this formula, when $G$ is a classical Lie group, they precisely determined the number of special unipotent representations of $G$ attached to $\check{\CO}$ in the sense of Arthur and Barbasch-Vogan, where $\check{\CO}$ is a nilpotent orbit in the Langlands dual group of $G$ (or the metaplectic dual of $G$ when $G$ is the real metaplectic group). Furthermore, they utilized these counting results to construct all special unipotent representations and demonstrated that all such representations are unitarizable.
 
-In this paper, we apply their counting formula to provide a precise description of the number of general irreducible representations with a given infinitesimal character and associated variety, in the case where $G$ is a general linear group or a unitary group.
-
-\subsection{Structure of this article}
-
-In Section 2, we first introduce some basic notations from Lie theory, then present several types of painted Young diagrams, and use them to state the main results on counting irreducible representations. Section 3 provides preliminaries for the counting formula, including coherent families, coherent continuation representations, and $j$-induction for Weyl groups. In Section 4, we apply the theories introduced in previous sections to the specific cases of general linear groups and unitary groups and get counting results for irreducible Casselman-Wallach representations discussed in Section 2。
-
-   
+In this paper, we apply their counting formula to provide a precise description of the number of irreducible representations with a given infinitesimal character and associated variety, in the case where $G$ is a general linear group or a unitary group.
 
 
 
-
-
-
-
-
-
-
-
-
-
-\section{The main results}
 
 
 \subsection{Lie group (algebra) notations}
-Let $G$ be a real reductive Lie group in Harish-Chandra's class, meaning that $G$ satisfies the following properties:
-\begin{enumerate}
+Let $G$ be a real reductive Lie group in Harish-Chandra's class, which is defined by the following properties:
+\begin{itemize}
    \item the corresponding Lie algebra $\Lie (G)$ is reductive;
    \item $G$ has finitely many connected components;
    \item the connected subgroup $G_{ss}$ of $G$ corresponding to $\Lie(G)_{ss} = [\Lie(G),\Lie(G)]$ has a finite center;
-   \item for any $g \in G$, $\Ad(g) \in \Inn(\Lie(G) \otimes_{\BR} \BC)$.
-\end{enumerate}
+   \item for any $g \in G$, $\Ad(g) \in \Inn(\Lie(G) \otimes_{\BR} \BC)$, where $\Inn$ denotes the group of inner automorphisms.
+\end{itemize}
 
-Denote the complexified Lie algebra of $\Lie(G)$ by $\fg$. Let $\Rep(G)$ be the category of Casselman-Wallach representations of $G$, whose Grothendieck group (with coefficients in $\BC$) is denoted by $\CK(G)$. Let $\Irr (G)$ be the set of equivalence classes of irreducible Casselman-Wallach representations of $G$, which form a basis of $\CK(G)$.
+Denote the complexification of $\Lie(G)$ by $\fg$. Let $\Rep(G)$ denote the category of Casselman-Wallach representations of $G$, whose Grothendieck group (with coefficients in $\BC$) is denoted by $\CK(G)$. Let $\Irr (G)$ be the set of equivalence classes of irreducible Casselman-Wallach representations of $G$, which form a basis of $\CK(G)$.
 
 The universal enveloping algebra of $\fg$ is denoted by $\CU(\fg)$, and its center is denoted by $\CZ(\fg)$. Let $^{a}\fh$ denote the abstract Cartan subalgebra of $\fg$ (recall that for every Borel subalgebra $\fb$ of $\fg$, there is an identification $^{a}\fh = \fb/[\fb,\fb]$). Write 
-$$\Delta^+ \subseteq \Delta \subseteq {^{a}\fh^*} \ \textrm{and} \ \check{\Delta}^+ \subseteq \check{\Delta} \subseteq {^{a}\fh}$$
+$$\Delta^+ \subseteq \Delta \subseteq {^{a}\fh^*} \ \ \textrm{and} \ \ \check{\Delta}^+ \subseteq \check{\Delta} \subseteq {^{a}\fh}$$
 for the positive root system, the root system, the positive coroot system, and coroot system, respectively, for the reductive Lie algebra $\fg$. Let $Q_{\fg}$ and $Q^{\fg}$ denote the root lattice and the weight group of $\fg$, respectively. Let $W \subseteq \GL(^{a}\fh)$ denote the abstract Weyl group. In general, we denote the linear dual of a vector space by a superscript $*$. By the Harish-Chandra isomorphism, there is a 1-1 correspondence between $W$-orbits of $\nu \in {^{a}\fh^*}$ and algebraic characters $\chi_{\nu}:\CZ(\fg) \to \BC$. We say that an ideal of $\CU(\fg)$ has infinitesimal character $\nu$ if it contains the kernel of $\chi_{\nu}$.
 
 Let $\Nil(\fg)$ (resp. $\Nil(\fg^*)$) denote the set of nilpotent elements in $[\fg,\fg]$ (resp. $[\fg,\fg]^*$), and define
@@ -303,18 +286,24 @@ Let $\Nil(\fg)$ (resp. $\Nil(\fg^*)$) denote the set of nilpotent elements in $[
 \end{equation}
 the set of $\Inn(\fg)$-orbits in $\Nil(\fg)$ and $\Nil(\fg^*)$. The Killing form on $[\fg,\fg]$ yields an identification $\bar{\Nil}(\fg) = \bar{\Nil}(\fg^*)$.
 
-For every two-sided ideal $I$ of $\CU(\fg)$, we define the associated variety of $I$ as the subvariety of $\fg^*$ annihilated by the ideal $\mathrm{gr}(I) \subseteq \RS(\fg)$.  Furthermore, if $V \in \Irr(G)$ is an irreducible Casselman-Wallach representation of $G$, we define the complex associated variety of $V$ as the associated variety of the ideal $\Ann(V)$. It is straightforward to verify that these complex associated varieties of representations are stable under the action of $\Inn(\mathfrak{g})$. Let $S$ be an $\Inn(\fg)$-stable Zariski closed subset of $\Nil(\fg^*)$, denote by $\Rep_S(G)$ the category of Casselman-Wallach representations of $G$ whose complex associated variety is contained in $S$.
+Denote by $(\CU(\fg)_{k})_{k = 0,1,2,\cdots}$ the natural increasing filtration of $\CU(\fg)$, where $\CU(\fg)_{k}$ is the subspace of $\CU(\fg)$ generated by element $X_{1} X_{2} \cdots X_{m}$ ($0 \leq m \leq k$) with $X_{j} \in \fg$ ($1 \leq j \leq m$). By the Poincar\'e-Birkhoff-Witt theorem we can identify the associated ring
+\[
+    \mathrm{gr}(\CU(\fg)) = \bigoplus_{i \geq 0}\CU(\fg)_{i+1} / \CU(\fg)_{i}
+\]   
+with the symmetric algebra $\mathrm{S}(\fg)$ in the canonical way.
 
-For every $\nu \in {^{a}\fh^*}$, let $\Rep_{\nu}(G)$ and $\Rep_{\nu,S}(G)$ denote the full subcategories of $\Rep(G)$ and $\Rep_S(G)$, respectively, consisting of the Casselman-Wallach representations with generalized infinitesimal character $\nu$. Denote by $\CK(G)$, $\CK_{\nu}(G)$, and $\CK_{\nu,S}(G)$ the Grothendieck groups of $\Rep(G)$, $\Rep_{\nu}(G)$, and $\Rep_{\nu,S}(G)$, respectively. The set of irreducible objects in $\Rep_{\nu}(G)$ and $\Rep_{\nu,S}(G)$ will be denoted by $\Irr_{\nu}(G)$ and $\Irr_{\nu,S}(G)$, respectively. 
+For every two-sided ideal $I$ of $\CU(\fg)$, we define the associated variety of $I$ as the subvariety of $\fg^*$ annihilated by the ideal $\mathrm{gr}(I) := \bigoplus_{i \geq 0} (I \cap \CU(\fg)_{i+1})/(I \cap \CU(\fg)_i) \subseteq \RS(\fg)$.  Furthermore, if $V \in \Irr(G)$ is an irreducible Casselman-Wallach representation of $G$, we define the complex associated variety of $V$ as the associated variety of the ideal $\Ann(V)$. It is straightforward to verify that these complex associated varieties of representations are stable under the action of $\Inn(\mathfrak{g})$. Suppose $S$ is a $\Inn(\fg)$-stable Zariski closed subset of $\Nil(\fg^*)$, denote by $\Rep_S(G)$ the category of Casselman-Wallach representations of $G$ whose complex associated variety is contained in $S$.
 
-By the work of Borho and Brylinski \cite{BB}, and Joseph \cite{Jos}, the associated variety of any primitive ideal (annihilator of an irreducible $\fg$-module) is the closure of a single nilpotent orbit, since our group $G$ is in Harish-Chandra's class, through a simple verification we can see that the associated variety of any irreducible Casselman-Wallach representation is the closure of a single nilpotent orbit.
+For every $\nu \in {^{a}\fh^*}$, let $\Rep_{\nu}(G)$ and $\Rep_{\nu,S}(G)$ denote the full subcategories of $\Rep(G)$ and $\Rep_S(G)$, respectively, whose objects consisting of Casselman-Wallach representations with generalized infinitesimal character $\nu$. Denote by $\CK(G)$, $\CK_{\nu}(G)$, and $\CK_{\nu,S}(G)$ the Grothendieck groups of $\Rep(G)$, $\Rep_{\nu}(G)$, and $\Rep_{\nu,S}(G)$, respectively. The set of irreducible objects in $\Rep_{\nu}(G)$ and $\Rep_{\nu,S}(G)$ will be denoted by $\Irr_{\nu}(G)$ and $\Irr_{\nu,S}(G)$, respectively. 
 
-Let $\nu \in {^{a}\fh^*}$ and let $\CO$ be a nilpotent orbit in $\fg^*$,   denote by $\Irr_{\nu}(G;\CO)$ the subset of $\Irr(G)$ consisting of irreducible representations with infinitesimal character $\nu \in {^{a}\fh^*}$ and complex associated variety $\bar{\CO}$. Then, we observe that:
+By the work of Borho and Brylinski \cite{BB}, and Joseph \cite{Jos}, the associated variety of any primitive ideal (annihilator of an irreducible $\fg$-module) is the Zariski closure of a single nilpotent orbit. This implies the associated variety of any irreducible Casselman-Wallach representation is the Zariski closure of a single nilpotent orbit.
+
+Suppose $\nu \in {^{a}\fh^*}$ and $\CO$ is a nilpotent orbit in $\fg^*$,   denote by $\Irr_{\nu}(G;\CO)$ the subset of $\Irr(G)$ consisting of irreducible representations with infinitesimal character $\nu \in {^{a}\fh^*}$ and complex associated variety $\bar{\CO}$ (the Zariski closure of $\CO$). Then, we observe that for any $\Inn(\fg)$-stable Zariski closed subset $S$ of $\Nil(\fg^*)$
 \begin{equation}\label{(1.3)}
-    \Irr_{\nu,S}(G) = \bigsqcup_{\CO \subseteq S} \Irr_{\nu}(G;\CO).
+    \Irr_{\nu,S}(G) = \bigsqcup_{\substack{\CO \in \bar{\Nil}(\fg) \\ \CO \subseteq S}} \Irr_{\nu}(G;\CO).
 \end{equation}
 
-This article aims to describe the number of elements in $\Irr_{\nu}(G;\CO)$ when $G$ is a general linear group or unitary group. There are four cases:
+This article aims to describe the number of elements in $\Irr_{\nu}(G;\CO)$ when $G$ is a general linear group over $\BR$, $\BH$, or $\BC$, or a real unitary group. We attach a label $\star$ to each class of these groups, as in the following table ($n,p,q \in \BN $).
 
 \begin{center}
    \begin{tabular}{ccc}
@@ -322,9 +311,9 @@ This article aims to describe the number of elements in $\Irr_{\nu}(G;\CO)$ when
       Lable $\star $ & Classical Lie Group G & Complex Lie Group $G_{\BC}$    \\
       \midrule
       $A^{\BR}$      & $\GL_n(\BR)$          & $\GL_n(\BC)$                   \\
-      $A^{\BH}$      & $\GL_{\frac{n}{2}}(\BH)$      & $\GL_n(\BC)$                   \\
+      $A^{\BH}$      & $\GL_{\frac{n}{2}}(\BH)$ \  ($n$ is even)      & $\GL_n(\BC)$                   \\
       $A^{\BC}$      & $\GL_n(\BC)$          & $\GL_n(\BC) \times \GL_n(\BC)$ \\
-      $A$            & $\U(p,q)$              & $\GL_n(\BC)$                   \\
+      $A$            & $\U(p,q)$              & $\GL_n(\BC)$ \ $(n = p + q)$                   \\
       \bottomrule
    \end{tabular}
 \end{center}
@@ -334,9 +323,9 @@ This article aims to describe the number of elements in $\Irr_{\nu}(G;\CO)$ when
 \subsection{The main results}
 For a Young diagram $\iota$, write
 $$\br_1(\iota) \geq \br_2(\iota) \geq \br_3(\iota) \geq \cdots$$
-for its row lengths, and similarly, and
+for its row lengths, and similarly
 $$\bc_1(\iota) \geq \bc_2(\iota) \geq \bc_3(\iota) \geq \cdots$$
-for its column lengths. Let $|\iota|:= \sum_{i=1}^{\infty}\br_i(\iota)$ denote the total size of $\iota$, and let $\mathrm{YD}_{n}$ denote the set of all Young diagrams with total size $n$. We identify this set with the set of partitions of $n$ by associating each Young diagram with the partition given by row lengths. By abuse of notation, we also use Young diagrams to represent partitions.
+for its column lengths. Let $|\iota|:= \sum_{i=1}^{\infty}\br_i(\iota)$ denote the total size of $\iota$, and let $\mathrm{YD}_{n}$ ($n \geq 0$) denote the set of all Young diagrams with total size $n$. For a non-negative integer $n$, we define the set of partitions of $n$ by the descending sequences of positive integers $[d_1,\cdots,d_k]$ ($k \geq 1$), such that $\sum_{i=1}^{k}d_i = n$.  We identify this set with the set of partitions of $n$ by associating each Young diagram with the partition given by row lengths. By abuse of notation, we also use Young diagrams to represent partitions.
 
 For any Young diagram $\iota$, we introduce the set $\mathrm{Box}(\iota)$ of boxes of $\iota$ as follows:
 \begin{equation}
@@ -346,10 +335,10 @@ A subset of $\BN^{+} \times \BN^{+}$ of this form also constitutes the Young dia
 
 We introduce five symbols $\bullet, s, r, c \ \textrm{and} \ d$, and make the following definition.
 
-\begin{defn}
-   A painting on a Young diagram is a map (we place a symbol in each box):
+\begin{defn}(cf. \cite[Definition 2.9.]{BMSZ})
+   A painting on a Young diagram $\iota$ is a map (we place a symbol in each box)
    $$\CP : \mathrm{Box}(\iota) \to \{ \bullet, s, r ,c ,d \}$$
-   with the following properties:
+   with the following properties
 
    \begin{enumerate}
       \item if we remove the boxes painted with $\{d\}, \{c,d\}, \{r,c,d\} \ \textrm{or} \  \{s ,r ,c ,d\}$, the remainder still constitutes a Young diagram;
@@ -357,23 +346,6 @@ We introduce five symbols $\bullet, s, r, c \ \textrm{and} \ d$, and make the fo
       \item every column of $\iota$ has at most one box painted with $c$, and has at most one box painted with $d$.
    \end{enumerate}
    A painted Young diagram is a pair $(\iota, \CP)$ consisting of a Young diagram $\iota$ and a painting $\CP$ on $\iota$.
-\end{defn}
-
-
-We also introduce the notion of assigned Young diagrams:
-
-
-\begin{defn}
-   An assignment of type $[d_1,d_2, \cdots, d_N]$ (where $d_1 \geq d_2 \geq \cdots \geq d_N$ are positive integers, they form a partition of $|\iota|$) on a Young diagram is a map (we place a positive integer in each box)
-   $$\CQ: \mathrm{Box}(\iota) \to \{1,2,\cdots,N\} $$
-   with the following properties:
-
-   \begin{enumerate}
-      \item for each $i \in \{1,2,\cdots,N\}$, the preimage $\CP^{-1}(i)$ has exactly $d_i$ elements;
-      \item each positive integer exists at most once in each column;
-      \item for each $1 \leq n \leq N$, the preimage $\CP_2^{-1}(\{1,2,\cdots,n\})$ is still a Young diagram.
-   \end{enumerate}
-   An assigned Young diagram of type $[d_1,d_2, \cdots, d_N]$ is a pair $(\iota,\CQ)$ consisting of a Young diagram $\iota$ and an assignment $\CQ$ of type $[d_1,d_2, \cdots, d_N]$ on $\iota$.
 \end{defn}
 
 \begin{defn}
@@ -396,41 +368,59 @@ We also introduce the notion of assigned Young diagrams:
       \item every row of $\iota$ has an even number of boxes painted with $\bullet$.
    \end{enumerate}
 
-   Denote by $\mathrm{P}_{\star}(\iota)$ the set of paintings on $\iota$ that has type $\star$, and $\mathrm{P}_{A}'(\iota)$ the set of degenerate paintings on $\iota$ that has type $A$.
+   Denote by $\mathrm{P}_{\star}(\iota)$ the set of paintings on $\iota$ of type $\star$, and $\mathrm{P}_{A}'(\iota)$ the set of degenerate paintings on $\iota$ of type $A$.
 
-   Now suppose that $\iota$ is a Young diagram and $\CP$ is a painting on $\iota$ that has type $A$. Define the signature of $\CP$ to be the pair 
+   Now suppose that $\iota$ is a Young diagram and $\CP$ is a painting on $\iota$ that has type $A$. Define the signature of $\CP$ to be the pair of non-negative integers
    \begin{equation}
     (p_{\CP}, q_{\CP}) := (\frac{\sharp(\CP^{-1}(\bullet))}{2} + \sharp(\CP^{-1}(s)), \frac{\sharp(\CP^{-1}(\bullet))}{2}+ \sharp(\CP^{-1}(r))),
    \end{equation}
-   for fixed integer $p,q$, we define
+   for every $p,q \in \BN$ such that $p + q = |\iota|$, we define
    \begin{equation}
         \mathrm{P}_{A}^{p,q}(\iota) := \set{\CP \in \mathrm{P}_{A}(\iota)}{(p_{\CP},q_{\CP}) = (p,q)}.       
    \end{equation}
 \end{defn}
 
+
+We also introduce the notion of assigned Young diagrams.
+
+
 \begin{defn}
-   For a Young diagram $\iota$, and a partition $[d_1,d_2,\cdots,d_N]$ of $|\iota|$, denote by $\RA_{[d_1,d_2,\cdots,d_N]}(\iota)$ the set of assignments on $\iota$ that has type $[d_1,d_2,\cdots,d_N]$.
+   For a Young diagram $\iota$, and a partition $[d_1, \cdots, d_k]$ of $|\iota|$.  An assignment of type $[d_1,d_2, \cdots, d_N]$ on $\iota$ is a map (we place a positive integer in each box)
+   $$\CQ: \mathrm{Box}(\iota) \to \{1,2, \cdots,N\} $$
+   with the following properties
+
+   \begin{enumerate}
+      \item for each $i \in \{1,2,\cdots,N\}$, the preimage $\CP^{-1}(i)$ has exactly $d_i$ elements;
+      \item for each $1 \leq n \leq N$, if we remove the boxes assigned with $\{N+1, \cdots, |\iota|\}$, the reminder still constitutes a Young diagram;
+      \item each positive integer occurs at most once in each column.
+   \end{enumerate}
+   An assigned Young diagram of type $[d_1,d_2, \cdots, d_N]$ is a pair $(\iota,\CQ)$ consisting of a Young diagram $\iota$ and an assignment $\CQ$ of type $[d_1,d_2, \cdots, d_N]$ on $\iota$. Denote by $\RA_{[d_1,d_2,\cdots,d_N]}(\iota)$ the set of all assignments on $\iota$ of type $[d_1,d_2,\cdots,d_N]$.
 \end{defn}
 
-In the statement of the following theorems, we will use the canonical identification $^{a}\fh^* = \BC^n, \ \BC^n \times \BC^n$ defined in section \ref{3.1}, and identify nilpotent orbits in Lie algebras of type $A$ with partitions or Young diagrams in the usual way. For a partition $\iota$ denote by $\CO_\iota$ the corresponding nilpotent orbit, and for a nilpotent orbit $\CO$, denote by $\iota(\CO)$ the corresponding partition. We also define the "row by row" union of Young diagrams $\mathop{\sqcup}\limits^r$, e.g. $[5,3,1^2] \mathop{\sqcup}\limits^r [4,3^3] = [9,6,4^2]$
+
+
+
+In the statement of the following theorems, we will use the canonical identification $^{a}\fh^* = \BC^n \ \textrm{or} \ \BC^n \times \BC^n$ defined in section \ref{3.1}, and identify nilpotent orbits in Lie algebras of type $A$ with partitions or Young diagrams in the usual way. For a partition $\iota$ denote by $\CO_\iota$ the corresponding nilpotent orbit, and for a nilpotent orbit $\CO$, denote by $\iota(\CO)$ the corresponding partition. We also define the ``row by row” union of Young diagrams $\mathop{\sqcup}\limits^r$, e.g. $[5,3,1^2] \mathop{\sqcup}\limits^r [4,3^3] = [9,6,4^2]$
 
 \begin{thm}\label{R}
-   Let $G = \GL_n(\BR)$, and $\CO \in \bar{\Nil}(\fg^*)$.
+   Suppose $G = \GL_n(\BR)$ ($n \in \BN$), and let $\CO \in \bar{\Nil}(\fg^*)$.
    \begin{enumerate}
-        \item If $\nu \in {^{a}\fh^*} = \BC^n$ is integral, it means that we can permute its entries such that 
+        \item If $\nu \in {^{a}\fh^*} = \BC^n$ is integral, it means that the differences of its entries are integral, we can permute its entries such that 
         \[
         \nu = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \BC^n,
         \]
-        where $[d_1, d_2, \cdots , d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \setminus \{0\}$ for $i \neq j$. Then
+        where $[d_1, d_2, \cdots , d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \setminus \{0\}$ for any $i \neq j$. Then
         \begin{equation}
             \sharp(\Irr_\nu(G;\CO)) = \sharp(\mathrm{P}_{A^{\BR}}(\iota(\CO)))\cdot \sharp(\RA_{[d_1,\cdots,d_k]}(\iota(\CO))).
         \end{equation}
-        \item For a general $\nu \in {^{a}\fh}^*$, we can permute its entries so that 
+        \item For an arbitrary $\nu \in {^{a}\fh}^*$, we can permute its entries so that 
         \[
         \nu = (\blam_1, \cdots, \blam_r) \in \BC^n,
         \]
-        where each $\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i}$ is integral.\\
-        Here, $[d_{i,1}, \cdots d_{i,k_i} ]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \setminus \{0\}$ holds for different $p, q$. Moreover, we have $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i, j$. Then,
+        \[
+        \blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i} \ \ (e_i \geq 1),
+        \]  
+        where each $\blam_i$ is integral but $(\blam_i,\blam_j) \in \BC^{e_i+e_j}$ is not integral for any $i \neq j$, $[d_{i,1}, \cdots d_{i,k_i} ]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \setminus \{0\}$ holds for any $p \neq q$. Then,
         \begin{equation}
             \sharp(\Irr_{\nu}(G;\CO)) = \sum_{\substack{(\iota_1,\cdots,\iota_r) \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \\ \iota_1 \mathop{\sqcup}\limits^r \iota_2 \cdots \mathop{\sqcup}\limits^r  \iota_r = \iota(\CO) }}\prod_{i=1}^{r}\sharp(\Irr_{\blam_i}(\GL_{e_i}(\BR);\CO_{\iota_i})).
         \end{equation}
@@ -443,22 +433,24 @@ In the statement of the following theorems, we will use the canonical identifica
 
 
 \begin{thm}\label{H}
-    Let $G= \GL_{\frac{n}{2}}(\BH)$, and $\CO \in \bar{\Nil}(\fg^*)$.
+    Let $G= \GL_{\frac{n}{2}}(\BH)$ ($n \in \BN$ is even), and let $\CO \in \bar{\Nil}(\fg^*)$.
     \begin{enumerate}
-        \item If $\nu \in {^a\fh^*} = \BC^n$ is integral, it means that we can permute its entries such that 
+        \item If $\nu \in {^a\fh^*} = \BC^n$ is integral, it means that the differences of its entries are integral, we can permute its entries such that 
         \[
         \nu =  (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k} ) \in \BC^n,
         \]
-        where $[d_1, d_2, \cdots, d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \backslash \{0\}$ for different $i,j$. Then
+        where $[d_1, d_2, \cdots, d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \backslash \{0\}$ for any $i \neq j$. Then
         \begin{equation}
             \sharp(\Irr_{\nu}(G;\CO)) = \sharp(\mathrm{P}_{A^{\BH}}(\iota(\CO)))\cdot \sharp(\A_{[d_1,\cdots,d_k]}(\iota(\CO))).
         \end{equation}
-        \item For a general $\nu \in {^{a}\fh}$, we can permute its entries so that
+        \item For an arbitrary $\nu \in {^{a}\fh}$, we can permute its entries so that
         \[    
         \nu = (\blam_1, \cdots, \blam_r) \in \BC^n,
         \]
-        where each $\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}},\cdots,\underbrace{\lambda_{i,k_i},\cdots,\lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i}$ is integral.\\ 
-        $[d_{i,1}, \cdots, d_{i,k_i}]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \backslash \{0\}$ holds for different $p,q$. Moreover, we have $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i,j$. Then,
+        \[
+            \blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}},\cdots,\underbrace{\lambda_{i,k_i},\cdots,\lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i} \ \ (e_i \geq 1),
+         \] 
+        where each $\blam_i$ is integral but $(\blam_i,\blam_j) \in \BC^{e_i+e_j}$ is not integral for any $i \neq j$, $[d_{i,1}, \cdots, d_{i,k_i}]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \backslash \{0\}$ holds for any $p \neq q$. Then,
         \begin{equation}
             \sharp(\Irr_{\nu}(G;\CO)) = \left\{
             \begin{aligned}
@@ -487,7 +479,7 @@ In the statement of the following theorems, we will use the canonical identifica
                     2 & 2 & 3 & 3
                 \end{ytableau}.
             \]
-            This implies that $\sharp(\Irr_{\nu}(G;\CO)) = 1$.
+            This implies that $\sharp(\Irr_{\nu}(G;\CO)) = 1$, and $\sharp(\Irr_{\nu}(G)) = 1$.
 
     \item   Suppose $G = \GL_{5}(\BH)$, $\nu = (1,1,1,1,2,2,2,3,3,4) \in \BC^{10}$.       
             There are two nilpotent orbits $\CO_1$ and $\CO_2$, whose closures can appear as the associated variety of an irreducible Casselman-Wallach representation with this infinitesimal character. The corresponding Young diagrams are, respectively:
@@ -533,13 +525,13 @@ In the statement of the following theorems, we will use the canonical identifica
 
 
 \begin{thm}\label{C}
-    Let $G = \GL_{n}(\BC)$, and $\CO = \CO_{\iota} \times \CO_{\iota'} \in \bar{\Nil}(\fg^*)$.
+    Suppose $G = \GL_{n}(\BC)$ ($n \in \BN$), and let $\CO = \CO_{\iota} \times \CO_{\iota'} \in \bar{\Nil}(\fg^*)$.
     \begin{enumerate}
-        \item If $\nu \in {^a\fh^*} = \BC^n \times \BC^n$ is integral, it means that we can permute its entries via Weyl group $\mathrm{S}_n \times \mathrm{S}_n$ such that
+        \item If $\nu \in {^a\fh^*} = \BC^n \times \BC^n$ is integral, it means that in each factor $\BC^n$, the differences of its entries are integral, we can permute its entries via Weyl group $\mathrm{S}_n \times \mathrm{S}_n$ such that
         \[
         \nu =  (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}, \underbrace{\lambda_1', \cdots, \lambda_1'}_{d_1'}, \cdots, \underbrace{\lambda_k', \cdots, \lambda_k'}_{d_{l}'} ) \in \BC^n \times \BC^n, 
         \]
-        where $[d_1,d_2,\cdots,d_k]$ and $[d_1',d_2',\cdots,d_l']$ are partitions of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j, \ \lambda_i' - \lambda_j' \in \BZ \backslash \{0\}$ for different $i,j$. Then
+        where $[d_1,d_2,\cdots,d_k]$ and $[d_1',d_2',\cdots,d_l']$ are partitions of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j, \ \lambda_i' - \lambda_j' \in \BZ \backslash \{0\}$ for any $i \neq j$. Then
         \begin{equation}
             \sharp(\Irr_{\nu}(G;\CO)) = \left\{ 
             \begin{aligned}
@@ -554,18 +546,17 @@ In the statement of the following theorems, we will use the canonical identifica
             &1, & \textrm{if $\iota = \iota'$}.
         \end{aligned}
         \right.$$
-        \item For a general $\nu \in {^{a}\fh^*}$, we can permute its entries via the Weyl group such that
+        \item For an arbitrary $\nu \in {^{a}\fh^*}$, we can permute its entries via the Weyl group such that
         \[
         \nu = (\blam_1, \cdots, \blam_r, \blam_1', \cdots, \blam_s') \in \BC^n \times \BC^n,
         \]
-        where 
         \begin{align}
             &\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i},\\
             &\blam_j' = (\underbrace{\lambda_{j,1}, \cdots, \lambda_{j,1}}_{d_{j,1}'}, \cdots, \underbrace{\lambda_{j,l_j}, \cdots, \lambda_{j,l_j}}_{d_{j,l_j}'}) \in \BC^{e_j'},
         \end{align}
-        are integral. Here, the sequence $[d_{i,1}, \cdots, d_{i,k_i}]$ forms a partition of $e_i$, and $[d_{j,1}', \cdots, d_{j,l_j}']$ forms a partition of $e_j'$. The conditions $\lambda_{i,p} - \lambda_{i,q} \in \BZ \setminus \{0\}$ and $\lambda_{j,p}' - \lambda_{j,q}' \in \BZ \setminus \{0\}$ hold for different $p,q$. Moreover, we have $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ and $\lambda_{i,1}' - \lambda_{j,1}' \notin \BZ$ for different $i,j$. 
+        where each $\blam_i$ (resp. $\blam'_j$) is integral but $(\blam_i,\blam_j) \in \BC^{e_i+e_j}$ (resp. $(\blam'_i,\blam'_j) \in \BC^{e'_i+e'_j}$) is not integral for any $i \neq j$. $[d_{i,1}, \cdots, d_{i,k_i}]$ (resp. $[d_{j,1}', \cdots, d_{j,l_j}']$) forms a partition of $e_i$ (resp. $e'_j$). The condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \setminus \{0\}$ (resp. $\lambda_{j,p}' - \lambda_{j,q}' \in \BZ \setminus \{0\}$) holds for any $p \neq q$. 
     
-        Then, there exist irreducible Casselman-Wallach representations with this infinitesimal character only if $r = s$, and we can permute the components of $\nu$ under the Weyl group such that $e_i = e_i'$ for all $i = 1, 2, \cdots, r$, and $\lambda_{i,1} - \lambda_{i,1}' \in \BZ$. In this case, 
+        Then, there exist irreducible Casselman-Wallach representations with this infinitesimal character only if $r = s$, and we can permute the components of $\nu$ under the Weyl group such that $e_i = e_i'$ and $\lambda_{i,1} - \lambda_{i,1}' \in \BZ$ for each $i \in \{1, 2, \cdots, r\}$. In this case, 
         \begin{equation}
             \Irr_{\nu}(G;\CO) = \sum_{\substack{(\iota_1,\cdots,\iota_r), (\iota_1',\cdots,\iota_r') \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r}\\ \mathop{\sqcup}\limits^r \iota_i = \iota, \ \mathop{\sqcup}\limits^r \iota_i' = \iota' }} \prod_{i=1}^{r} \sharp(\Irr_{\blam_i}(\GL_{e_i}(\BC);\CO_{\iota_i} \times \CO_{\iota_i'})).
         \end{equation}
@@ -576,13 +567,13 @@ In the statement of the following theorems, we will use the canonical identifica
 \end{thm}
 
 \begin{thm}\label{U}
-    Let $G = \U(p,q)$ with $p + q = n$, and $\CO \in \bar{\Nil}(\fg^*)$.
+    Suppose $G = \U(p,q)$ ($p, q \in \BN$), and let $\CO \in \bar{\Nil}(\fg^*)$.
     \begin{enumerate}
-        \item If $\nu \in {^a\fh^*} = \BC^n$ and we can permute its entries such that 
+        \item If $\nu \in {^a\fh^*} = \BC^n$ ($n = p+q$) is integral, it means that the differences of its entries are integral, and we can permute its entries such that 
         \[ 
         \nu =  (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k} ) \in \BC^n, 
         \]
-        where $[d_1, d_2, \cdots, d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \backslash \{0\}$. Then
+        where $[d_1, d_2, \cdots, d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \backslash \{0\}$ for any $i \neq j$. Then
         \begin{equation}
             \sharp(\Irr_{\nu}(G;\CO)) = \left\{
             \begin{aligned}
@@ -593,22 +584,22 @@ In the statement of the following theorems, we will use the canonical identifica
             \right.
         \end{equation}
 
-        \item For a general $\nu \in {^{a}\fh^*}$, there exist irreducible Casselman-Wallach representations with this infinitesimal character only if we can permute the components of $\nu$ such that $\nu$ takes the form
+        \item For an arbitrary $\nu \in {^{a}\fh^*}$, there exist irreducible Casselman-Wallach representations with this infinitesimal character only if when we can permute the components of $\nu$ such that $\nu$ has the form
         \[
-            \nu = (\blam_1, \blam_1', \cdots, \blam_r, \blam_r', \blam, \blam') \in {^{a}\fh}^* = \BC^n,
+            \nu = (\blam_1, \blam_1', \cdots, \blam_r, \blam_r', \blam, \blam') \in {^{a}\fh}^* = \BC^n \ (r \geq 0),
         \]
         where 
         \begin{align} 
-            &\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i},\\
+            &\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i} \ (e_i \geq 1),\\
             &\blam_i' = (\underbrace{\lambda_{i,1}', \cdots, \lambda_{i,1}'}_{d_{i,1}'}, \cdots, \underbrace{\lambda_{i,k_i'}, \cdots, \lambda_{i,k_i'}}_{d_{i,k_i}'}) \in \BC^{e_i},\\
-            &\blam = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \left(\frac{n}{2} + \BZ\right)^{e},\\
-            &\blam' = (\underbrace{\lambda_1', \cdots, \lambda_1'}_{d_1'}, \cdots, \underbrace{\lambda_{k'}, \cdots, \lambda_{k'}}_{d_{k'}'}) \in \left(\frac{n-1}{2} + \BZ\right)^{e'},
+            &\blam = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \left(\frac{n}{2} + \BZ\right)^{e} \ (e \geq 0 \  \textrm{is even}) ,\\
+            &\blam' = (\underbrace{\lambda_1', \cdots, \lambda_1'}_{d_1'}, \cdots, \underbrace{\lambda_{k'}, \cdots, \lambda_{k'}}_{d_{k'}'}) \in \left(\frac{n-1}{2} + \BZ\right)^{e'} (e' \geq 0),
         \end{align}
-        and $[d_{i,1}, \cdots, d_{i,k_i}]$, $[d_{i,1}', \cdots, d_{i,k_i'}']$ are partitions of $e_i$, with the following conditions: 
+        and $[d_{i,1}, \cdots, d_{i,k_i}]$, $[d_{i,1}', \cdots, d_{i,k_i'}']$ are partitions of $e_i$, with the following conditions 
         \begin{itemize}
-            \item $\lambda_{i,p} - \lambda_{i,q} \in \BZ$,\ $\lambda_{i,p}' - \lambda_{i,q}' \in \BZ$;
-            \item $\lambda_{i,p} + \lambda_{i,q}' \in \BZ$, \ $\lambda_{i,p} \notin \frac{1}{2}\BZ$;
-            \item $e \text{ is even}$, and $\frac{e}{2} + e_1 + e_2 + \cdots + e_r \leq \mathrm{max}\{p,q\}$.
+            \item each $\blam_i$ (resp. $\blam'_j$) is integral but $(\blam_i,\blam_j) \in \BC^{e_i+e_j}$ (resp. $(\blam'_i,\blam'_j) \in \BC^{e'_i+e'_j}$) is not integral for any $i \neq j$;
+            \item $\lambda_{i,p} + \lambda_{i,q}' \in \BZ$ and  $\lambda_{i,p} \notin \frac{1}{2}\BZ$ for any $i \in \{1, \cdots, r\}$;
+            \item $\frac{e}{2} + e_1 + e_2 + \cdots + e_r \leq \mathrm{max}\{p,q\}$.
         \end{itemize}
         In this case, 
         \begin{align*}
@@ -620,64 +611,52 @@ In the statement of the following theorems, we will use the canonical identifica
 \end{thm}
 
 \begin{examp}
-    \begin{enumerate}
-        \item Suppose $G = \U(2,1)$, and $\nu = (1,1,2) \in \BC^3$. Let $\CO_1$, $\CO_2$, and $\CO_3$ be the nilpotent orbit of $\fg$, whose Young diagrams are, respectively:
-            \[
-                \begin{ytableau}
-                    ~&~&~
-                \end{ytableau}
-            ~,~
-                \begin{ytableau}
-                    ~&~\\
-                    ~
-                \end{ytableau}
-            ~,~
-                \begin{ytableau}
-                    ~\\
-                    ~\\
-                    ~
-                \end{ytableau}
-            \]
-            the number of assigments of type $[2,1]$ on $\CO_1$, $\CO_2$, and $\CO_3$ are, respectively $1$, $1$, and $0$.
+    Suppose $G = \U(2,1)$, and $\nu = (1,1,2) \in \BC^3$. Let $\CO_1$, $\CO_2$, and $\CO_3$ be the nilpotent orbits of $\fg$, whose Young diagrams are, respectively:
+    \[
+        \begin{ytableau}
+            ~&~&~
+        \end{ytableau}
+    ~,~
+        \begin{ytableau}
+            ~&~\\
+            ~
+        \end{ytableau}
+    ~,~
+        \begin{ytableau}
+            ~\\
+            ~\\
+            ~
+        \end{ytableau}
+    \]
+    the number of assigments of type $[2,1]$ on $\CO_1$, $\CO_2$, and $\CO_3$ are, respectively $1$, $1$, and $0$.
 
-            On the first diagram, there is only one painting, given by
-            \[
-                \begin{ytableau}
-                    \bullet & \bullet & s
-                \end{ytableau}.
-            \]
+    On the first diagram, there is only one painting, given by
+    \[
+        \begin{ytableau}
+            \bullet & \bullet & s
+        \end{ytableau}.
+    \]
 
-            On the second diagram, there are two paintings, given by
-            \[
-            \begin{ytableau}
-                \bullet & \bullet\\
-                s    
-            \end{ytableau}
-            ~,~
-            \begin{ytableau}
-                s & r\\
-                s
-            \end{ytableau}.
-            \]
+    On the second diagram, there are two paintings, given by
+    \[
+    \begin{ytableau}
+        \bullet & \bullet\\
+        s    
+    \end{ytableau}
+    ~,~
+    \begin{ytableau}
+        s & r\\
+        s
+    \end{ytableau}.
+    \]
             
-            So, we can conclude that 
-            \begin{itemize}
-                \item $\sharp(\Irr_{\nu}(G;\CO_{1})) = 1$;
-                \item $\sharp(\Irr_{\nu}(G;\CO_{2})) = 2$;
-                \item $\sharp(\Irr_{\nu}(G;\CO_{3})) = 0$.
-            \end{itemize}
+    So, we can conclude that 
+    \begin{itemize}
+        \item $\sharp(\Irr_{\nu}(G;\CO_{1})) = 1$;
+        \item $\sharp(\Irr_{\nu}(G;\CO_{2})) = 2$;
+        \item $\sharp(\Irr_{\nu}(G;\CO_{3})) = 0$.
+    \end{itemize}
 
-        \item Suppose $G = \U(n)$ is the compact unitary group. In this case, $p = n$, $q = 0$. According to the theorem above, the infinitesimal character of irreducible representations must lie in $(\frac{n-1}{2} + \BZ)^n$. The associated variety can only be the closure of the minimal nilpotent orbit $\iota = [\underbrace{1,1,\cdots,1}_{n}]$. It is straightforward to verify that
-            \begin{equation*}
-            \mathrm{A}_{[d_1,\cdots,d_{k}]}(\iota) = \left\{
-            \begin{aligned}
-                & 1, & \textrm{if $\nu$ is regular};  \\ 
-                &0, & \textrm{if $\nu$ is singular}.
-            \end{aligned}
-            \right.
-        \end{equation*}
-        Thus, the irreducible representations are in 1-1 correspondence with regular characters in $W \backslash (X^*(T) + \rho)$, which is consistent with the classical Cartan-Weyl theory.
-    \end{enumerate}
     
 \end{examp}
 
@@ -696,21 +675,20 @@ is satisfied. Here, zeros are added to the shorter partition if necessary.
 This partial order naturally induces a corresponding partial order on the set of associated varieties of irreducible representations. We now describe the minimal associated variety that can arise for irreducible representations with a given infinitesimal character in the context of real general linear groups.
 
 \begin{thm}\label{minimal}
-    Let $G = \GL_n(\BR)$, and $\nu \in {^{a}\fh}^* = \BC^n$.
-    \begin{enumerate}
+    Suppose $G = \GL_n(\BR)$, and $\nu \in {^{a}\fh}^* = \BC^n$.
         \item If 
         \[
         \nu = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \BC^n,
         \]
         where $[d_1, d_2, \cdots , d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \setminus \{0\}$ for $i \neq j$. Then, the unique minimal associated variety of irreducible Casselman-Wallach representation with infinitesimal character $\nu$ is $\bar{\CO}$, where $\iota(\CO) = [d_1, d_2, \cdots, d_k]$.
-        \item If
-                \[
-                \nu = (\blam_1, \cdots, \blam_r) \in \BC^n,
-                \]
-                where each $\blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i}$ is integral.\\
-                Here, $[d_{i,1}, \cdots d_{i,k_i} ]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \setminus \{0\}$ holds for different $p, q$. Moreover, we have $\lambda_{i,1} - \lambda_{j,1} \notin \BZ$ for different $i, j$. Then, the unique minimal associated variety of irreducible Casselman-Wallach representation with infinitesimal character $\nu$ is $\bar{\CO} = \bar{\CO(\iota_1 \mathop{\sqcup}\limits^r \iota_2 \cdots \mathop{\sqcup}\limits^r  \iota_r)} $, where $\iota_i = [d_{i,1}, \cdots d_{i,k_i}]$.
-    \end{enumerate}
 \end{thm}
+
+
+\subsection{Structure of this article}
+
+In Section 3, we present the preliminaries for the counting formula, including coherent families, coherent continuation representations, and the representation theory of Weyl groups. In Section 4, we apply the theories developed in the previous sections to the specific cases of general linear groups over $\BR$, $\BC$, and $\BH$, and real unitary groups, obtaining explicit counting results.
+
+
 
 
 \section{Preliminaries}
@@ -1277,10 +1255,6 @@ here, the third equality is the consequence of Proposition \ref{2.9}.
 
 Combining the above three identities, we obtain the second part of Theorem \ref{R}.
 
-\subsubsection{Proof of theorem \ref{minimal}}
-
-
-We will prove the first assertion, as the second follows directly. It is easy to check that for any Young diagram, there is always a painting of type $A^{\BR}$ on it. Thus, the orbit closure $\bar{\CO}$  arises for an irreducible Casselman-Wallach representation of infinitesimal character $\nu$ if and only if $\CO$ has an assignment of type $[d_1, d_2, \cdots, d_k]$. We proceed by induction. For $n = 1,2$, the assertion is obvious. Assume the assertion holds for any positive integer $k < n$. Suppose $[d_1', d_2', \cdots, d_{k'}']$ is a minimal partition satisfies the assumption that it has an assignment of type $[d_1, d_2, \cdots, d_k]$, remove the boxes assigned with $k$ in the Young diagram to obtain another Young diagram $[d_1'', d_2'', \cdots, d_{k''}'']$, by induction hypothesis, we have $[d_1'', d_2'', \cdots, d_{k''}''] \geq [d_1, d_2, \cdots, d_{k-1}]$. It follows immediately that $[d_1', d_2', \cdots , d_{k'}'] \geq [d_1, d_2, \cdots , d_k]$, after we add $d_k$ boxes to both sides. Since $[d_1, d_2, \cdots , d_k]$ also satisfies the assumption, we must have $[d_1', d_2', \cdots , d_{k'}'] = [d_1, d_2, \cdots , d_k]$. The assertion follows.
 
 
 
