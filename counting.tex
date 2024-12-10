@@ -427,7 +427,62 @@ In the statement of the following theorems, we will use the canonical identifica
     \end{enumerate}
 \end{thm}
 
-
+\begin{examp}
+    \begin{enumerate}
+        \item Recall that a partial order is defined on the set of nilpotent orbits by $\CO \leq \CO'$ if $\bar{\CO} \subseteq \bar{\CO'}$. It can also be described in terms of corresponding partitions as follows: 
+        \[
+            [d_1, d_2, \cdots , d_k] \leq [d_1', d_2', \cdots , d_{k'}']
+        \]
+        if the condition
+        \[
+            \sum_{1 \leq j \leq m} d_{j} \leq \sum_{1 \leq j \leq m} d_{j}' \  \ \textrm{for $1 \leq m \leq \mathrm{max}\{k,k'\}$},
+        \]
+        is satisfied. Here, zeros are added to the shorter partition if necessary.
+        With the notation as in the integral case of theorem \ref{R}, it is easy to verify that the unique minimal nilpotent orbit which is open in a complex associated variety of an irreducible Casselman-Wallach representation of $\GL_n(\BR)$ with infinitesimal character $\nu$ is $\CO([d_1, d_2, \cdots, d_k])$.
+        \item Suppose $G = \GL_3(\BR)$, $\nu = (0,1,\frac{1}{2})$. There are two nilpotent orbits $\CO_1$ and $\CO_2$, whose closures can occur as the associated variety of an irreducible Casselman-Wallach representation with this infinitesimal character. The corresponding Young diagrams are, respectively
+        \[
+                \begin{ytableau}
+                    ~&~ \\
+                    ~
+                \end{ytableau}
+                ~,~
+                \begin{ytableau}
+                    ~&~&~
+                \end{ytableau}.
+        \]
+        They both have unique decomposition as
+        \[
+        \begin{ytableau}
+            ~&~ \\
+            ~
+        \end{ytableau}
+        ~=~
+        \begin{ytableau}
+            ~\\
+            ~
+        \end{ytableau}
+        ~\mathop{\sqcup}\limits^r~
+        \begin{ytableau}
+            ~
+        \end{ytableau},
+        \]
+        and
+        \[
+        \begin{ytableau}
+            ~&~&~
+        \end{ytableau}
+        ~=~
+        \begin{ytableau}
+            ~&~
+        \end{ytableau}
+        ~\mathop{\sqcup}\limits^r~
+        \begin{ytableau}
+            ~
+        \end{ytableau}.
+        \]
+        After enumerate all the assignments and paintings on them, we can obtain that $\sharp(\Irr_{\nu}(G;\CO_1)) = 4$ and $\sharp(\Irr_{\nu}(G;\CO_2)) = 3$
+    \end{enumerate}
+\end{examp}
 
 
 
@@ -464,7 +519,7 @@ In the statement of the following theorems, we will use the canonical identifica
 
 \begin{examp}
     \begin{enumerate}
-    \item  Suppose $G = \GL_{4}(\BH)$, $\nu = (1,1,1,2,2,2,3,3) \in \BC^{8}$.
+    \item  Suppose $G = \GL_{4}(\BH)$, $\nu = (1,1,1,2,2,2,3,3)$.
            Then, the associated variety of irreducible Casselman-Wallach representations with this infinitesimal character can only be the closure of the nilpotent orbit $\CO$, whose Young diagram is
            \[
                 \begin{ytableau}
@@ -481,8 +536,8 @@ In the statement of the following theorems, we will use the canonical identifica
             \]
             This implies that $\sharp(\Irr_{\nu}(G;\CO)) = 1$, and $\sharp(\Irr_{\nu}(G)) = 1$.
 
-    \item   Suppose $G = \GL_{5}(\BH)$, $\nu = (1,1,1,1,2,2,2,3,3,4) \in \BC^{10}$.       
-            There are two nilpotent orbits $\CO_1$ and $\CO_2$, whose closures can appear as the associated variety of an irreducible Casselman-Wallach representation with this infinitesimal character. The corresponding Young diagrams are, respectively:
+    \item   Suppose $G = \GL_{5}(\BH)$, $\nu = (1,1,1,1,2,2,2,3,3,4)$.       
+            There are two nilpotent orbits $\CO_1$ and $\CO_2$, whose closures can occur as the associated variety of an irreducible Casselman-Wallach representation with this infinitesimal character. The corresponding Young diagrams are, respectively
             \[
                 \begin{ytableau}
                     ~& & & & \\
@@ -560,16 +615,45 @@ In the statement of the following theorems, we will use the canonical identifica
         \begin{equation}
             \Irr_{\nu}(G;\CO) = \sum_{\substack{(\iota_1,\cdots,\iota_r), (\iota_1',\cdots,\iota_r') \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r}\\ \mathop{\sqcup}\limits^r \iota_i = \iota, \ \mathop{\sqcup}\limits^r \iota_i' = \iota' }} \prod_{i=1}^{r} \sharp(\Irr_{\blam_i}(\GL_{e_i}(\BC);\CO_{\iota_i} \times \CO_{\iota_i'})).
         \end{equation}
-
     \end{enumerate}
-
-
 \end{thm}
+
+
+\begin{examp}
+    Suppose $G = \GL_n(\BC)$, $\nu \in {^{a}\fh^*}$ is regular integral, and $\CO_{\iota} \times \CO_{\iota} \in \bar{\Nil}(\fg)$ is the minimal orbit, where the Young diagram $\iota$ is
+    \[
+    \begin{ytableau}
+        ~&~\\
+        ~\\
+        \vdots\\
+        ~
+    \end{ytableau}.
+    \]
+    There are $n-1$ assignments of type $[\underbrace{1,1,\cdots,1}_n]$ on it, given by
+    \[
+    \begin{ytableau}
+        1&_{i+1}\\
+        2\\
+        \vdots\\
+        i\\
+        \vdots\\
+        n
+    \end{ytableau},
+    \]
+    for $i = 1,2,\cdots,n-1$.
+    This implies $\sharp(\Irr_{\nu}(G;\CO_{\iota} \times \CO_{\iota})) = (n-1)^2$.
+\end{examp}
+
+
+
+
+
+
 
 \begin{thm}\label{U}
     Suppose $G = \U(p,q)$ ($p, q \in \BN$), and let $\CO \in \bar{\Nil}(\fg^*)$.
     \begin{enumerate}
-        \item If $\nu \in {^a\fh^*} = \BC^n$ ($n = p+q$) is integral, it means that the differences of its entries are integral, and we can permute its entries such that 
+        \item If $\nu \in {^a\fh^*} = \BC^n$ ($n = p+q$) is integral, means the differences of its entries are integral, and we can permute its entries such that 
         \[ 
         \nu =  (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k} ) \in \BC^n, 
         \]
@@ -611,7 +695,7 @@ In the statement of the following theorems, we will use the canonical identifica
 \end{thm}
 
 \begin{examp}
-    Suppose $G = \U(2,1)$, and $\nu = (1,1,2) \in \BC^3$. Let $\CO_1$, $\CO_2$, and $\CO_3$ be the nilpotent orbits of $\fg$, whose Young diagrams are, respectively:
+    Suppose $G = \U(2,1)$, and $\nu = (1,1,2) \in \BC^3$. Let $\CO_1$, $\CO_2$, and $\CO_3$ be the nilpotent orbits of $\fg$, whose Young diagrams are, respectively
     \[
         \begin{ytableau}
             ~&~&~
@@ -663,25 +747,7 @@ In the statement of the following theorems, we will use the canonical identifica
 
 
 
-Recall that a partial order is defined on the set of nilpotent orbits by $\CO \leq \CO'$ if $\bar{\CO} \subseteq \bar{\CO'}$. It can also be described in terms of corresponding partitions as follows: 
-\[
-[d_1, d_2, \cdots , d_k] \leq [d_1', d_2', \cdots , d_{k'}']
-\]
-if the condition
-\[
-    \sum_{1 \leq j \leq m} d_{j} \leq \sum_{1 \leq j \leq m} d_{j}' \  \ \textrm{for $1 \leq m \leq \mathrm{max}\{k,k'\}$},
-\]
-is satisfied. Here, zeros are added to the shorter partition if necessary.
-This partial order naturally induces a corresponding partial order on the set of associated varieties of irreducible representations. We now describe the minimal associated variety that can arise for irreducible representations with a given infinitesimal character in the context of real general linear groups.
 
-\begin{thm}\label{minimal}
-    Suppose $G = \GL_n(\BR)$, and $\nu \in {^{a}\fh}^* = \BC^n$.
-        \item If 
-        \[
-        \nu = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \BC^n,
-        \]
-        where $[d_1, d_2, \cdots , d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \setminus \{0\}$ for $i \neq j$. Then, the unique minimal associated variety of irreducible Casselman-Wallach representation with infinitesimal character $\nu$ is $\bar{\CO}$, where $\iota(\CO) = [d_1, d_2, \cdots, d_k]$.
-\end{thm}
 
 
 \subsection{Structure of this article}
@@ -831,14 +897,14 @@ As a representation of $W_{\Lambda}$,
 
 
 \subsection{Representation of Weyl groups}\label{2.2}
-Let $G$ be a finite group with a linear action on a complex vector space $V$, $H \subseteq G$ be a subgroup, denote by $V^{H}$ the subspace of $V$ defined by
-$$V^H := \set{v \in V}{hv = v, \textrm{for all $h \in H$}}$$
-it is an $H$-submodule of $V$, so there is a decomposition $V = V^H \oplus V'$, where $V'$ is an $H$-submodule which has no nonzero $H$-invariants.
+Let $H$ be a finite group with a linear action on a complex vector space $V$, $H_1 \subseteq H$ be a subgroup, denote by $V^{H_1}$ the subspace of $V$ defined by
+$$V^{H_1} := \set{v \in V}{hv = v, \textrm{for all $h \in H_1$}}$$
+it is an $H_1$-submodule of $V$, so there is a decomposition $V = V^{H_1} \oplus V_1$, where $V_1$ is an $H_1$-submodule which has no nonzero $H_1$-invariants.
 
 \begin{thm}[Macdonald, Lusztig, and Spaltenstein]\label{j-ind}
-    Denote by $\mathrm{S}^e(V')$ denote the $e$-th symmetric power of $V'$. Suppose $\sigma' \in \Irr(H)$ is an irreducible representation that occurs with multiplicity $1$ in $\mathrm{S}^e(V')$ and does not occur in $\mathrm{S}^{i}(V')$ if $0 \leq i \leq e-1$. We may regard $\sigma'$ as a subspace of $\mathrm{S}^e(V)$ via the inclusion $\sigma' \subseteq \BC \otimes \mathrm{S}^e(V') \subseteq \mathrm{S}^e(V)$, and consider the $G$-representation $\sigma$ of $\mathrm{S}^e(V)$ generated by $\sigma'$. Then
+    Denote by $\mathrm{S}^e(V_1)$ denote the $e$-th symmetric power of $V_1$. Suppose $\sigma_1 \in \Irr(H_1)$ is an irreducible representation that occurs with multiplicity $1$ in $\mathrm{S}^e(V_1)$ and does not occur in $\mathrm{S}^{i}(V_1)$ if $0 \leq i \leq e-1$. We may regard $\sigma_1$ as a subspace of $\mathrm{S}^e(V)$ via the inclusion $\sigma_1 \subseteq \BC \otimes \mathrm{S}^e(V_1) \subseteq \mathrm{S}^e(V)$, and consider the $H$-representation $\sigma$ of $\mathrm{S}^e(V)$ generated by $\sigma'$. Then
     \begin{enumerate}
-        \item $\sigma$ is an irreducible $G$-representation;
+        \item $\sigma$ is an irreducible $H$-representation;
         \item $\sigma$ occurs with multiplicity $1$ in $\mathrm{S}^e(V)$;
         \item $\sigma$ does not occur in $\mathrm{S}^{i}(V)$ if $0 \leq i \leq e-1$.
     \end{enumerate}
@@ -848,23 +914,23 @@ it is an $H$-submodule of $V$, so there is a decomposition $V = V^H \oplus V'$, 
     See \cite[Theorem 11.2.1]{Car}.
 \end{proof}
 
-Let $\Irr(H,e)$ denote the subset of all $\sigma \in \Irr(H)$ such that $\sigma$ occurs with multiplicity $1$ in $\mathrm{S}^e(V)$ and does not occur in $\mathrm{S}^{i}(V')$ if $0 \leq i \leq e-1$.  Then by the theorem above, we have a map called $j$-induction
-\defmap{j_H^G}{\Irr(H,e)}{\Irr(G,e)}{\sigma}{j_{H}^{G}(\sigma)}
-where $j_{H}^{G}(\sigma)$ is the subrepresentation of $\mathrm{S}^e(V)$ generated by $\sigma$.
+Let $\Irr(H_1,e)$ denote the subset of all $\sigma \in \Irr(H_1)$ such that $\sigma$ occurs with multiplicity $1$ in $\mathrm{S}^e(V')$ and does not occur in $\mathrm{S}^{i}(V')$ if $0 \leq i \leq e-1$.  Then by the theorem above, we have a map called $j$-induction
+\defmap{j_{H_1}^H}{\Irr(H_1,e)}{\Irr(H,e)}{\sigma}{j_{H_1}^{H}(\sigma)}
+where $j_{H_1}^{H}(\sigma)$ is the subrepresentation of $\mathrm{S}^e(V)$ generated by $\sigma$.
 
 The following are some basic facts about $j$-induction.
 
 \begin{prop}\label{2.5}
-    Let $H' \subseteq H \subseteq G$ be subgroups. Suppose that
+    Let $H_2 \subseteq H_1 \subseteq H$ be subgroups. Suppose that
     \begin{equation}
         \begin{split}
-            V = V' \oplus V^H, \ & \textrm{where $V'$ is an $H$-submodule}; \\
-            V' = V'' \oplus V'^{H'}, \ & \textrm{where $V''$ is an $H''$-submodule}.
+            V = V_1 \oplus V^{H_1}, \ & \textrm{where $V_1$ is an $H_1$-submodule}; \\
+            V_1 = V_2 \oplus V_1^{H_2}, \ & \textrm{where $V_2$ is an $H_2$-submodule}.
         \end{split}
     \end{equation}
-    Then $V = V'' \oplus V^{W''}$, and we have
+    Then $V = V_2 \oplus V^{H_2}$, and we have
     \begin{equation}
-        j_{H'}^{H} = j_{H}^{G} \circ j_{H'}^{H}.
+        j_{H_2}^{H} = j_{H_1}^{H} \circ j_{H_2}^{H_1}.
     \end{equation}
 \end{prop}
 
@@ -873,24 +939,24 @@ The following are some basic facts about $j$-induction.
 \end{proof}
 
 \begin{prop}\label{2.6}
-    Let $G_1$ and $G_2$ be finite groups, with linear actions on complex vector spaces $V_1$, $V_2$ respectively, $H_1 \subseteq G_1$ and $H_2 \subseteq G_2$ be subgroups. Let $\sigma_1 \in \Irr(H_1,e_1)$ and $\sigma_2 \in \Irr(H_2,e_2)$, then
+    Let $H$ and $H'$ be finite groups, with linear actions on complex vector spaces $V$, $V'$ respectively, $H_1 \subseteq H$ and $H'_1 \subseteq H'$ be subgroups. Let $\sigma_1 \in \Irr(H_1,e_1)$ and $\sigma'_1 \in \Irr(H'_1,e'_1)$, then
     \begin{enumerate}
-        \item $\sigma_1 \boxtimes \sigma_2 \in \Irr(H_1 \times H_2,e_1 + e_2)$;
+        \item $\sigma_1 \boxtimes \sigma'_1 \in \Irr(H_1 \times H'_1,e_1 + e'_1)$;
         \item we have the following equation 
             \begin{equation}
-            j_{H_1 \times H_2}^{G_1 \times G_2}(\sigma_1 \boxtimes \sigma_2) = j_{H_1}^{G_1}\sigma_1 \boxtimes j_{H_2}^{G_2}\sigma_2,
+            j_{H_1 \times H'_1}^{H \times H'}(\sigma_1 \boxtimes \sigma'_1) = j_{H_1}^{H}\sigma_1 \boxtimes j_{H'_1}^{H'}\sigma'_1,
             \end{equation}
-            where $j_{H_1 \times H_2}^{G_1 \times G_2}$ is defined by the representation $V_1 \oplus V_2$ of $G_1 \times G_2$.
+            where $j_{H_1 \times H'_1}^{H \times H'}$ is defined by the representation $V \oplus V'$ of $H \times H'$.
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
     This is well known, we provide a sketch of proof for completeness.
     Since
-    $$\mathrm{S}^{n}(V_1 \oplus V_2) = \bigoplus_{i = 0}^{n}\mathrm{S}^{i}(V_1) \otimes \mathrm{S}^{n-i}(V_2),$$
-    $\sigma_1 \boxtimes \sigma_2 $ does not occur in $\mathrm{S}^{n}(V_1 \oplus V_2)$ if $n \leq e_1 + e_2$, and in $\mathrm{S}^{e_1+e_2}(V_1 \oplus V_2)$,
+    $$\mathrm{S}^{n}(V_1 \oplus V'_1) = \bigoplus_{i = 0}^{n}\mathrm{S}^{i}(V_1) \otimes \mathrm{S}^{n-i}(V'_1),$$
+    $\sigma_1 \boxtimes \sigma'_1 $ does not occur in $\mathrm{S}^{n}(V_1 \oplus V'_1)$ if $n \leq e_1 + e_2$, and in $\mathrm{S}^{e_1+e'_1}(V_1 \oplus V'_1)$,
     %$ = \bigoplus_{i=0}^{e_1 + e_2}\mathrm{S}^{i}(V_1)\otimes \mathrm{S^{n-i}}(V_2),$
-    only $\mathrm{S}^{e_1}(V_1) \boxtimes \mathrm{S}^{e_2}(V_2)$ contains $\sigma_1 \boxtimes \sigma_2$ as subrepresentation, the multiplicity is $1$ by assumption, so $\sigma_1 \boxtimes \sigma_2 \in \Irr(H_1 \times H_2, e_1+e_2)$.
+    only $\mathrm{S}^{e_1}(V_1) \boxtimes \mathrm{S}^{e'_1}(V'_1)$ contains $\sigma_1 \boxtimes \sigma'_1$ as subrepresentation, the multiplicity is $1$ by assumption, so $\sigma_1 \boxtimes \sigma'_1 \in \Irr(H_1 \times H'_1, e_1+e'_1)$.
     The second statement can be checked via direct verification.
 \end{proof}
 
