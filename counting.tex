@@ -325,7 +325,7 @@ For a Young diagram $\iota$, write
 $$\br_1(\iota) \geq \br_2(\iota) \geq \br_3(\iota) \geq \cdots$$
 for its row lengths, and similarly
 $$\bc_1(\iota) \geq \bc_2(\iota) \geq \bc_3(\iota) \geq \cdots$$
-for its column lengths. Let $|\iota|:= \sum_{i=1}^{\infty}\br_i(\iota)$ denote the total size of $\iota$, and let $\mathrm{YD}_{n}$ ($n \geq 0$) denote the set of all Young diagrams with total size $n$. For a non-negative integer $n$, we define the set of partitions of $n$ by the descending sequences of positive integers $[d_1,\cdots,d_k]$ ($k \geq 1$), such that $\sum_{i=1}^{k}d_i = n$.  We identify this set with the set of partitions of $n$ by associating each Young diagram with the partition given by row lengths. By abuse of notation, we also use Young diagrams to represent partitions.
+for its column lengths. Let $|\iota|:= \sum_{i=1}^{\infty}\br_i(\iota) \in \BN$ denote the total size of $\iota$, and let $\mathrm{YD}_{n}$ ($n \geq 0$) denote the set of all Young diagrams with total size $n$. For a non-negative integer $n$, we define the set of partitions of $n$ by the descending sequences of positive integers $[d_1,\cdots,d_k]$ ($k \geq 1$), such that $\sum_{i=1}^{k}d_i = n$.  We identify this set with the set of partitions of $n$ by associating each Young diagram with the partition given by row lengths. By abuse of notation, we also use Young diagrams to represent partitions.
 
 For any Young diagram $\iota$, we introduce the set $\mathrm{Box}(\iota)$ of boxes of $\iota$ as follows:
 \begin{equation}
@@ -620,7 +620,7 @@ In the statement of the following theorems, we will use the canonical identifica
 
 
 \begin{examp}
-    Suppose $G = \GL_n(\BC)$, $\nu \in {^{a}\fh^*}$ is regular integral, and $\CO_{\iota} \times \CO_{\iota} \in \bar{\Nil}(\fg)$ is the minimal orbit, where the Young diagram $\iota$ is
+    Suppose $G = \GL_n(\BC)$, $\nu \in {^{a}\fh^*}$ is regular integral, and $\CO = \CO_{\min} \times \CO_{\min} \in \bar{\Nil}(\fg)$, where $\fg$ is identified with $\Lie(G) \times \Lie(G)$ as in section \ref{3.1}, the corresponding Young diagram of $\CO_{\min}$ is
     \[
     \begin{ytableau}
         ~&~\\
@@ -636,12 +636,13 @@ In the statement of the following theorems, we will use the canonical identifica
         2\\
         \vdots\\
         i\\
+        _{i+2}\\
         \vdots\\
         n
     \end{ytableau},
     \]
     for $i = 1,2,\cdots,n-1$.
-    This implies $\sharp(\Irr_{\nu}(G;\CO_{\iota} \times \CO_{\iota})) = (n-1)^2$.
+    This implies $\sharp(\Irr_{\nu}(G;\CO_{\min} \times \CO_{\min})) = (n-1)^2$.
 \end{examp}
 
 
