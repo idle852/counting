@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.15)  11 DEC 2024 14:16
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.15)  18 DEC 2024 00:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -765,12 +765,8 @@ Overfull \hbox (11.10237pt too wide) detected at line 1635
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `counting.out' has not changed.
-(rerunfilecheck)             Checksum: A63B9E1F78F718A1C269C17464C3A11A;3616.
+(rerunfilecheck)             Checksum: 606D0610B7B0929B3B61E2188902459E;3522.
  ) 
 Here is how much of TeX's memory you used:
  25530 strings out of 474773

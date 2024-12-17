@@ -9,14 +9,14 @@
 \contentsline {subsection}{\tocsubsection {}{2.3}{Counting formula}}{16}{subsection.2.3}%
 \contentsline {section}{\tocsection {}{3}{Counting results for general linear groups and unitary groups}}{16}{section.3}%
 \contentsline {subsection}{\tocsubsection {}{3.1}{Standard representations of classical groups}}{16}{subsection.3.1}%
-\contentsline {subsection}{\tocsubsection {}{3.2}{Real general linear groups}}{17}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Proof of theorem \ref {R}}}{17}{subsection.3.2}%
 \contentsline {subsubsection}{\tocsubsubsection {}{3.2.1}{Integral case}}{18}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\tocsubsubsection {}{3.2.2}{General case}}{19}{subsubsection.3.2.2}%
-\contentsline {subsection}{\tocsubsection {}{3.3}{Quaternion general linear groups}}{20}{subsection.3.3}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{Proof of theorem \ref {H}}}{20}{subsection.3.3}%
 \contentsline {subsubsection}{\tocsubsubsection {}{3.3.1}{Integral case}}{20}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\tocsubsubsection {}{3.3.2}{General case}}{22}{subsubsection.3.3.2}%
-\contentsline {subsection}{\tocsubsection {}{3.4}{Complex general linear groups}}{22}{subsection.3.4}%
+\contentsline {subsection}{\tocsubsection {}{3.4}{Proof of theorem \ref {C}}}{22}{subsection.3.4}%
 \contentsline {subsubsection}{\tocsubsubsection {}{3.4.1}{Integral case}}{23}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\tocsubsubsection {}{3.4.2}{General case}}{24}{subsubsection.3.4.2}%
-\contentsline {subsection}{\tocsubsection {}{3.5}{Unitary groups}}{24}{subsection.3.5}%
+\contentsline {subsection}{\tocsubsection {}{3.5}{Proof of theorem \ref {U}}}{24}{subsection.3.5}%
 \contentsline {section}{\tocsection {}{}{References}}{26}{section*.2}%
